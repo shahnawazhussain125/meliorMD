@@ -9,11 +9,11 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Row className="header-bar">
-                    <Col span={8}>
+                <Row type="flex" className="header-bar">
+                    <Col span={4}>
                         <img className="header-logo" src={logo} alt="logo" />
                     </Col>
-                    <Col span={12}>
+                    <Col span={16}>
                         <div className="navbar">
                             <ul className="navbar-links">
                                 <li>ABOUT</li>
@@ -24,9 +24,10 @@ class Header extends Component {
                         </div>
                     </Col>
                     <Col span={4}>
-                    <   div class="vl"></div>
-                        <div>
-                            <Button type="primary">Provider Login</Button>
+                        <div className="vl">
+                            <div>
+                                <Button type="primary" className="provider-button">Provider Login</Button>
+                            </div>
                         </div>
                     </Col>
                 </Row>

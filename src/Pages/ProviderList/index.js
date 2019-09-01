@@ -13,27 +13,47 @@ class ProviderList extends Component {
             <div className="provoder-list-body">
                 <Row type="flex" justify="center">
                     <Col span={12} className="search-container">
-                        <div>
+                        <Row type="flex" justify="center">
                             <h1>Find your best Physician</h1>
-                        </div>
-                        <div>
-                            <h3>meliorMD will help you in that important decision.</h3>
-                        </div>
-                        <div>
+                        </Row>
+                        <Row type="flex" justify="center">
+                            <h2>meliorMD will help you in that important decision.</h2>
+                        </Row>
+                        <Row className="search-parameters">
                             <InputGroup size="large">
                                 <Row gutter={24}>
-                                    <Col span={5}>
-                                        <Input defaultValue="0571" />
+                                    <Col span={8}>
+                                        <label className="search-parameters-label">SPECIALITY BY PROVIDER CATEGORY</label>
+                                        <Input defaultValue="e.g California" />
                                     </Col>
-                                    <Col span={5}>
-                                        <Input defaultValue="26888888" />
+                                    <Col span={8}>
+                                        <label className="search-parameters-label">LOCATIONS BY CITY</label>
+                                        <Input defaultValue="e.g California" />
                                     </Col>
-                                    <Col span={5}>
+                                    <Col span={8}>
                                         <Button>Search</Button>
                                     </Col>
                                 </Row>
                             </InputGroup>
-                        </div>
+                        </Row>
+                        {/* <Row gutter={24}>
+                                    <Col span={8}>
+                                        <Row>
+                                            <label>SPECIALITY BY PROVIDER CATEGORY</label>
+                                            <Input className="full-width-input" defaultValue="0871" />
+                                        </Row>
+                                    </Col>
+                                    <Col span={8}>
+                                        <Row>
+                                            <label>LOCATIONS BY CITY</label>
+                                            <Input  className="full-width-input" defaultValue="26888888" />
+                                        </Row>
+                                    </Col>
+                                    <Col span={8}>
+                                        <Button>Search</Button>
+                                    </Col>
+                                </Row> */}
+
                         <div>
                             <p>HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>
                         </div>
@@ -41,9 +61,9 @@ class ProviderList extends Component {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col span={12}>
-                        <dvi>
+                        <div>
                             <h1>Find a listing</h1>
-                        </dvi>
+                        </div>
                         <div className="card-container">
                             <Tabs type="card">
                                 <TabPane tab="Dentistry" key="1">
