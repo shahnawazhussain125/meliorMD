@@ -1,0 +1,42 @@
+.header-bar
+{
+    background-color: #2c61ad;
+    color: white;
+    height: 50px;
+}
+
+.header-logo
+{
+    margin-left: 20px;
+}
+
+.navbar 
+{
+    display: flex;
+    justify-content: left;
+}
+
+.navbar-links
+{
+    display: block;
+    list-style: none;
+}
+
+.navbar-links li {
+    display: inline-block;
+    margin: 5px;
+    font-size: 10px;
+    margin-top: 20px;
+}
+.navbar-links li:hover {
+    cursor: pointer;
+    margin-top: 20px;
+    border-bottom: 3px solid white;
+}
+
+.vl {
+    display: inline-block;
+    border-left: 3px solid white;
+    height: 40px;
+    margin-top: 5px;
+}
