@@ -1,0 +1,14 @@
+
+.provoder-list-body{
+    height: 100% auto;
+}
+.row-container {
+    display: flex;
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-container{
+    margin-top: 230%;
+}
