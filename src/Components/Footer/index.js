@@ -13,8 +13,14 @@ class Footer extends Component {
     render() {
         return (
             <div>
-                <Row span={24} className="footer">
-                    <Col span={12}>
+                <Row className="footer">
+                    <Col span={2}>
+                        <Row type="flex" justify="center">
+                        </Row>
+                    </Col>
+
+                    <Col span={8}>
+                        <Row type="flex" justify="center">
                         <div>
                             <img className="header-logo" src={logo} alt="logo" />
                         </div>
@@ -24,67 +30,77 @@ class Footer extends Component {
                                 across specialties. Finding a healthcare provider can be
                             </p>
                         </div>
+                        </Row>
                     </Col>
-                    <Col span={12}>
-                        <Row gutter={24}>
-                            <Col span={8}>
+
+                    <Col span={4}>
+                        <Row type="flex" justify="center">
+                        </Row>
+                    </Col>
+
+                    <Col span={3}>
+                        <Row type="flex" justify="center">
+                            <div>
                                 <div>
-                                    <div>
-                                        <p>FEATURE</p>
-                                    </div>
-                                    <div>
-                                        <ul>
-                                            <li>Find Doctors</li>
-                                            <li>Add a provider listing</li>
-                                            <li>About</li>
-                                            <li>Mission</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col span={8}>
-                                <div>
-                                    <div>
-                                        <p></p>
-                                    </div>
-                                    <div>
-                                        <ul>
-                                            <li>About Us</li>
-                                            <li>Pricing</li>
-                                            <li>Careers</li>
-                                            <li>Contact Us</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col span={8}>
-                                <div>
-                                    <p>FOLLO</p>
-                                </div>
-                                <div className="icons-list">
-                                    <Icon type="linkedin" />
-                                    <IconFont type="icon-facebook" />
-                                    <IconFont type="icon-twitter" />
+                                    <p>FEATURES</p>
                                 </div>
                                 <div>
-                                    <p>ENGLISH</p>
+                                    <ul>
+                                        <li>Find Doctors</li>
+                                        <li>Add a provider listing</li>
+                                        <li>About</li>
+                                        <li>Mission</li>
+                                    </ul>
                                 </div>
-                            </Col>
+                            </div>
+                        </Row>
+                    </Col>
+
+                    <Col span={3}>
+                        <Row type="flex" justify="center">
+                            <div>
+                                <div>
+                                    <p>Company</p>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>About Us</li>
+                                        <li>Pricing</li>
+                                        <li>Careers</li>
+                                        <li>Contact Us</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </Row>
+                    </Col>
+
+                    <Col span={3}>
+                        <Row type="flex" justify="center">
+                            <div>
+                                <p>FOLLOW<br/></p>
+                            </div>
+                            <div className="icons-list"><br/>
+                                <Icon type="linkedin" /><br/>
+                                <IconFont type="icon-facebook" /> <br/>
+                                <IconFont type="icon-twitter" />
+                            </div>
+                            <br/>
+                            
+                        </Row>
+                    </Col>
+
+                    <Col span={1}>
+                        <Row type="flex" justify="center">
                         </Row>
                     </Col>
                 </Row>
-                <hr/>
+                    
                 <Row type="flex" justify="center">
                     <div>
                         <p>© 2019 CityNetworksGroup. All rights reserved</p>
                     </div>
                     <div>
-                        <ul>
-                            <li>Legal</li>
-                            <li>Terms</li>
-                            <li>Privacy</li>
-                            <li>devias.io</li>
-                        </ul>
+                    Legal Terms Privacy devias.i
                     </div>
                 </Row>
             </div>

@@ -1,0 +1,44 @@
+
+/* .provoder-list-body{
+    height: 100% auto;
+    margin-bottom: 50%;
+} */
+.row-container {
+    display: flex;
+    padding-bottom: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-container{
+    margin-top: 34%;
+    width: 100%;
+    height: 250px;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+.card-container > .ant-tabs-card > .ant-tabs-content {
+    height: auto;
+    margin-top: -16px;
+    border: 2px gray;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+    background: #fff;
+    padding: 16px;
+    border: 2px gray;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar {
+    border-color: gray;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+    border-bottom:  #fff;
+    background: transparent;
+  }
+  
+  .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+    border-color: gray;
+    background: #fff;
+  }
