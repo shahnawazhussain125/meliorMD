@@ -14,7 +14,7 @@ class SearchResult extends Component {
             <div className="provoder-list-body">
                 <Row>
                     <Col>
-                        <Breadcrumb>
+                        <Breadcrumb style={{backgroundColor:'#F1F4F6',padding:'5px', paddingLeft:'15px', borderBottom:'1px solid #E0E1E2'}}>
                             <Breadcrumb.Item>Home</Breadcrumb.Item>
                             <Breadcrumb.Item>California</Breadcrumb.Item>
                             <Breadcrumb.Item>San Francisc</Breadcrumb.Item>
@@ -22,21 +22,21 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col span={6}>
+                    <Col span={5} style={{padding:'2%', backgroundColor:'#F1F4F6', borderRight:'1px solid #E0E1E2'}}>
                         <div>
                             <h1>Filter Result</h1>
                         </div>
                         <div>
                             <div>
-                                <label>LOCATIONS BY CIT</label>
+                                <label>LOCATIONS BY CITY</label>
                                 <Input placeholder="E.g San Francisc" />
-                            </div>
+                            </div><br/>
                         </div>
                         <div>
                             <div>
                                 <label>ZIP COD</label>
                                 <Input placeholder="Zip cod" />
-                            </div>
+                            </div><br/>
                         </div>
                         <div>
                             <div>
@@ -51,7 +51,7 @@ class SearchResult extends Component {
                                     <Option value="lucy">Lucy</Option>
                                     <Option value="tom">Tom</Option>
                                 </Select>
-                            </div>
+                            </div><br/>
                         </div>
                         <div>
                             <div>
@@ -67,9 +67,9 @@ class SearchResult extends Component {
                                     <Option value="tom">Tom</Option>
                                 </Select>
                             </div>
-                            <div>
+                            <div><br/>
                                 <div>
-                                    <label>HEALTH INSURANC</label>
+                                    <label>HEALTH INSURANCE</label>
                                     <Select
                                         showSearch
                                         style={{ width: 200 }}
@@ -81,7 +81,7 @@ class SearchResult extends Component {
                                         <Option value="tom">Tom</Option>
                                     </Select>
                                 </div>
-                            </div>
+                            </div><br/><br/>
                             <Row>
                                 <div>
                                     <p>HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>
@@ -92,13 +92,13 @@ class SearchResult extends Component {
                                     <p>TYPE OF PATIENT SERVED</p>
                                     <ul>
                                         <li>
-                                            <Radio value="Adults Only">Adults Only</Radio>
+                                            <Radio style={{fontSize:"12px"}} value="Adults Only">Adults Only</Radio>
                                         </li>
                                         <li>
-                                            <Radio value="Both Adults and Children">Both Adults and Children</Radio>
+                                            <Radio style={{fontSize:"12px"}} value="Both Adults and Children">Both Adults and Children</Radio>
                                         </li>
                                         <li>
-                                            <Radio value="Children & Adolescents Only">Children & Adolescents Only</Radio>
+                                            <Radio style={{fontSize:"12px"}} value="Children & Adolescents Only">Children & Adolescents Only</Radio>
                                         </li>
                                     </ul>
                                 </div>
@@ -106,27 +106,29 @@ class SearchResult extends Component {
                                     <p>GENDER OF HEALTHCARE PROVIDER</p>
                                     <ul>
                                         <li>
-                                            <Radio value="Female">Female</Radio>
+                                            <Radio style={{fontSize:"12px"}} value="Female">Female</Radio>
                                         </li>
                                         <li>
-                                            <Radio value="Male">Male</Radio>
+                                            <Radio style={{fontSize:"12px"}} value="Male">Male</Radio>
                                         </li>
                                     </ul>
                                 </div>
                             </Row>
                         </div>
                     </Col>
-                    <Col span={18}>
-                        <Row>
-                            <div>
-                                <h1>202 Physicians</h1>
+
+                    <Col span={18} style={{backgroundColor:'#ffffff'}}>
+
+                        <Row type="flex" justify="center">
+                            <div style={{display:'inline'}}><br/>
+                                <h1><span style={{color:"#0F6AB6"}}>202 </span> Physicians</h1>
                             </div>
-                            <div>
-                                <label>Sorted By</label>
+                            <div style={{display:'inline',marginLeft:'25%'}}><br/>
+                                {/* <label></label> */}
                                 <Select
                                     showSearch
                                     style={{ width: 200 }}
-                                    placeholder="Select a provider"
+                                    placeholder="Sort by"
                                     optionFilterProp="children"
                                 >
                                     <Option value="jack">Jack</Option>
@@ -135,171 +137,175 @@ class SearchResult extends Component {
                                 </Select>
                             </div>
                         </Row>
+
                         <Row type="flex" justify="center">
                             <Col span={16}>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
+
+                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
                                     <Col span={12}>
                                         <div>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p>Physician — Obstetrician/Gynecologist</p>
-                                            <p>ADDRESS</p>
-                                            <p>2726 Shinn Street, New York - View on map</p>
-                                            <Button>VIEW PROFILE</Button>
+                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
+                                             ADDRESS<br/>
+                                             2726 Shinn Street, New York - View on map</p>
+                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
                                         <div>
                                             <p>CALL</p>
-                                            <h2>216.445.2030</h2>
+                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
                                         </div>
-                                    </Col>
-                                </Row>
-                                <Row type="flex" justify="center">
-                                    <Col>
-                                        <Pagination defaultCurrent={6} total={500} />
                                     </Col>
                                 </Row>
                             </Col>

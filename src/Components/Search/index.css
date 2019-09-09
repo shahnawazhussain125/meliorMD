@@ -1,0 +1,19 @@
+
+/* .provoder-list-body{
+    height: 100% auto;
+    margin-bottom: 50%;
+} */
+.row-container {
+    display: flex;
+    padding-bottom: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-container{
+    margin-top: 34%;
+    width: 100%;
+    height: 250px;
+    border-radius: 30px;
+    opacity: 0.9;
+}

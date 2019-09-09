@@ -3,16 +3,21 @@ import Header from './Components/Header';
 import ProviderList from './Pages/ProviderList';
 // import Footer from './Components/Footer';
 import SearchResult from './Components/SearchResult';
+import Search from './Components/Search';
+import Profile from './Components/Profile'
 
 function App() {
   return (
     <div>
       <Header/>
-      <ProviderList/>
+      {/* <ProviderList/> */}
       {/* <Footer/> */}
       {
         // <SearchResult/>
       }
+      {/* <Search/> */}
+
+      <Profile/>
     </div>
   );
 }
