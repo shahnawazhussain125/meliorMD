@@ -13,9 +13,9 @@ function App() {
       {/* <ProviderList/> */}
       {/* <Footer/> */}
       {
-        // <SearchResult/>
+        <SearchResult/>
       }
-      <Search/>
+      {/* <Search/> */}
 
       {/* <Profile/> */}
     </div>
