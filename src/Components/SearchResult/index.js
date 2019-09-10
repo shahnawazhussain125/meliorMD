@@ -14,7 +14,7 @@ class SearchResult extends Component {
             <div className="provoder-list-body">
                 <Row>
                     <Col>
-                        <Breadcrumb style={{backgroundColor:'#F1F4F6',padding:'5px', paddingLeft:'15px', borderBottom:'1px solid #E0E1E2'}}>
+                        <Breadcrumb className="bread-crumb">
                             <Breadcrumb.Item>Home</Breadcrumb.Item>
                             <Breadcrumb.Item>California</Breadcrumb.Item>
                             <Breadcrumb.Item>San Francisc</Breadcrumb.Item>
@@ -22,28 +22,28 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col span={5} style={{padding:'2%', backgroundColor:'#F1F4F6', borderRight:'1px solid #E0E1E2'}}>
+                    <Col span={5} className="search-content">
                         <div>
                             <h1>Filter Result</h1>
                         </div>
                         <div>
                             <div>
-                                <label>LOCATIONS BY CITY</label>
-                                <Input placeholder="E.g San Francisc" />
+                                <label className="input-label">LOCATIONS BY CITY</label>
+                                <Input className="search-input" placeholder="E.g San Francisc" />
                             </div><br/>
                         </div>
                         <div>
                             <div>
-                                <label>ZIP COD</label>
-                                <Input placeholder="Zip cod" />
+                                <label className="input-label">ZIP COD</label>
+                                <Input className="search-input" placeholder="Zip cod" />
                             </div><br/>
                         </div>
                         <div>
                             <div>
-                                <label>PROVIDER CATEGOR</label>
+                                <label className="input-label">PROVIDER CATEGOR</label>
                                 <Select
                                     showSearch
-                                    style={{ width: 200 }}
+                                    className="search-input"
                                     placeholder="Select a provider"
                                     optionFilterProp="children"
                                 >
@@ -55,10 +55,10 @@ class SearchResult extends Component {
                         </div>
                         <div>
                             <div>
-                                <label>SPECIALITY BY PROVIDER CATEGOR</label>
+                                <label className="input-label">SPECIALITY BY PROVIDER CATEGOR</label>
                                 <Select
                                     showSearch
-                                    style={{ width: 200 }}
+                                    className="search-input"                                    
                                     placeholder="Select a person"
                                     optionFilterProp="children"
                                 >
@@ -69,10 +69,10 @@ class SearchResult extends Component {
                             </div>
                             <div><br/>
                                 <div>
-                                    <label>HEALTH INSURANCE</label>
+                                    <label className="input-label">HEALTH INSURANCE</label>
                                     <Select
                                         showSearch
-                                        style={{ width: 200 }}
+                                        className="search-input"
                                         placeholder="Select a provider"
                                         optionFilterProp="children"
                                     >
@@ -89,21 +89,21 @@ class SearchResult extends Component {
                             </Row>
                             <Row>
                                 <div>
-                                    <p>TYPE OF PATIENT SERVED</p>
-                                    <ul>
+                                    <p className="input-label">TYPE OF PATIENT SERVED</p>
+                                    <ul className="input-ul">
                                         <li>
-                                            <Radio style={{fontSize:"12px"}} value="Adults Only">Adults Only</Radio>
+                                            <Radio className="input-radio" value="Adults Only">Adults Only</Radio>
                                         </li>
                                         <li>
-                                            <Radio style={{fontSize:"12px"}} value="Both Adults and Children">Both Adults and Children</Radio>
+                                            <Radio className="input-radio" value="Both Adults and Children">Both Adults and Children</Radio>
                                         </li>
                                         <li>
-                                            <Radio style={{fontSize:"12px"}} value="Children & Adolescents Only">Children & Adolescents Only</Radio>
+                                            <Radio className="input-radio" value="Children & Adolescents Only">Children & Adolescents Only</Radio>
                                         </li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <p>GENDER OF HEALTHCARE PROVIDER</p>
+                                    <p className="input-label">GENDER OF HEALTHCARE PROVIDER</p>
                                     <ul>
                                         <li>
                                             <Radio style={{fontSize:"12px"}} value="Female">Female</Radio>
