@@ -22,10 +22,11 @@
 
 .input-ul {
     list-style: none;
+    padding: 0%;
 }
 
-.input-radio {
-    font-size: 12px;
+.input-checkbox {
+    font-size: 10px;
 }
 
 .input-label {

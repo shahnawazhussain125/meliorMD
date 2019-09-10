@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Radio, Breadcrumb, Select, Pagination } from 'antd';
+import { Row, Col, Input, Button, Icon, Tabs, Radio, Checkbox, Breadcrumb, Select, Pagination } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 
@@ -22,7 +22,7 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col span={5} className="search-content">
+                    <Col span={6} className="search-content">
                         <div>
                             <h1>Filter Result</h1>
                         </div>
@@ -92,24 +92,24 @@ class SearchResult extends Component {
                                     <p className="input-label">TYPE OF PATIENT SERVED</p>
                                     <ul className="input-ul">
                                         <li>
-                                            <Radio className="input-radio" value="Adults Only">Adults Only</Radio>
+                                            <Checkbox className="input-checkbox" value="Adults Only">Adults Only</Checkbox>
                                         </li>
                                         <li>
-                                            <Radio className="input-radio" value="Both Adults and Children">Both Adults and Children</Radio>
+                                            <Checkbox className="input-checkbox" value="Both Adults and Children">Both Adults and Children</Checkbox>
                                         </li>
                                         <li>
-                                            <Radio className="input-radio" value="Children & Adolescents Only">Children & Adolescents Only</Radio>
+                                            <Checkbox className="input-checkbox" value="Children & Adolescents Only">Children & Adolescents Only</Checkbox>
                                         </li>
                                     </ul>
                                 </div>
                                 <div>
                                     <p className="input-label">GENDER OF HEALTHCARE PROVIDER</p>
-                                    <ul>
+                                    <ul className="input-ul">
                                         <li>
-                                            <Radio style={{fontSize:"12px"}} value="Female">Female</Radio>
+                                            <Checkbox className="input-checkbox" value="Female">Female</Checkbox>
                                         </li>
                                         <li>
-                                            <Radio style={{fontSize:"12px"}} value="Male">Male</Radio>
+                                            <Checkbox className="input-checkbox" value="Male">Male</Checkbox>
                                         </li>
                                     </ul>
                                 </div>
@@ -127,7 +127,7 @@ class SearchResult extends Component {
                                 {/* <label></label> */}
                                 <Select
                                     showSearch
-                                    style={{ width: 200 }}
+                                    
                                     placeholder="Sort by"
                                     optionFilterProp="children"
                                 >
