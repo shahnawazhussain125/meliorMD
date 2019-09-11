@@ -26,19 +26,19 @@ class SearchResult extends Component {
                         <div>
                             <h1>Filter Result</h1>
                         </div>
-                        <div>
+                        <div className="input-spacing">
                             <div>
                                 <label className="input-label">LOCATIONS BY CITY</label>
                                 <Input className="search-input" placeholder="E.g San Francisc" />
-                            </div><br/>
+                            </div>
                         </div>
-                        <div>
+                        <div className="input-spacing">
                             <div>
                                 <label className="input-label">ZIP COD</label>
                                 <Input className="search-input" placeholder="Zip cod" />
-                            </div><br/>
+                            </div>
                         </div>
-                        <div>
+                        <div className="input-spacing">
                             <div>
                                 <label className="input-label">PROVIDER CATEGOR</label>
                                 <Select
@@ -51,10 +51,10 @@ class SearchResult extends Component {
                                     <Option value="lucy">Lucy</Option>
                                     <Option value="tom">Tom</Option>
                                 </Select>
-                            </div><br/>
+                            </div>
                         </div>
-                        <div>
-                            <div>
+                        <div className="input-spacing">
+                            <div className="input-spacing">
                                 <label className="input-label">SPECIALITY BY PROVIDER CATEGOR</label>
                                 <Select
                                     showSearch
@@ -67,7 +67,7 @@ class SearchResult extends Component {
                                     <Option value="tom">Tom</Option>
                                 </Select>
                             </div>
-                            <div><br/>
+                            <div className="input-spacing">
                                 <div>
                                     <label className="input-label">HEALTH INSURANCE</label>
                                     <Select
@@ -81,10 +81,10 @@ class SearchResult extends Component {
                                         <Option value="tom">Tom</Option>
                                     </Select>
                                 </div>
-                            </div><br/><br/>
+                            </div>
                             <Row>
                                 <div>
-                                    <p>HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>
+                                    <p className="advance-search">HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>
                                 </div>
                             </Row>
                             <Row>
