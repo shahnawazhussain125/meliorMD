@@ -4,6 +4,8 @@ import ProviderList from './Pages/ProviderList';
 import SearchResult from './Components/SearchResult';
 import Search from './Components/Search';
 import Profile from './Components/Profile';
+import SearchOnMap from './Pages/SearchOnMap';
+
 
 const Routes = () =>{
     return(
@@ -13,7 +15,7 @@ const Routes = () =>{
                 <Route exact path = "/profile" component = { Profile } />
                 <Route path = "/search" component = { Search } />
                 <Route path = "/search_result" component = { SearchResult } />
-                
+                <Route path = "/search_on_map" component = { SearchOnMap } />
                 {/* <Route path = "/updateproduct/:id" component= {UpdateProduct} /> */}
             </Switch>
         </BrowserRouter>

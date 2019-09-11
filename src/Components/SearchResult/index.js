@@ -22,7 +22,7 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col span={6} className="search-content">
+                    <Col span={5} className="search-content">
                         <div>
                             <h1>Filter Result</h1>
                         </div>
@@ -117,7 +117,7 @@ class SearchResult extends Component {
                         </div>
                     </Col>
 
-                    <Col span={18} style={{backgroundColor:'#ffffff'}}>
+                    <Col span={19} style={{backgroundColor:'#ffffff'}}>
 
                         <Row type="flex" justify="center">
                             <div style={{display:'inline'}}><br/>
