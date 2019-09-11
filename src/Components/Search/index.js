@@ -62,9 +62,9 @@ class Search extends Component {
                           <Col span={1}></Col>
 
                           <Col span={22}>
-                          <Collapse defaultActiveKey={['1']} style={{backgroundColor:'#5C96C6',border:'0px',width:'100%'}}>
+                          <Collapse defaultActiveKey={['1']} style={{backgroundColor:'#5C96C6',border:'0px',width:'100%',height:'auto'}}>
                             <Panel header="Advanced Search" key="1">
-                              <div style={{backgroundColor:'#ffffff'}}>
+                              <div style={{backgroundColor:'#ffffff',height:'auto'}}>
                                 <Row>
                                   <h3 style={{color:'#0D47A1'}}>Find a listing</h3>
                                 </Row>
@@ -91,25 +91,25 @@ class Search extends Component {
                                       </Col>
 
                                       <Col span={12}>
-                                      <div style={{padding:'10px'}}>
-                                        <Checkbox style={{marginBottom:'10px'}}>
-                                            <span style={{color:'#8A8B8C'}}>Pediatric Dentist </span>
-                                        </Checkbox><br/>
-                                        <Checkbox style={{marginBottom:'10px'}}>
-                                            <span style={{color:'#8A8B8C'}}>Periodontist </span>
-                                        </Checkbox><br/>
-                                        <Checkbox style={{marginBottom:'10px'}}>
-                                            <span style={{color:'#8A8B8C'}}>Prosthodontics </span>
-                                        </Checkbox>
-                                      </div>
+                                        <div style={{padding:'10px'}}>
+                                          <Checkbox style={{marginBottom:'10px'}}>
+                                              <span style={{color:'#8A8B8C'}}>Pediatric Dentist </span>
+                                          </Checkbox><br/>
+                                          <Checkbox style={{marginBottom:'10px'}}>
+                                              <span style={{color:'#8A8B8C'}}>Periodontist </span>
+                                          </Checkbox><br/>
+                                          <Checkbox style={{marginBottom:'10px'}}>
+                                              <span style={{color:'#8A8B8C'}}>Prosthodontics </span>
+                                          </Checkbox>
+                                        </div>
                                       </Col>
                                     </Row> 
 
                                     <Row type="flex" justify="center">
                                       <Col span="24">
                                       <div style={{padding:'10px'}}>
-                                      <label><h5 style={{color:'#AEB1B1'}}>HOSPITAL/PRACTICE NAME</h5></label>
-                                      <Input
+                                        <label><h5 style={{color:'#AEB1B1'}}>HOSPITAL/PRACTICE NAME</h5></label>
+                                        <Input
                                           placeholder="Search by business name"
                                           prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                           suffix={
@@ -120,29 +120,163 @@ class Search extends Component {
                                           /><br/><br/>
 
                                           <Col span="11">
-                                          <div>
-                                              <label><h5 style={{color:'#AEB1B1'}}>CITY OR STATE</h5></label>
-                                              <Input placeholder="e.g California" />
-                                          </div>
+                                            <div>
+                                                <label><h5 style={{color:'#AEB1B1'}}>CITY OR STATE</h5></label>
+                                                <Input placeholder="e.g California" />
+                                            </div>
                                           </Col>
+
                                           <Col span="2">
                                           </Col>
+
                                           <Col span="11">
-                                          <div>
-                                              <label><h5 style={{color:'#AEB1B1'}}>ZIP CODE</h5></label>
-                                              <Input placeholder="e.g California" />
-                                          </div>
+                                            <div>
+                                                <label><h5 style={{color:'#AEB1B1'}}>ZIP CODE</h5></label>
+                                                <Input placeholder="e.g California" />
+                                            </div>
                                           </Col>
+                                          </div>
+                                        </Col>
+                                      </Row><br/>
                                           
-                                      </div>
-                                      </Col>
-                                    </Row>
+                                          <Row type="flex" justify="center">
+                                            <Col span="24">
+                                              <h6 style={{color:'#AEB1B1'}}>TYPE OF PATIENT SERVED</h6>
+                                              <div style={{padding:'10px'}}>
+                                                <Checkbox style={{marginBottom:'10px'}}>
+                                                    <span style={{color:'#8A8B8C'}}>Adults Only </span>
+                                                </Checkbox><br/>
+                                                <Checkbox style={{marginBottom:'10px'}}>
+                                                    <span style={{color:'#8A8B8C'}}>Both Adults and Children &  </span>
+                                                </Checkbox><br/>
+                                                <Checkbox style={{marginBottom:'10px'}}>
+                                                    <span style={{color:'#8A8B8C'}}>Children & Adolescents Only </span>
+                                                </Checkbox>
+                                              </div>
+                                            </Col>
+                                          </Row>
+
+                                          <Row type="flex" justify="center">
+                                            <Col span="24">
+                                              <h6 style={{color:'#AEB1B1'}}>GENDER OF HEALTHCARE PROVIDER</h6>
+                                              <div style={{padding:'10px'}}>
+                                                <Checkbox style={{marginBottom:'10px'}}>
+                                                    <span style={{color:'#8A8B8C'}}>Female </span>
+                                                </Checkbox><br/>
+                                                <Checkbox style={{marginBottom:'10px'}}>
+                                                    <span style={{color:'#8A8B8C'}}>Male </span>
+                                                </Checkbox>
+                                              </div>
+                                            </Col>
+                                          </Row>
+
+                                          <Row type="flex" justify="center">
+                                            <Col span="24">
+                                              <div style={{paddingLeft:'15px', paddingTop:'10px'}}>
+                                                <Button 
+                                                style={{height:'30px',border:'2px solid #6D8496',borderRadius:'15px',backgroundColor:'#4D5DE3',color:'#ffffff',fontSize:'12px',display:'inline'}}
+                                                >
+                                                SHOW HEALTHCARE PROVIDERS (212 RESULTS)
+                                                </Button>
+                                              </div>
+                                            </Col>
+                                          </Row><br/>
+
+                                          <div style={{border:'2px solid #DDDEE5',padding:'15px'}}>
+                                          <Row type="flex" justify="center">
+                                            <Col span="24">
+                                              <Row type="flex"><h2>Search by State:</h2></Row>
+                                                <Col span="4">
+                                                  <div style={{textAlign:'center'}}>
+                                                    <h5><a href="">Alabama</a></h5>
+                                                    <h5><a href="">Alaska</a></h5>
+                                                    <h5><a href="">Arizona</a></h5>
+                                                    <h5><a href="">Arkansas</a></h5>
+                                                    <h5><a href="">California</a></h5>
+                                                    <h5><a href="">Colorado</a></h5>
+                                                    <h5><a href="">Connecticut</a></h5>
+                                                    <h5><a href="">Delaware</a></h5>
+                                                    <h5><a href="">Florida</a></h5>
+                                                    <h5><a href="">Georgia</a></h5>
+                                                    <h5><a href="">Idaho</a></h5>
+                                                  </div>                          
+                                                </Col>
+                                                <Col span="1"></Col>
+                                                <Col span="4">
+                                                  <div style={{textAlign:'center'}}>
+                                                    <h5><a href="">Idaho</a></h5>
+                                                    <h5><a href="">Illinois</a></h5>
+                                                    <h5><a href="">Indiana</a></h5>
+                                                    <h5><a href="">lowa</a></h5>
+                                                    <h5><a href="">Kansas</a></h5>
+                                                    <h5><a href="">Kentucky</a></h5>
+                                                    <h5><a href="">Louisiana</a></h5>
+                                                    <h5><a href="">Maine</a></h5>
+                                                    <h5><a href="">Maryland</a></h5>
+                                                    <h5><a href="">Massachusetts</a></h5>
+                                                    <h5><a href="">Michigan</a></h5>
+                                                  </div>     
+                                                </Col>
+                                                <Col span="1"></Col>
+                                                <Col span="4">
+                                                  <div style={{textAlign:'center'}}>
+                                                    <h5><a href="">Minnesota</a></h5>
+                                                    <h5><a href="">Mississippi</a></h5>
+                                                    <h5><a href="">Missouri</a></h5>
+                                                    <h5><a href="">Montana</a></h5>
+                                                    <h5><a href="">Nebraska</a></h5>
+                                                    <h5><a href="">Nevada</a></h5>
+                                                    <h5><a href="">New Hampshire</a></h5>
+                                                    <h5><a href="">New Jersey</a></h5>
+                                                    <h5><a href="">New Mexico</a></h5>
+                                                    <h5><a href="">New York</a></h5>
+                                                    <h5><a href="">North Carolia</a></h5>
+                                                  </div>     
+                                                </Col>
+                                                <Col span="1"></Col>
+                                                <Col span="4">
+                                                  <div style={{textAlign:'center'}}>
+                                                    <h5><a href="">North Dakota</a></h5>
+                                                    <h5><a href="">Ohio</a></h5>
+                                                    <h5><a href="">Oklahoma</a></h5>
+                                                    <h5><a href="">Oregon</a></h5>
+                                                    <h5><a href="">Pennsylvania</a></h5>
+                                                    <h5><a href="">Puerto Rico</a></h5>
+                                                    <h5><a href="">Rhode Island</a></h5>
+                                                    <h5><a href="">South Carolina</a></h5>
+                                                    <h5><a href="">South Dakota</a></h5>
+                                                    <h5><a href="">Tennessee</a></h5>
+                                                    <h5><a href="">Texas</a></h5>
+                                                  </div>     
+                                                </Col>
+                                                <Col span="1"></Col>
+                                                <Col span="4">
+                                                  <div style={{textAlign:'center'}}>
+                                                    <h5><a href="">Utah</a></h5>
+                                                    <h5><a href="">Vermont</a></h5>
+                                                    <h5><a href="">Virginia</a></h5>
+                                                    <h5><a href="">Washington</a></h5>
+                                                    <h5><a href="">Washington DC</a></h5>
+                                                    <h5><a href="">West Virginia</a></h5>
+                                                    <h5><a href="">Wisconsin</a></h5>
+                                                    <h5><a href="">Wyoming</a></h5>
+                                                    <h5><a href=""></a></h5>
+                                                    <h5><a href=""></a></h5>
+                                                    <h5><a href=""></a></h5>
+                                                  </div>     
+                                                </Col>
+                                            </Col>
+                                          </Row>
+                                          </div>
+                                      
                                     </TabPane>
+
                                     <TabPane tab="Physicians" key="2">
                                       <p>Content of Tab Pane 2</p>
                                       <p>Content of Tab Pane 2</p>
                                       <p>Content of Tab Pane 2</p>
                                     </TabPane>
+
                                     <TabPane tab="Other Healthcare Providers" key="3">
                                       <p>Content of Tab Pane 3</p>
                                       <p>Content of Tab Pane 3</p>

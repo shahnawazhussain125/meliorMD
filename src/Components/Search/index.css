@@ -1,13 +1,14 @@
 
-/* .provoder-list-body{
-    height: 100% auto;
-    margin-bottom: 50%;
-} */
+.provoder-list-body{
+    height: auto;
+    /* margin-bottom: 50%; */
+}
 .row-container {
     display: flex;
     padding-bottom: 700px;
     justify-content: center;
     align-items: center;
+
 }
 
 .div-container{
