@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Collapse, Tooltip, Checkbox, Select, Pagination } from 'antd';
+import { Row, Col, Input, Button, Icon, Tabs, Collapse, Tooltip, Checkbox, Select } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 
-const InputGroup = Input.Group;
 const { TabPane } = Tabs;
 const { Option } = Select;
 const { Panel } = Collapse;
@@ -17,13 +16,13 @@ class Search extends Component {
             <Col span={12}>
                 <div className="div-container" style={{backgroundColor:'#5C96C6'}}>
                     <span style={{padding:'15px'}}>
-                      <h1 style={{color:'#ffffff',textAlign:'center',fontFamily:'arial',fontSize:'35px'}}>Find your best Physicians</h1>
-                      <h2 style={{color:'#ffffff',textAlign:'center',fontFamily:'arial'}}>meliorMD will help you in that important decision.</h2>
+                      <h1 className="text-style" style={{fontSize:'35px'}}>Find your best Physicians</h1>
+                      <h2 className="text-style" >meliorMD will help you in that important decision.</h2>
                         <Row type="flex" style={{padding:'10px'}}>
                           <Col span={10}>
                             <Row type="flex" justify="center">
                               <div>
-                                <label><h6 style={{color:'#ffffff',fontFamily:'arial'}}>SPECIALITY BY PROVIDER CATEGORY</h6></label>
+                                <label><h6 className="h6-style">SPECIALITY BY PROVIDER CATEGORY</h6></label>
                                 <Select
                                  showSearch
                                  style={{ width: 200 }}
@@ -41,7 +40,7 @@ class Search extends Component {
                           <Col span={8}>
                             <Row type="flex" justify="center">
                                 <div>
-                                <label><h6 style={{color:'#ffffff',fontFamily:'arial'}}>LOCATION BY CITY</h6></label>
+                                <label><h6 className="h6-style">LOCATION BY CITY</h6></label>
                                 <Input placeholder="E.g San Francisc" />
                                 </div>
                             </Row>
@@ -49,10 +48,8 @@ class Search extends Component {
 
                           <Col span={6}>
                                 <div style={{paddingLeft:'20px', paddingTop:'20px'}}>
-                                <Button 
-                                style={{height:'30px',border:'2px solid #6D8496',borderRadius:'15px',color:'#6D8496',fontSize:'12px',display:'inline'}}
-                                >
-                                SEARCH >>>
+                                <Button className="button-style">
+                                  SEARCH >>
                                 </Button>
                                 </div>
                           </Col>
@@ -62,7 +59,7 @@ class Search extends Component {
                           <Col span={1}></Col>
 
                           <Col span={22}>
-                          <Collapse defaultActiveKey={['1']} style={{backgroundColor:'#5C96C6',border:'0px',width:'100%',height:'auto'}}>
+                          <Collapse className="collapse-tab" defaultActiveKey={['1']}>
                             <Panel header="Advanced Search" key="1">
                               <div style={{backgroundColor:'#ffffff',height:'auto'}}>
                                 <Row>
@@ -173,10 +170,8 @@ class Search extends Component {
                                           <Row type="flex" justify="center">
                                             <Col span="24">
                                               <div style={{paddingLeft:'15px', paddingTop:'10px'}}>
-                                                <Button 
-                                                style={{height:'30px',border:'2px solid #6D8496',borderRadius:'15px',backgroundColor:'#4D5DE3',color:'#ffffff',fontSize:'12px',display:'inline'}}
-                                                >
-                                                SHOW HEALTHCARE PROVIDERS (212 RESULTS)
+                                                <Button className="button-style2">
+                                                  SHOW HEALTHCARE PROVIDERS (212 RESULTS)
                                                 </Button>
                                               </div>
                                             </Col>
@@ -300,6 +295,5 @@ class Search extends Component {
       )
     }
 }
-
 
 export default Search;

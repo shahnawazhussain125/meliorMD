@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Radio, Checkbox, Breadcrumb, Select, Pagination } from 'antd';
+import { Row, Col, Input, Button, Icon, Checkbox, Breadcrumb, Select } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 
-const InputGroup = Input.Group;
-const { TabPane } = Tabs;
 const { Option } = Select;
 
 class SearchResult extends Component {
@@ -124,7 +122,6 @@ class SearchResult extends Component {
                                 <h1><span style={{color:"#0F6AB6"}}>202 </span> Physicians</h1>
                             </div>
                             <div style={{display:'inline',marginLeft:'25%'}}><br/>
-                                {/* <label></label> */}
                                 <Select
                                     showSearch
                                     
@@ -141,7 +138,7 @@ class SearchResult extends Component {
                         <Row type="flex" justify="center">
                             <Col span={16}>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -151,7 +148,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -162,7 +159,8 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -172,7 +170,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -183,7 +181,8 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -193,7 +192,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -204,7 +203,7 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -214,7 +213,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -225,7 +224,7 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -235,7 +234,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -246,7 +245,7 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -256,7 +255,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -267,7 +266,7 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -277,7 +276,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>
@@ -288,7 +287,7 @@ class SearchResult extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row style={{borderTop:'1px solid #A0A1A2',borderBottom:'1px solid #A0A1A2',borderLeft:'2px solid #E9EBEC',borderRight:'2px solid #E9EBEC', padding:'8px',borderRadius:'5px',margin:'10px'}}>
+                                <Row className="row-img">
                                     <Col span={6}>
                                         <p>Helwo</p>
                                     </Col>
@@ -298,7 +297,7 @@ class SearchResult extends Component {
                                             <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
                                              ADDRESS<br/>
                                              2726 Shinn Street, New York - View on map</p>
-                                            <Button style={{height:'25px',border:'2px solid #6D8496',borderRadius:'12px',color:'#6D8496', fontSize:'10px'}}>VIEW PROFILE</Button>
+                                            <Button className="view-profile">VIEW PROFILE</Button>
                                         </div>
                                     </Col>
                                     <Col span={6}>

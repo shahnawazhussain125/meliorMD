@@ -43,3 +43,40 @@
     border-color: gray;
     background: #fff;
   }
+
+  .text-style{
+    color: #ffffff;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .h6-style{
+    color:#ffffff;
+    font-family: arial;
+  }
+
+  .button-style{
+    /* height: 30px; */
+    border: 2px solid #6D8496;
+    border-radius: 15px;
+    color: #6D8496;
+    font-size: 12px;
+    display: inline;
+  }
+
+  .collapse-tab{
+    background-color: #5C96C6;
+    border: 0px;
+    width: 100%;
+    height: auto;
+  }
+
+  .button-style2{
+    /* height: 30px; */
+    border: 2px solid #6D8496;
+    border-radius: 15px;
+    background-color:#4D5DE3;
+    color:#ffffff;
+    font-size: 12px;
+    display: inline;
+  }

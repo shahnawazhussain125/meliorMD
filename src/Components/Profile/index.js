@@ -128,28 +128,28 @@ class SearchResult extends Component {
                                     <Tabs defaultActiveKey="1"
                                         style={{ backgroundColor: '#2A70A9', color: '#ffffff' }}>
 
-                                        <TabPane tab="Overview" key="1" style={{ backgroundColor: '#ffffff', color: '#000000', padding: '10px' }}>
+                                        <TabPane className="tab-pane" tab="Overview" key="1">
                                             <Row>
                                                 <Col span={10}>Picture</Col>
                                                 <Col span={14}>
-                                                    <span><h6 style={{ color: '#696A6A' }}>DENTRISTRY-GENERAL DENTISTRY</h6></span>
-                                                    <span><h3 style={{ color: '#696A6A' }}>Abby Abelson, MD, FACR</h3></span>
+                                                    <span><h6 className="font">DENTRISTRY-GENERAL DENTISTRY</h6></span>
+                                                    <span><h3 className="font">Abby Abelson, MD, FACR</h3></span>
                                                     <span><Rate disabled defaultValue={3} /></span><br /><br />
-                                                    <span><h5 style={{ color: '#696A6A' }}>ADDRESS<br />2726 Shinn Street, Newyork -view map</h5></span>
+                                                    <span><h5 className="font">ADDRESS<br />2726 Shinn Street, Newyork -view map</h5></span>
                                                     <span>
                                                         <span style={{ color: '#696A6A', fontWeight: 'bold' }}>CALL</span><br />
-                                                        <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#0F6AB6' }}>216.445.2030</span>
+                                                        <span className="contact-num">216.445.2030</span>
                                                     </span><br /><br />
                                                 </Col>
                                             </Row>
                                             <div style={{ borderTop: '2px solid #E5E8E8', padding: '8px' }}>
-                                                <h5 style={{ color: '#696A6A' }}>
+                                                <h5 className="h5-style">
                                                     <span style={{ fontSize: '15px' }}>Professional statement</span><br />
                                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                                                     veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                                             </h5>
-                                                <h5 style={{ color: '#696A6A' }}>
+                                                <h5 className="h5-style">
                                                     <span style={{ fontSize: '15px' }}>Education & Fellowships</span><br />
                                                     Fellowship - Vanderbilt University Medical Center<br />
                                                     Hematology<br />
@@ -160,7 +160,7 @@ class SearchResult extends Component {
                                                     Columbia, MO USA<br />
                                                     1988
                                             </h5>
-                                                <h5 style={{ color: '#696A6A' }}>
+                                                <h5 className="h5-style">
                                                     <span style={{ fontSize: '15px' }}>Certifications</span><br />
                                                     • Internal Medicinez<br />
                                                     • Internal Medicine - Hematology<br />
@@ -169,7 +169,7 @@ class SearchResult extends Component {
                                             </div>
                                         </TabPane>
 
-                                        <TabPane tab="Patient Satisfaction reviews" key="2" style={{ backgroundColor: '#ffffff', color: '#000000', padding: '7px' }}>
+                                        <TabPane className="tab-pane" tab="Patient Satisfaction reviews" key="2">
                                             Content of Tab Pane 2
                                     </TabPane>
                                     </Tabs>
