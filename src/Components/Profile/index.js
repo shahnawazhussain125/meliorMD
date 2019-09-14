@@ -25,7 +25,7 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col span={5} className="search-content">
+                    <Col sm={5} md	={5} xs={24} className="search-content">
                         <div>
                             <h1>Filter Result</h1>
                         </div>
@@ -121,7 +121,7 @@ class SearchResult extends Component {
                     </Col>
 
 
-                    <Col span={11} style={{ backgroundColor: '#ffffff' }}>
+                    <Col sm={11} md	={11} xs={24} style={{ backgroundColor: '#ffffff' }}>
                         <Row type="flex" justify="center">
                             <Col span={18}>
                                 <div style={{ marginTop: '30px', border: '2px solid #E5E8E8' }}>
@@ -178,7 +178,7 @@ class SearchResult extends Component {
                         </Row>
                     </Col>
 
-                    <Col span={5} style={{ backgroundColor: '#ffffff' }}>
+                    <Col sm={8} md	={5}  xs={24} style={{ backgroundColor: '#ffffff' }}>
                         <Row type="flex" justify="center">
                             <Col span={18}>
                                 <div style={{ marginTop: '30px', border: '2px solid #ECEEEE' }}>
