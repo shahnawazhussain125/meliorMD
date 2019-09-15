@@ -81,3 +81,8 @@
     font-size: 12px;
     display: inline;
   }
+
+  .state-name {
+    font-size: 12px;
+    cursor: pointer;
+  }
