@@ -4,6 +4,7 @@ import { searchByState } from '../../Redux/Actions/searchActions';
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
 import './index.css';
+import { white } from 'ansi-colors';
 
 
 const { TabPane } = Tabs;
@@ -24,7 +25,7 @@ class Search extends Component
       <div className="provoder-list-body">
         <Row className="row-container">
           <Col span={12}>
-            <div className="div-container" style={{ backgroundColor: '#5C96C6' }}>
+            <div className="div-container">
               <span style={{ padding: '15px' }}>
                 <h1 className="text-style" style={{ fontSize: '35px' }}>Find your best Physicians</h1>
                 <h2 className="text-style" >meliorMD will help you in that important decision.</h2>
@@ -58,17 +59,13 @@ class Search extends Component
 
                   <Col span={6}>
                     <div style={{ paddingLeft: '20px', paddingTop: '20px' }}>
-                      <Button className="button-style">
-                        SEARCH >>
-                                </Button>
+                      <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{color: "white"}}/></Button>
                     </div>
                   </Col>
                 </Row>
 
-                <Row type="flex">
-                  <Col span={1}></Col>
-
-                  <Col span={22}>
+                <Row type="flex" justify="center">
+                  <Col span={24}>
                     <Collapse className="collapse-tab" defaultActiveKey={['1']}>
                       <Panel header="Advanced Search" key="1">
                         <div style={{ backgroundColor: '#ffffff', height: 'auto' }}>
@@ -81,32 +78,32 @@ class Search extends Component
                               <TabPane tab="Dentistry" key="1">
                                 <Row type="flex">
                                   <Col span={12}>
-                                    <div style={{ padding: '10px' }}>
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>General Dentist </span>
+                                    <div className="check-box-container">
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">General Dentist </span>
                                       </Checkbox><br />
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Endodontist</span>
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Endodontist</span>
                                       </Checkbox><br />
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Oral and Maxillofacial Surgeon</span>
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Oral and Maxillofacial Surgeon</span>
                                       </Checkbox><br />
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Orthodontist</span>
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Orthodontist</span>
                                       </Checkbox><br />
                                     </div>
                                   </Col>
 
                                   <Col span={12}>
-                                    <div style={{ padding: '10px' }}>
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Pediatric Dentist </span>
+                                    <div className="check-box-container">
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Pediatric Dentist </span>
                                       </Checkbox><br />
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Periodontist </span>
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Periodontist </span>
                                       </Checkbox><br />
-                                      <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Prosthodontics </span>
+                                      <Checkbox className="check-box">
+                                        <span className="check-box-text">Prosthodontics </span>
                                       </Checkbox>
                                     </div>
                                   </Col>
@@ -118,13 +115,10 @@ class Search extends Component
                                       <label><h5 style={{ color: '#AEB1B1' }}>HOSPITAL/PRACTICE NAME</h5></label>
                                       <Input
                                         placeholder="Search by business name"
-                                        prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                        suffix={
-                                          <Tooltip title="Extra information">
-                                            <Icon type="info-circle" style={{ color: 'rgba(0,0,0,.45)' }} />
-                                          </Tooltip>
-                                        }
-                                      /><br /><br />
+                                        prefix={<Icon type="user" className="icon"/>} 
+                                      />
+                                      <br />
+                                      <br />
 
                                       <Col span="11">
                                         <div>
@@ -151,13 +145,13 @@ class Search extends Component
                                     <h6 style={{ color: '#AEB1B1' }}>TYPE OF PATIENT SERVED</h6>
                                     <div style={{ padding: '10px' }}>
                                       <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Adults Only </span>
+                                        <span className="check-box-text">Adults Only </span>
                                       </Checkbox><br />
                                       <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Both Adults and Children &  </span>
+                                        <span className="check-box-text">Both Adults and Children &  </span>
                                       </Checkbox><br />
                                       <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Children & Adolescents Only </span>
+                                        <span className="check-box-text">Children & Adolescents Only </span>
                                       </Checkbox>
                                     </div>
                                   </Col>
@@ -168,10 +162,10 @@ class Search extends Component
                                     <h6 style={{ color: '#AEB1B1' }}>GENDER OF HEALTHCARE PROVIDER</h6>
                                     <div style={{ padding: '10px' }}>
                                       <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Female </span>
+                                        <span className="check-box-text">Female </span>
                                       </Checkbox><br />
                                       <Checkbox style={{ marginBottom: '10px' }}>
-                                        <span style={{ color: '#8A8B8C' }}>Male </span>
+                                        <span className="check-box-text">Male </span>
                                       </Checkbox>
                                     </div>
                                   </Col>
