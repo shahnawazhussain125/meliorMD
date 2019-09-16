@@ -13,9 +13,9 @@
 }
 
 .div-container{
-    margin-top: 34%;
+    margin-top: 30px;
     width: 100%;
-    background-color: #5C96C6;
+    background-color: #5D89C7;
     border-radius: 30px;
     opacity: 0.9;
 }
@@ -67,7 +67,7 @@
   }
 
   .collapse-tab{
-    background-color: #5C96C6;
+    background-color: #5D89C7;
     border: 0px;
     width: 100%;
     height: auto;
@@ -102,3 +102,4 @@
   .icon {
     color: rgba(0,0,0,.25);
   }
+

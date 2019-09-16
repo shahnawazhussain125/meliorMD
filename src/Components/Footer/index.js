@@ -14,31 +14,21 @@ class Footer extends Component {
         return (
             <div>
                 <Row className="footer">
-                    <Col span={2}>
-                        <Row type="flex" justify="center">
+                    <Col span={2} ></Col>
+                    <Col span={6} className="footer-logo-container">
+                        <Row className="footer-logo">
+                            <img src={logo} alt="logo" />
                         </Row>
-                    </Col>
-
-                    <Col span={8}>
-                        <Row type="flex" justify="center">
-                        <div>
-                            <img className="header-logo" src={logo} alt="logo" />
-                        </div>
-                        <div>
+                        <Row className="footer-logo-text">
                             <p>
                                 MeliorMD is a one-stop shop for finding healthcare providers
+                                <br/>
                                 across specialties. Finding a healthcare provider can be
                             </p>
-                        </div>
                         </Row>
                     </Col>
 
-                    <Col span={4}>
-                        <Row type="flex" justify="center">
-                        </Row>
-                    </Col>
-
-                    <Col span={3}>
+                    <Col span={4} className="border-black">
                         <Row type="flex" justify="center">
                             <div>
                                 <div>
@@ -56,8 +46,8 @@ class Footer extends Component {
                         </Row>
                     </Col>
 
-                    <Col span={3}>
-                        <Row type="flex" justify="center">
+                    <Col span={4} className="border-black">
+                        <Row>
                             <div>
                                 <div>
                                     <p>Company</p>
@@ -74,33 +64,34 @@ class Footer extends Component {
                         </Row>
                     </Col>
 
-                    <Col span={3}>
-                        <Row type="flex" justify="center">
+                    <Col span={4} className="border-black">
+                        <Row >
                             <div>
-                                <p>FOLLOW<br/></p>
+                                <p>FOLLOW<br /></p>
                             </div>
-                            <div className="icons-list"><br/>
-                                <Icon type="linkedin" /><br/>
-                                <IconFont type="icon-facebook" /> <br/>
+                            <div className="icons-list"><br />
+                                <Icon type="linkedin" /><br />
+                                <IconFont type="icon-facebook" /> <br />
                                 <IconFont type="icon-twitter" />
                             </div>
-                            <br/>
-                            
+                            <br />
                         </Row>
                     </Col>
-
-                    <Col span={1}>
-                        <Row type="flex" justify="center">
-                        </Row>
-                    </Col>
-                </Row>
                     
-                <Row type="flex" justify="center">
-                    <div>
+                    <Col span={2} ></Col>
+                </Row>
+
+                <Row type="flex" justify="space-around">
+                    <div className="copy-right-container">
                         <p>© 2019 CityNetworksGroup. All rights reserved</p>
                     </div>
-                    <div>
-                    Legal Terms Privacy devias.i
+                    <div className="footer-bottom">
+                        <ul className="terms-privacy">
+                            <li>Legal</li>
+                            <li>Terms</li>
+                            <li>Privacy</li>
+                            <li>devias.i</li>
+                        </ul>
                     </div>
                 </Row>
             </div>

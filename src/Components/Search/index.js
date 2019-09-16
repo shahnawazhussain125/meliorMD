@@ -4,17 +4,15 @@ import { searchByState } from '../../Redux/Actions/searchActions';
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
 import './index.css';
-import { white } from 'ansi-colors';
 
 
 const { TabPane } = Tabs;
 const { Option } = Select;
 const { Panel } = Collapse;
 
-class Search extends Component 
-{
+class Search extends Component {
 
-  handleClick = (state_name) =>{
+  handleClick = (state_name) => {
     console.log("this.props  ==> ", this.props);
     this.props.searchByState(state_name);
   }
@@ -59,7 +57,7 @@ class Search extends Component
 
                   <Col span={6}>
                     <div style={{ paddingLeft: '20px', paddingTop: '20px' }}>
-                      <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{color: "white"}}/></Button>
+                      <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{ color: "white" }} /></Button>
                     </div>
                   </Col>
                 </Row>
@@ -115,7 +113,7 @@ class Search extends Component
                                       <label><h5 style={{ color: '#AEB1B1' }}>HOSPITAL/PRACTICE NAME</h5></label>
                                       <Input
                                         placeholder="Search by business name"
-                                        prefix={<Icon type="user" className="icon"/>} 
+                                        prefix={<Icon type="user" className="icon" />}
                                       />
                                       <br />
                                       <br />
@@ -181,9 +179,9 @@ class Search extends Component
                                   </Col>
                                 </Row>
 
-                                <Row type="flex" justify="center" style={{ border: '2px solid #DDDEE5', padding: '15px', marginTop: 20 }} >
-                                  <Col span="24">
-                                    <Row type="flex"><h2>Search by State:</h2></Row>
+                                <Row style={{ border: '2px solid #DDDEE5', padding: '15px', marginTop: 20 }} >
+                                  <Row type="flex"><h2>Search by State:</h2></Row>
+                                  <Row type="flex" justify="space-between">
                                     <Col span="4">
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("AL")}>Alabama</p>
@@ -259,7 +257,7 @@ class Search extends Component
                                         <p></p>
                                       </div>
                                     </Col>
-                                  </Col>
+                                  </Row>
                                 </Row>
                               </TabPane>
 
@@ -293,14 +291,14 @@ class Search extends Component
   }
 }
 
-const mapStateToProps = (state) =>{
-  return({
+const mapStateToProps = (state) => {
+  return ({
 
   })
 }
 
-const mapDispatchToProps = (dispatch) =>{
-  return({
+const mapDispatchToProps = (dispatch) => {
+  return ({
     searchByState: (state_name) => dispatch(searchByState(state_name))
   })
 }

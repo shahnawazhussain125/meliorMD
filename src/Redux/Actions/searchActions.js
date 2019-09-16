@@ -13,7 +13,7 @@ export const searchByState = ( state_name ) =>{
         };
         let input = `https://npiregistry.cms.hhs.gov/api/?version=2.0&enumeration_type=NPI-1&city=APO&state=${state_name}&country_code=US`;
 
-        fetch(input, init)
+        fetch(input)
         .then(res =>res.json())
         .then(data =>{
             console.log("data ===>  ", data);
