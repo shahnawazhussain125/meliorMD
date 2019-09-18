@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Radio, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
+import { Row, Col, Input, Button, Icon, Tabs, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 import moment from 'moment';
@@ -25,7 +25,7 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col sm={5} md	={5} xs={24} className="search-content">
+                    <Col sm={5} md={5} xs={24} className="search-content">
                         <div>
                             <h1>Filter Result</h1>
                         </div>
@@ -121,12 +121,12 @@ class SearchResult extends Component {
                     </Col>
 
 
-                    <Col sm={11} md	={11} xs={24} style={{ backgroundColor: '#ffffff' }}>
+                    <Col className="col-profile" sm={11} md={11} xs={24}>
                         <Row type="flex" justify="center">
-                            <Col span={18}>
-                                <div style={{ marginTop: '30px', border: '2px solid #E5E8E8' }}>
+                            <Col span={22}>
+                                <div className="div-profile">
                                     <Tabs defaultActiveKey="1"
-                                        style={{ backgroundColor: '#2A70A9', color: '#ffffff' }}>
+                                      className="tabs-container">
 
                                         <TabPane className="tab-pane" tab="Overview" key="1">
                                             <Row>
@@ -137,20 +137,20 @@ class SearchResult extends Component {
                                                     <span><Rate disabled defaultValue={3} /></span><br /><br />
                                                     <span><h5 className="font">ADDRESS<br />2726 Shinn Street, Newyork -view map</h5></span>
                                                     <span>
-                                                        <span style={{ color: '#696A6A', fontWeight: 'bold' }}>CALL</span><br />
+                                                        <span className="span-call">CALL</span><br />
                                                         <span className="contact-num">216.445.2030</span>
                                                     </span><br /><br />
                                                 </Col>
                                             </Row>
-                                            <div style={{ borderTop: '2px solid #E5E8E8', padding: '8px' }}>
+                                            <div className="div-text">
                                                 <h5 className="h5-style">
-                                                    <span style={{ fontSize: '15px' }}>Professional statement</span><br />
+                                                    <span className="span-text">Professional statement</span><br />
                                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                                                     veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                                             </h5>
                                                 <h5 className="h5-style">
-                                                    <span style={{ fontSize: '15px' }}>Education & Fellowships</span><br />
+                                                    <span className="span-text">Education & Fellowships</span><br />
                                                     Fellowship - Vanderbilt University Medical Center<br />
                                                     Hematology<br />
                                                     Nashville, TN USA<br />
@@ -161,7 +161,7 @@ class SearchResult extends Component {
                                                     1988
                                             </h5>
                                                 <h5 className="h5-style">
-                                                    <span style={{ fontSize: '15px' }}>Certifications</span><br />
+                                                    <span className="span-text">Certifications</span><br />
                                                     • Internal Medicinez<br />
                                                     • Internal Medicine - Hematology<br />
                                                     • Pathology - Blood Banking/Transfusion Medicine<br />
@@ -178,17 +178,17 @@ class SearchResult extends Component {
                         </Row>
                     </Col>
 
-                    <Col sm={8} md	={5}  xs={24} style={{ backgroundColor: '#ffffff' }}>
+                    <Col sm={8} md={5} xs={24} className="col-profile">
                         <Row type="flex" justify="center">
-                            <Col span={18}>
-                                <div style={{ marginTop: '30px', border: '2px solid #ECEEEE' }}>
-                                    <div style={{ backgroundColor: '#2A70A9', padding: '8px', }}>
-                                        <h2 style={{ color: '#ffffff' }}>BOOK A VISIT</h2>
-                                        <h5 style={{ color: '#ffffff' }}>Monday to Friday 09.00am-06.00pm</h5>
+                            <Col span={24}>
+                                <div className="div-profile">
+                                    <div className="div-head">
+                                        <h2 style={{ color:'#ffffff' }}>BOOK A VISIT</h2>
+                                        <h5 style={{ color:'#ffffff' }}>Monday to Friday 09.00am-06.00pm</h5>
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>PHONE NAME</h5></label>
+                                    <div className="div-pad">
+                                        <label><h5 className="span2-text">PHONE NAME</h5></label>
                                         <Input
                                             placeholder="Enter your username"
                                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -200,39 +200,44 @@ class SearchResult extends Component {
                                         />
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>PHONE NUMBER</h5></label>
+                                    <div className="div-pad">
+                                        <label><h5 className="span2-text">PHONE NUMBER</h5></label>
                                         <Input placeholder="Your phone number" />
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>SELECT DATE</h5></label>
+                                    <div className="div-pad">
+                                        <label><h5 className="span2-text">SELECT DATE</h5></label>
                                         <DatePicker defaultValue={moment('00/00/2019', dateFormatList[0])} format={dateFormatList} />
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>SELECT TIME</h5></label>
+                                    <div className="div-pad">
+                                        <label><h5 className="span2-text">SELECT TIME</h5></label>
                                         <TimePicker defaultValue={moment('00:00', format)} format={format} />
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
+                                    <div className="div-pad">
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>Oral Maintainance</span>
+                                            <span className="span2-text">Oral Maintainance</span>
                                         </Checkbox><br />
 
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>General Visit</span>
+                                            <span className="span2-text">General Visit</span>
                                         </Checkbox><br />
 
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>Oral Flow</span>
+                                            <span className="span2-text">Oral Flow</span>
                                         </Checkbox>
                                     </div>
 
-                                    <div style={{ padding: '10px' }}>
-                                        <Button style={{ height: '30px', border: '2px solid #6D8496', borderRadius: '15px', color: '#6D8496', fontSize: '10px', fontWeight: 'bold' }}>REQUEST APPOINTMENT >>></Button>
+                                    
+                                    <div className="div-pad">
+                                    <Row type="flex" justify="center">
+                                        <Col span="24">
+                                            <Button className="request-appoint">REQUEST<br/>APPOINTMENT</Button>
+                                        </Col>
+                                    </Row>
                                     </div>
-
+                                    
                                 </div>
                             </Col>
                         </Row>

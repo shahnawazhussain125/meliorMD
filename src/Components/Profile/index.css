@@ -1,5 +1,5 @@
 
-.provoder-list-body {
+.provoder-list-body,.col-profile {
     background-color: white;
 }
 
@@ -61,4 +61,54 @@
     font-size: 20px;
     font-weight: bold; 
     color: #0F6AB6;
+}
+
+.request-appoint{
+    height: auto;
+    border: 3px solid #6D8496;
+    border-radius: 20px;
+    color: #6D8496;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tabs-container{
+    background-color: #2A70A9;
+    color: #ffffff;
+}
+
+.div-profile{
+    margin-top: 30px;
+    border: 2px solid #E5E8E8;
+}
+
+.span-call{
+    color: #696A6A;
+    font-weight: bold;
+}
+
+.span-text{
+    font-size: 15px;
+}
+
+.span2-text{
+    color: #AEB1B1;
+}
+
+.div-pad{
+    padding: 10px;
+}
+
+.col-profile{
+    padding: 0px;
+}
+
+.div-head{
+    background-color: #2A70A9; 
+    padding: 8px;
+}
+
+.div-text{
+    border-top: 2px solid #E5E8E8; 
+    padding: 8px;
 }
