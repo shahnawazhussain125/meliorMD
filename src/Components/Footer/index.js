@@ -12,7 +12,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="footer-div">
                 <Row className="footer">
                     <Col span={2} ></Col>
                     <Col span={6} className="footer-logo-container">

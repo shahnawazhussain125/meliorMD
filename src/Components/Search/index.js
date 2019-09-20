@@ -22,19 +22,20 @@ class Search extends Component {
     return (
       <div className="provoder-list-body">
         <Row className="row-container">
-          <Col span={12}>
+          <Col md={12} sm={16} xs={23}>
             <div className="div-container">
               <span style={{ padding: '15px' }}>
-                <h1 className="text-style" style={{ fontSize: '35px' }}>Find your best Physicians</h1>
-                <h2 className="text-style" >meliorMD will help you in that important decision.</h2>
-                <Row type="flex" style={{ padding: '10px' }}>
+                <h1 className="text-style1">Find your best Physicians</h1>
+                <h2 className="text-style2">meliorMD will help you in that important decision</h2>
+                <Row type="flex" justify="center" style={{ padding: '10px' }}>
+
                   <Col span={10}>
                     <Row type="flex" justify="center">
                       <div>
                         <label><h6 className="h6-style">SPECIALITY BY PROVIDER CATEGORY</h6></label>
                         <Select
                           showSearch
-                          style={{ width: 200 }}
+                          style={{ width: '100%' }}
                           placeholder="Sort by"
                           optionFilterProp="children"
                         >
@@ -179,7 +180,8 @@ class Search extends Component {
                                   </Col>
                                 </Row>
 
-                                <Row style={{ border: '2px solid #DDDEE5', padding: '15px', marginTop: 20 }} >
+                                <Col sm={21} md={23} xs={24}>
+                                <Row style={{ border: '2px solid #DDDEE5', padding: '8px', marginTop: 20 }} >
                                   <Row type="flex"><h2>Search by State:</h2></Row>
                                   <Row type="flex" justify="space-between">
                                     <Col span="4">
@@ -259,6 +261,7 @@ class Search extends Component {
                                     </Col>
                                   </Row>
                                 </Row>
+                                </Col>
                               </TabPane>
 
                               <TabPane tab="Physicians" key="2">

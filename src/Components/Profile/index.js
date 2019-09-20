@@ -27,7 +27,7 @@ class SearchResult extends Component {
                 <Row type="flex" >
                     <Col sm={5} md={5} xs={24} className="search-content">
                         <div>
-                            <h1>Filter Result</h1>
+                            <h1 className="filter">Filter Result</h1>
                         </div>
                         <div>
                             <div>
@@ -121,7 +121,7 @@ class SearchResult extends Component {
                     </Col>
 
 
-                    <Col className="col-profile" sm={11} md={11} xs={24}>
+                    <Col className="col-profile" sm={12} md={11} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
                                 <div className="div-profile">
@@ -178,13 +178,14 @@ class SearchResult extends Component {
                         </Row>
                     </Col>
 
-                    <Col sm={8} md={5} xs={24} className="col-profile">
+
+                    <Col className="col-book" sm={7} md={5} xs={24}>
                         <Row type="flex" justify="center">
-                            <Col span={24}>
+                            <Col span={22}>
                                 <div className="div-profile">
                                     <div className="div-head">
-                                        <h2 style={{ color:'#ffffff' }}>BOOK A VISIT</h2>
-                                        <h5 style={{ color:'#ffffff' }}>Monday to Friday 09.00am-06.00pm</h5>
+                                        <h2 className="book-visit">BOOK A VISIT</h2>
+                                        <h5 className="day-time">Monday to Friday 09.00am-06.00pm</h5>
                                     </div>
 
                                     <div className="div-pad">

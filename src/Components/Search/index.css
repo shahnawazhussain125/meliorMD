@@ -9,7 +9,6 @@
     /* padding-bottom: 700px; */
     justify-content: center;
     align-items: center;
-
 }
 
 .div-container{
@@ -45,10 +44,18 @@
     background: #fff;
   }
 
-  .text-style{
+  .text-style1{
     color: #ffffff;
     text-align: center;
     font-family: arial;
+    font-size: 35px;
+  }
+
+  .text-style2{
+    color: #ffffff;
+    text-align: center;
+    font-family: arial;
+    font-size: 20px;
   }
 
   .h6-style{
@@ -103,3 +110,11 @@
     color: rgba(0,0,0,.25);
   }
 
+  @media screen and (max-width: 1000px) {
+    .text-style1{
+      font-size: 25px;
+    }
+    .text-style2{
+      font-size: 15px;
+    }
+  }

@@ -1,5 +1,5 @@
 
-.provoder-list-body,.col-profile {
+.provoder-list-body,.col-profile,.col-book {
     background-color: white;
 }
 
@@ -99,7 +99,7 @@
     padding: 10px;
 }
 
-.col-profile{
+.col-profile, .col-book{
     padding: 0px;
 }
 
@@ -112,3 +112,16 @@
     border-top: 2px solid #E5E8E8; 
     padding: 8px;
 }
+
+.book-visit, .day-time{
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .filter{
+        font-size: 20px;
+    }
+    .book-visit{
+        font-size: 17px;
+    }
+  }

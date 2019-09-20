@@ -14,9 +14,9 @@
     border: 2px solid red;
 }
 
-.footer-logo {
+/* .footer-logo {
 
-}
+} */
 
 .footer-logo-text {
     font-size: 10px;
@@ -31,9 +31,9 @@
     border: 1px solid red;
 }
 
-.footer-bottom {
+/* .footer-bottom {
 
-}
+} */
 
 .terms-privacy {
     list-style-type: none;
@@ -43,4 +43,10 @@
     display: inline;
     font-size: 10px;
     padding: 5px;
+}
+
+.footer-div{
+    margin-top: 12px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
