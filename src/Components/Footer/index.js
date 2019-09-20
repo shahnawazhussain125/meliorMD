@@ -22,62 +22,54 @@ class Footer extends Component {
                         <Row className="footer-logo-text">
                             <p>
                                 MeliorMD is a one-stop shop for finding healthcare providers
-                                <br/>
+                                <br />
                                 across specialties. Finding a healthcare provider can be
                             </p>
                         </Row>
                     </Col>
 
                     <Col span={4} className="border-black">
-                        <Row type="flex" justify="center">
-                            <div>
-                                <div>
-                                    <p>FEATURES</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Find Doctors</li>
-                                        <li>Add a provider listing</li>
-                                        <li>About</li>
-                                        <li>Mission</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <Row className="links-title">
+                            <h4>FEATURES</h4>
+                        </Row>
+                        <Row className="links-list">
+                            <ul>
+                                <li>Find Doctors</li>
+                                <li>Add a provider listing</li>
+                                <li>About</li>
+                                <li>Mission</li>
+                            </ul>
                         </Row>
                     </Col>
 
                     <Col span={4} className="border-black">
+                        <Row className="links-title">
+                            <h4>Company</h4>
+                        </Row>
+                        <Row className="links-list">
+                            <ul>
+                                <li>About Us</li>
+                                <li>Pricing</li>
+                                <li>Careers</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </Row>
+                    </Col>
+
+                    <Col span={4} className="border-black">
+                        <Row className="links-title">
+                            <h4>FOLLOW</h4>
+                        </Row>
                         <Row>
-                            <div>
-                                <div>
-                                    <p>Company</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>About Us</li>
-                                        <li>Pricing</li>
-                                        <li>Careers</li>
-                                        <li>Contact Us</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </Row>
-                    </Col>
-
-                    <Col span={4} className="border-black">
-                        <Row >
-                            <div>
-                                <p>FOLLOW<br /></p>
-                            </div>
-                            <div className="icons-list"><br />
-                                <Icon type="linkedin" /><br />
-                                <IconFont type="icon-facebook" /> <br />
-                                <IconFont type="icon-twitter" />
+                            <div className="icons-list">
+                                <Icon type="linkedin" className="icon" />
+                                <IconFont type="icon-facebook" className="icon" />
+                                <IconFont type="icon-twitter" className="icon" />
                             </div>
                             <br />
                         </Row>
                     </Col>
-                    
+
                     <Col span={2} ></Col>
                 </Row>
 

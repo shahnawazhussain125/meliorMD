@@ -188,7 +188,7 @@ class SearchResult extends Component {
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>PHONE NAME</h5></label>
+                                        <label><h5 className="checkbox-custom-color">PHONE NAME</h5></label>
                                         <Input
                                             placeholder="Enter your username"
                                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -201,36 +201,36 @@ class SearchResult extends Component {
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>PHONE NUMBER</h5></label>
+                                        <label><h5 className="checkbox-custom-color">PHONE NUMBER</h5></label>
                                         <Input placeholder="Your phone number" />
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>SELECT DATE</h5></label>
+                                        <label><h5 className="checkbox-custom-color">SELECT DATE</h5></label>
                                         <DatePicker defaultValue={moment('00/00/2019', dateFormatList[0])} format={dateFormatList} />
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
-                                        <label><h5 style={{ color: '#AEB1B1' }}>SELECT TIME</h5></label>
+                                        <label><h5 className="checkbox-custom-color">SELECT TIME</h5></label>
                                         <TimePicker defaultValue={moment('00:00', format)} format={format} />
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>Oral Maintainance</span>
+                                            <span className="checkbox-custom-color">Oral Maintainance</span>
                                         </Checkbox><br />
 
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>General Visit</span>
+                                            <span className="checkbox-custom-color">General Visit</span>
                                         </Checkbox><br />
 
                                         <Checkbox>
-                                            <span style={{ color: '#AEB1B1' }}>Oral Flow</span>
+                                            <span className="checkbox-custom-color">Oral Flow</span>
                                         </Checkbox>
                                     </div>
 
                                     <div style={{ padding: '10px' }}>
-                                        <Button style={{ height: '30px', border: '2px solid #6D8496', borderRadius: '15px', color: '#6D8496', fontSize: '10px', fontWeight: 'bold' }}>REQUEST APPOINTMENT >>></Button>
+                                        <Button style={{ height: '30px', border: '2px solid #6D8496', borderRadius: '15px', color: '#6D8496', fontSize: '10px', fontWeight: 'bold' }}>REQUEST APPOINTMENT <Icon type="arrow-right"/></Button>
                                     </div>
 
                                 </div>
