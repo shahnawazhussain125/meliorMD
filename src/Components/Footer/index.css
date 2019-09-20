@@ -2,16 +2,29 @@
     display: flex;
     justify-content: space-around;
     background-color: #f6f9fc;
-    border: 2px solid green;
 }
 
 .border-black {
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .footer-logo-container {
     padding-top: 30px;
-    border: 2px solid red;
+}
+
+.links-title h4 {
+    padding-top: 30px;
+    font-weight: bold;
+    color: #565758;
+}
+
+.links-list ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.links-list li {
+    font-size: 12px;
 }
 
 /* .footer-logo {
@@ -27,13 +40,13 @@
     padding-top: 5px;
 }
 
-.footer-image {
-    border: 1px solid red;
+.footer-bottom {
 }
 
 /* .footer-bottom {
 
 } */
+
 
 .terms-privacy {
     list-style-type: none;

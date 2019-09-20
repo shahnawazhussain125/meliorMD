@@ -1,20 +1,18 @@
 export const searchByState = ( state_name ) =>{
     return(dispatch) =>{
-        let init = { 
-                method: 'GET',
-                headers: {
-                    'Access-Control-Allow-Credentials' : true,
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Methods':'GET',
-                    'Access-Control-Allow-Headers':'application/json',
-                },
-                mode: 'cors',
-                cache: 'default' 
-        };
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+        headers.append('Access-Control-Allow-Credentials', 'true');
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        // headers.append('Origin','http://localhost:3000');
+    
         let input = `https://npiregistry.cms.hhs.gov/api/?version=2.0&enumeration_type=NPI-1&city=APO&state=${state_name}&country_code=US`;
-
         fetch(input)
-        .then(res =>res.json())
+        .then(response =>{
+            console.log("Response ===> ", response);
+            return response.json()
+        })
         .then(data =>{
             console.log("data ===>  ", data);
             dispatch({type: "SEARCH_BY_STATE_SUCCESS", data });
