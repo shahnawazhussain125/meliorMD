@@ -22,15 +22,15 @@ class Search extends Component {
     return (
       <div className="provoder-list-body">
         <Row className="row-container">
-          <Col md={12} sm={16} xs={23}>
+          <Col lg={16} md={12} sm={16} xs={23}>
             <div className="div-container">
               <span style={{ padding: '15px' }}>
                 <h1 className="text-style1">Find your best Physicians</h1>
                 <h2 className="text-style2">meliorMD will help you in that important decision</h2>
-                <Row type="flex" justify="center" style={{ padding: '10px' }}>
+                <Row type="flex" justify="center" style={{ padding: '10px' }} className="mobile-responsive-search">
 
                   <Col span={10}>
-                    <Row type="flex" justify="center">
+                    <Row type="flex" justify="center" >
                       <div>
                         <label><h6 className="h6-style">SPECIALITY BY PROVIDER CATEGORY</h6></label>
                         <Select
@@ -38,6 +38,7 @@ class Search extends Component {
                           style={{ width: '100%' }}
                           placeholder="Sort by"
                           optionFilterProp="children"
+                          className="input1"
                         >
                           <Option value="jack">Jack</Option>
                           <Option value="lucy">Lucy</Option>
