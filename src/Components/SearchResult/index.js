@@ -57,7 +57,7 @@ class SearchResult extends Component {
                                 <label className="input-label">SPECIALITY BY PROVIDER CATEGOR</label>
                                 <Select
                                     showSearch
-                                    className="search-input"                                    
+                                    className="search-input"
                                     placeholder="Select a person"
                                     optionFilterProp="children"
                                 >
@@ -117,11 +117,11 @@ class SearchResult extends Component {
                     </Col>
 
                     <Col span={19} className="search-result-body">
-                        <Row  type="flex" justify="center"> 
-                            <Col span={15} className="search-result-body-setting" >
-                                <Row> 
+                        <Row type="flex" justify="center">
+                            <Col lg={18} md={20} className="search-result-body-setting" >
+                                <Row>
                                     <Col span={18}>
-                                        <h1 className="search-result-number"><span style={{color:"#0F6AB6"}}>202 </span> Physicians</h1>
+                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>202 </span> Physicians</h1>
                                     </Col>
                                     <Col span={6} type="flex" justify="flex-end">
                                         <Select
@@ -140,67 +140,51 @@ class SearchResult extends Component {
                         </Row>
 
                         <Row type="flex" justify="center">
-                            <Col span={16}>
+                            <Col lg={18} md={20}>
 
                                 <Row className="profile-list">
                                     <Col span={6} className="profile-img-container">
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
-                                
+
                                 <Row className="profile-list">
                                     <Col span={6} className="profile-img-container">
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <div>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
-                                    </Col>
-                                    <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
                                 <Row className="profile-list">
@@ -208,19 +192,21 @@ class SearchResult extends Component {
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
                                 <Row className="profile-list">
@@ -228,19 +214,21 @@ class SearchResult extends Component {
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
                                 <Row className="profile-list">
@@ -248,19 +236,21 @@ class SearchResult extends Component {
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
                                 <Row className="profile-list">
@@ -268,21 +258,24 @@ class SearchResult extends Component {
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
                                     <Col span={12}>
-                                        <div>
+                                        <Row>
                                             <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{fontSize:'12px'}}>Physician — Obstetrician/Gynecologist<br/>
-                                             ADDRESS<br/>
-                                             2726 Shinn Street, New York - View on map</p>
+                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
+                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
+                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
                                             <Button className="view-profile">VIEW PROFILE</Button>
-                                        </div>
+                                        </Row>
                                     </Col>
                                     <Col span={6}>
-                                        <div>
-                                            <p>CALL</p>
-                                            <h2 style={{color:'#0F6AB6'}}>216.445.2030</h2>
-                                        </div>
+                                        <Row className="profile-list-call-container">
+                                            <div>
+                                                <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                            </div>
+                                        </Row>
                                     </Col>
                                 </Row>
+
                             </Col>
                         </Row>
                     </Col>
