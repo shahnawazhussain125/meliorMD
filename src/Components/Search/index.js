@@ -28,7 +28,6 @@ class Search extends Component {
                 <h1 className="text-style1">Find your best Physicians</h1>
                 <h2 className="text-style2">meliorMD will help you in that important decision</h2>
                 <Row type="flex" justify="center" style={{ padding: '10px' }} className="mobile-responsive-search">
-
                   <Col span={10}>
                     <Row type="flex" justify="center" >
                       <div>

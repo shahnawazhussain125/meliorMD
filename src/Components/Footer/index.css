@@ -3,11 +3,6 @@
     justify-content: space-around;
     background-color: #f6f9fc;
 }
-
-.border-black {
-    /* border: 2px solid black; */
-}
-
 .footer-logo-container {
     padding-top: 30px;
 }
@@ -39,14 +34,6 @@
     font-size: 12px;
     padding-top: 5px;
 }
-
-.footer-bottom {
-}
-
-/* .footer-bottom {
-
-} */
-
 
 .terms-privacy {
     list-style-type: none;
