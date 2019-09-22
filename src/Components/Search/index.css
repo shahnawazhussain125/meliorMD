@@ -1,8 +1,8 @@
 
-.provoder-list-body{
-    /* height: auto; */
-    /* margin-bottom: 50%; */
-}
+/* .provoder-list-body{
+    height: auto;
+    margin-bottom: 50%;
+} */
 
 .row-container {
     display: flex;
@@ -44,6 +44,11 @@
     background: #fff;
   }
 
+  .button-div{
+    /* padding-left: 5%;  */
+    padding-top: 20px;
+  }
+
   .text-style1{
     color: #ffffff;
     text-align: center;
@@ -81,13 +86,12 @@
   }
 
   .button-style2{
-    /* height: 30px; */
     border: 2px solid #6D8496;
     border-radius: 15px;
     background-color:#4D5DE3;
     color:#ffffff;
-    font-size: 12px;
-    display: inline;
+    /* font-size: 12px; */
+    /* display: inline; */
   }
 
   .state-name {
@@ -96,8 +100,13 @@
   }
 
   .check-box-container {
-    padding: 10px;
+    padding-top: 8px;
   }
+
+  .check-box-container2 {
+    padding-top: 8px;
+  }
+
   .check-box {
     margin-bottom: 10px;
   }
@@ -116,5 +125,20 @@
     }
     .text-style2{
       font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 633px) {
+    .check-box-container2 {
+      padding-top: 0px;
+    }
+
+    .button-style2{
+      /* border: 2px solid #6D8496; */
+      /* border-radius: 15px; */
+      /* background-color:#4D5DE3; */
+      /* color:#ffffff; */
+      font-size: 12px;
+      /* display: inline; */
     }
   }

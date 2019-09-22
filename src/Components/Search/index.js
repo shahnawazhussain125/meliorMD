@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Collapse, Tooltip, Checkbox, Select } from 'antd';
+import { Row, Col, Input, Button, Icon, Tabs, Collapse, Checkbox, Select } from 'antd';
 import { searchByState } from '../../Redux/Actions/searchActions';
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
@@ -22,14 +22,14 @@ class Search extends Component {
     return (
       <div className="provoder-list-body">
         <Row className="row-container">
-          <Col md={12} sm={16} xs={23}>
+          <Col lg={12} md={15} sm={20} xs={23}>
             <div className="div-container">
               <span style={{ padding: '15px' }}>
                 <h1 className="text-style1">Find your best Physicians</h1>
                 <h2 className="text-style2">meliorMD will help you in that important decision</h2>
                 <Row type="flex" justify="center" style={{ padding: '10px' }}>
 
-                  <Col span={10}>
+                  <Col md={10} sm={10} xs={23}>
                     <Row type="flex" justify="center">
                       <div>
                         <label><h6 className="h6-style">SPECIALITY BY PROVIDER CATEGORY</h6></label>
@@ -47,7 +47,7 @@ class Search extends Component {
                     </Row>
                   </Col>
 
-                  <Col span={8}>
+                  <Col md={8} sm={8} xs={23}>
                     <Row type="flex" justify="center">
                       <div>
                         <label><h6 className="h6-style">LOCATION BY CITY</h6></label>
@@ -56,10 +56,12 @@ class Search extends Component {
                     </Row>
                   </Col>
 
-                  <Col span={6}>
-                    <div style={{ paddingLeft: '20px', paddingTop: '20px' }}>
+                  <Col md={6} sm={6} xs={23}>
+                   <Row type="flex" justify="center"> 
+                    <div className="button-div">
                       <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{ color: "white" }} /></Button>
                     </div>
+                   </Row> 
                   </Col>
                 </Row>
 
@@ -76,7 +78,7 @@ class Search extends Component {
                             <Tabs type="card">
                               <TabPane tab="Dentistry" key="1">
                                 <Row type="flex">
-                                  <Col span={12}>
+                                  <Col span={12} xs={23}>
                                     <div className="check-box-container">
                                       <Checkbox className="check-box">
                                         <span className="check-box-text">General Dentist </span>
@@ -93,8 +95,8 @@ class Search extends Component {
                                     </div>
                                   </Col>
 
-                                  <Col span={12}>
-                                    <div className="check-box-container">
+                                  <Col span={12} xs={23}>
+                                    <div className="check-box-container2">
                                       <Checkbox className="check-box">
                                         <span className="check-box-text">Pediatric Dentist </span>
                                       </Checkbox><br />
@@ -172,7 +174,7 @@ class Search extends Component {
 
                                 <Row type="flex" justify="center">
                                   <Col span="24">
-                                    <div style={{ paddingLeft: '15px', paddingTop: '10px' }}>
+                                    <div>
                                       <Button className="button-style2">
                                         SHOW HEALTHCARE PROVIDERS (212 RESULTS)
                                       </Button>
@@ -180,11 +182,11 @@ class Search extends Component {
                                   </Col>
                                 </Row>
 
-                                <Col sm={21} md={23} xs={24}>
-                                <Row style={{ border: '2px solid #DDDEE5', padding: '8px', marginTop: 20 }} >
+                                <Col span="24">
+                                <Row style={{ border: '2px solid #DDDEE5', padding: '5px', marginTop: '20px' }} >
                                   <Row type="flex"><h2>Search by State:</h2></Row>
                                   <Row type="flex" justify="space-between">
-                                    <Col span="4">
+                                    <Col span="4" xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("AL")}>Alabama</p>
                                         <p onClick={() => this.handleClick("AK")}>Alaska</p>
@@ -199,7 +201,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                       </div>
                                     </Col>
-                                    <Col span="4">
+                                    <Col span="4" xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                         <p onClick={() => this.handleClick("IL")}>Illinois</p>
@@ -214,7 +216,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("MI")}>Michigan</p>
                                       </div>
                                     </Col>
-                                    <Col span="4">
+                                    <Col span="4" xs={8}>
                                       <div className="state-name" >
                                         <p onClick={() => this.handleClick("MN")}>Minnesota</p>
                                         <p onClick={() => this.handleClick("MS")}>Mississippi</p>
@@ -229,7 +231,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("NC")}>North Carolia</p>
                                       </div>
                                     </Col>
-                                    <Col span="4">
+                                    <Col span="4" xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("ND")}>North Dakota</p>
                                         <p onClick={() => this.handleClick("OH")}>Ohio</p>
@@ -244,7 +246,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("TX")}>Texas</p>
                                       </div>
                                     </Col>
-                                    <Col span="4">
+                                    <Col span="4" xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("UT")}>Utah</p>
                                         <p onClick={() => this.handleClick("VT")}>Vermont</p>
