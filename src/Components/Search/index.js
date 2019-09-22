@@ -38,6 +38,7 @@ class Search extends Component {
                           style={{ width: '100%' }}
                           placeholder="Sort by"
                           optionFilterProp="children"
+                          className="input1"
                         >
                           <Option value="jack">Jack</Option>
                           <Option value="lucy">Lucy</Option>

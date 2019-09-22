@@ -119,6 +119,19 @@
     color: rgba(0,0,0,.25);
   }
 
+  @media screen and (max-width: 480px)
+  {
+    .mobile-responsive-search {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    } 
+    .input1 {
+      width: 80%;
+    }
+  }
+
+
   @media screen and (max-width: 1000px) {
     .text-style1{
       font-size: 25px;
