@@ -22,7 +22,7 @@ class SearchResult extends Component {
         const { results, result_count } = this.props.searchResult;
 
         window.addEventListener("resize", this.checkWindowDimensions());
-        this.setState({ results, result_count });
+        this.setState({ results, result_count, resultToRender:  results.slice(0, 10)});
     }
 
     componentWillUnmount() {
@@ -43,9 +43,31 @@ class SearchResult extends Component {
         }
     }
 
+    handleChange = ( pageNumber ) =>{
+        console.log(pageNumber);
+
+        let { results } = this.state;
+        let resultToRender = [];
+
+        if( pageNumber === 1)
+        {
+            resultToRender = results.slice(0, 10);
+        }
+        else
+        {   
+            resultToRender = results.slice((pageNumber - 1 ) * 10, pageNumber * 10);
+        }
+        this.setState({resultToRender});
+    }
+
+    pagination = () =>{
+        return({
+
+        })
+    }
+
     render() {
-        const { hide, hideAdvSearch, results, result_count } = this.state;
-        console.log("Search Result ===> ", results);
+        const { hide, hideAdvSearch, resultToRender, result_count } = this.state;
         return (
             <div className="provoder-list-body">
                 <Row>
@@ -184,7 +206,7 @@ class SearchResult extends Component {
                             <Col lg={18} md={22} sm={22} xs={24} className="search-result-body-setting" >
                                 <Row>
                                     <Col span={18}>
-                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{result_count} </span> Physicians</h1>
+                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{result_count} </span></h1>
                                     </Col>
                                     <Col span={6} type="flex" justify="flex-end">
                                         <Select
@@ -205,8 +227,8 @@ class SearchResult extends Component {
                         <Row type="flex" justify="center">
                             <Col lg={18} md={22} sm={22} xs={24}>
                                 {
-                                    results ?
-                                        results.map((value, index) => {
+                                    resultToRender ?
+                                        resultToRender.map((value, index) => {
                                             return (
                                                 <Row key={index}  className="profile-list">
                                                     <Col span={6} className="profile-img-container">
@@ -225,7 +247,7 @@ class SearchResult extends Component {
                                                         <Row className="profile-list-call-container">
                                                             <div>
                                                                 <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>{value.number}</h3>
+                                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>{value.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{value.number.toString().substring(7)}</h3>
                                                             </div>
                                                         </Row>
                                                     </Col>
@@ -238,7 +260,7 @@ class SearchResult extends Component {
                             </Col>
                         </Row>
                         <Row type="flex" justify="center" className="pagination-container">
-                            <Pagination defaultCurrent={1} total={17} />
+                            <Pagination defaultCurrent={1} total={result_count} onChange={this.handleChange}  />
                         </Row>
                     </Col>
                 </Row>
