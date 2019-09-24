@@ -120,7 +120,7 @@ class SearchOnMap extends Component {
                             <div >
                                 <h4>Abby Abelson, MD, FACR</h4>
                                 <Col span="12">
-                                    <Rate disabled defaultValue={4} />
+                                    <Rate disabled defaultValue={4.5} />
                                     <p className="patient-rating">108 Patient Satisfaction Ratings<br/>10 Patient Comments</p>
                                 </Col>
                                 <Col span="4"></Col>
@@ -154,7 +154,7 @@ class SearchOnMap extends Component {
                             <div >
                                 <h4>Abby Abelson, MD, FACR</h4>
                                 <Col span="12">
-                                    <Rate disabled defaultValue={4} />
+                                    <Rate disabled defaultValue={2.5} />
                                     <p className="patient-rating">108 Patient Satisfaction Ratings<br/>10 Patient Comments</p>
                                 </Col>
                                 <Col span="4"></Col>
