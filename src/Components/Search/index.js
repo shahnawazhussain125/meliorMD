@@ -13,8 +13,16 @@ const { Panel } = Collapse;
 class Search extends Component {
 
   handleClick = (state_name) => {
-    console.log("this.props  ==> ", this.props);
     this.props.searchByState(state_name);
+  }
+
+  componentWillReceiveProps(nextProps)
+  {
+    if(nextProps.searchResult.result_count)
+    {
+      console.log("history", this.props)
+      this.props.history.push('search_result');
+    }
   }
 
 
@@ -187,7 +195,7 @@ class Search extends Component {
                                 <Row style={{ border: '2px solid #DDDEE5', padding: '5px', marginTop: '20px' }} >
                                   <Row type="flex"><h2>Search by State:</h2></Row>
                                   <Row type="flex" justify="space-between">
-                                    <Col span="4" xs={8}>
+                                    <Col md={4} xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("AL")}>Alabama</p>
                                         <p onClick={() => this.handleClick("AK")}>Alaska</p>
@@ -202,7 +210,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                       </div>
                                     </Col>
-                                    <Col span="4" xs={8}>
+                                    <Col md={4} xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                         <p onClick={() => this.handleClick("IL")}>Illinois</p>
@@ -217,7 +225,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("MI")}>Michigan</p>
                                       </div>
                                     </Col>
-                                    <Col span="4" xs={8}>
+                                    <Col md={4} xs={8}>
                                       <div className="state-name" >
                                         <p onClick={() => this.handleClick("MN")}>Minnesota</p>
                                         <p onClick={() => this.handleClick("MS")}>Mississippi</p>
@@ -232,7 +240,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("NC")}>North Carolia</p>
                                       </div>
                                     </Col>
-                                    <Col span="4" xs={8}>
+                                    <Col md={4} xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("ND")}>North Dakota</p>
                                         <p onClick={() => this.handleClick("OH")}>Ohio</p>
@@ -247,7 +255,7 @@ class Search extends Component {
                                         <p onClick={() => this.handleClick("TX")}>Texas</p>
                                       </div>
                                     </Col>
-                                    <Col span="4" xs={8}>
+                                    <Col md={4} xs={8}>
                                       <div className="state-name">
                                         <p onClick={() => this.handleClick("UT")}>Utah</p>
                                         <p onClick={() => this.handleClick("VT")}>Vermont</p>
@@ -299,7 +307,7 @@ class Search extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-
+    searchResult: state.searchReducer.data
   })
 }
 
