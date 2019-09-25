@@ -206,7 +206,7 @@ class SearchResult extends Component {
                             <Col lg={18} md={22} sm={22} xs={24} className="search-result-body-setting" >
                                 <Row>
                                     <Col span={18}>
-                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{result_count} </span></h1>
+                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{result_count} Doctors</span></h1>
                                     </Col>
                                     <Col span={6} type="flex" justify="flex-end">
                                         <Select
