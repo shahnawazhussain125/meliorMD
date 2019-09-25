@@ -45,7 +45,7 @@
   }
 
   .button-div{
-    /* padding-left: 5%;  */
+    width: 80%;
     padding-top: 20px;
   }
 
@@ -69,13 +69,21 @@
   }
 
   .button-style{
-    /* height: 30px; */
+    width: 100%;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 15px;
     color: white;
     background-color:#2e61ad;
     font-size: 12px;
     display: inline;
+  }
+
+  .input1, .input2 {
+    width: 100%;
+  }
+
+  .div-input1, .div-input2 {
+    width: 95%;
   }
 
   .collapse-tab{
@@ -90,8 +98,6 @@
     border-radius: 15px;
     background-color:#4D5DE3;
     color:#ffffff;
-    /* font-size: 12px; */
-    /* display: inline; */
   }
 
   .state-name {
@@ -126,8 +132,8 @@
       justify-content: center;
       flex-direction: column;
     } 
-    .input1 {
-      width: 80%;
+    .input1, .input2 {
+      width: 100%;
     }
   }
 
@@ -147,11 +153,6 @@
     }
 
     .button-style2{
-      /* border: 2px solid #6D8496; */
-      /* border-radius: 15px; */
-      /* background-color:#4D5DE3; */
-      /* color:#ffffff; */
       font-size: 12px;
-      /* display: inline; */
     }
   }

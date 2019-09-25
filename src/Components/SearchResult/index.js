@@ -118,7 +118,7 @@ class SearchResult extends Component {
 
                     <Col span={19} className="search-result-body">
                         <Row type="flex" justify="center">
-                            <Col lg={18} md={20} className="search-result-body-setting" >
+                            <Col xxl={14} xl={15} lg={16} md={20} className="search-result-body-setting" >
                                 <Row>
                                     <Col span={18}>
                                         <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>202 </span> Physicians</h1>
@@ -139,138 +139,34 @@ class SearchResult extends Component {
                             </Col>
                         </Row>
 
+
                         <Row type="flex" justify="center">
-                            <Col lg={18} md={20}>
+                            <Col xxl={14} xl={15} lg={16} md={20} sm={23} xs={24}>
 
                                 <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
+                                    <Col lg={5} md={6} sm={6} xs={10} className="profile-img-container">
                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                     </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
+                                    <Col lg={10} md={11} sm={10} xs={14}>
+                                        <Row >
+                                            <h4 className="h4-card">Abby Abelson, MD, FACR</h4>
+                                            <h5 className="h5-card">
+                                                <span className="h5-card-span1">Physician </span>
+                                                    — Obstetrician/Gynecologist<br />
+                                                <span className="h5-card-span2">ADDRESS</span><br />
+                                                    2726 Shinn Street, New York - 
+                                                <span className="h5-card-span3"> View on map </span>
+                                            </h5>
                                             <Button className="view-profile">VIEW PROFILE</Button>
                                         </Row>
                                     </Col>
-                                    <Col span={6}>
+                                    <Col lg={2} md={1} sm={0} xs={0}>
+                                    </Col>
+                                    <Col lg={6} md={6} sm={8} xs={24}>
                                         <Row className="profile-list-call-container">
                                             <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
-                                            </div>
-                                        </Row>
-                                    </Col>
-                                </Row>
-
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </Row>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Row className="profile-list-call-container">
-                                            <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
-                                            </div>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </Row>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Row className="profile-list-call-container">
-                                            <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
-                                            </div>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </Row>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Row className="profile-list-call-container">
-                                            <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
-                                            </div>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </Row>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Row className="profile-list-call-container">
-                                            <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
-                                            </div>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                                <Row className="profile-list">
-                                    <Col span={6} className="profile-img-container">
-                                        <img src={dr_image} alt="dr_image" className="profile-img" />
-                                    </Col>
-                                    <Col span={12}>
-                                        <Row>
-                                            <h4>Abby Abelson, MD, FACR</h4>
-                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>Physician</span> — Obstetrician/Gynecologist<br />
-                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                2726 Shinn Street, New York - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                            <Button className="view-profile">VIEW PROFILE</Button>
-                                        </Row>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Row className="profile-list-call-container">
-                                            <div>
-                                                <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>218.445.2030</h3>
+                                                <p className="profile-list-call-text">CALL : </p>
+                                                <h3 className="profile-list-call">218.445.2030</h3>
                                             </div>
                                         </Row>
                                     </Col>
