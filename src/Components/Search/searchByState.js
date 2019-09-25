@@ -34,7 +34,6 @@ class SearchByState extends Component {
                             <p onClick={() => this.handleClick("DE")}>Delaware</p>
                             <p onClick={() => this.handleClick("FL")}>Florida</p>
                             <p onClick={() => this.handleClick("GA")}>Georgia</p>
-                            <p onClick={() => this.handleClick("ID")}>Idaho</p>
                         </div>
                     </Col>
                     <Col md={4} xs={8}>
@@ -49,7 +48,6 @@ class SearchByState extends Component {
                             <p onClick={() => this.handleClick("ME")}>Maine</p>
                             <p onClick={() => this.handleClick("MD")}>Maryland</p>
                             <p onClick={() => this.handleClick("MA")}>Massachusetts</p>
-                            <p onClick={() => this.handleClick("MI")}>Michigan</p>
                         </div>
                     </Col>
                     <Col md={4} xs={8}>
@@ -64,7 +62,6 @@ class SearchByState extends Component {
                             <p onClick={() => this.handleClick("NJ")}>New Jersey</p>
                             <p onClick={() => this.handleClick("NM")}>New Mexico</p>
                             <p onClick={() => this.handleClick("NY")}>New York</p>
-                            <p onClick={() => this.handleClick("NC")}>North Carolia</p>
                         </div>
                     </Col>
                     <Col md={4} xs={8}>
@@ -92,8 +89,13 @@ class SearchByState extends Component {
                             <p onClick={() => this.handleClick("WV")}>West Virginia</p>
                             <p onClick={() => this.handleClick("WI")}>Wisconsin</p>
                             <p onClick={() => this.handleClick("WY")}>Wyoming</p>
-                            <p></p>
-                            <p></p>
+                            <p onClick={() => this.handleClick("ID")}>Idaho</p>
+                            <p onClick={() => this.handleClick("MI")}>Michigan</p>
+                            <p onClick={() => this.handleClick("NC")}>North Carolia</p>
+                        </div>
+                    </Col>
+                    <Col xs={8}>
+                        <div className="state-name">
                             <p></p>
                         </div>
                     </Col>
