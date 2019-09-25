@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Input, Button, Icon, Tabs, Collapse, Checkbox, Select } from 'antd';
-import { searchByState } from '../../Redux/Actions/searchActions';
+import State from './searchByState';
+import { searchByCity } from '../../Redux/Actions/searchActions';
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
 import './index.css';
@@ -11,14 +12,24 @@ const { Option } = Select;
 const { Panel } = Collapse;
 
 class Search extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cityName: ""
+    }
+  }
 
-  handleClick = (state_name) => {
-    console.log("this.props  ==> ", this.props);
-    this.props.searchByState(state_name);
+  handleChange = name => (event) => {
+    this.setState({ [name]: event.target.value });
+  }
+
+  componentWillReceiveProps(nextProps) {
+
   }
 
 
   render() {
+    const { cityName } = this.state;
     return (
       <div className="provoder-list-body">
         <Row className="row-container">
@@ -38,10 +49,15 @@ class Search extends Component {
                           placeholder="Sort by"
                           optionFilterProp="children"
                           className="input1"
+
                         >
-                          <Option value="jack">Jack</Option>
-                          <Option value="lucy">Lucy</Option>
-                          <Option value="tom">Tom</Option>
+                          <Option value="Anesthesiology">Anesthesiology</Option>
+                          <Option value="Orthopaedic Surgery">Orthopaedic Surgery</Option>
+                          <Option value="Dentist">Dentist</Option>
+                          <Option value="Nurse Practitioner Family">Nurse Practitioner Family</Option>
+                          <Option value="Physical Therapist Orthopedic">Physical Therapist Orthopedic</Option>
+                          <Option value="Social Worker Clinical">Social Worker Clinical</Option>
+                          <Option value="Physician Assistant">Physician Assistant</Option>
                         </Select>
                       </div>
                     </Row>
@@ -51,17 +67,17 @@ class Search extends Component {
                     <Row type="flex" justify="center">
                       <div className="div-input2">
                         <label><h6 className="h6-style">LOCATION BY CITY</h6></label>
-                        <Input className="input2" placeholder="E.g San Francisc" />
+                        <Input className="input2" placeholder="E.g San Francisc" value={cityName} onChange={this.handleChange("cityName")} />
                       </div>
                     </Row>
                   </Col>
 
                   <Col md={6} sm={6} xs={23}>
-                   <Row type="flex" justify="center"> 
-                    <div className="button-div">
-                      <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{ color: "white" }} /></Button>
-                    </div>
-                   </Row> 
+                    <Row type="flex" justify="center">
+                      <div className="button-div">
+                        <Button className="button-style">SEARCH <Icon type="arrow-right" className="icon" style={{ color: "white" }} /></Button>
+                      </div>
+                    </Row>
                   </Col>
                 </Row>
 
@@ -101,7 +117,7 @@ class Search extends Component {
                                         <span className="check-box-text">Pediatric Dentist </span>
                                       </Checkbox><br />
                                       <Checkbox className="check-box">
-                                        <span className="check-box-text">Periodontist </span>
+                                        <span className="check-box-text">Periodontist</span>
                                       </Checkbox><br />
                                       <Checkbox className="check-box">
                                         <span className="check-box-text">Prosthodontics </span>
@@ -300,13 +316,13 @@ class Search extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-
+    searchResult: state.searchReducer.data
   })
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    searchByState: (state_name) => dispatch(searchByState(state_name))
+    searchByCity: (city_name) => dispatch(searchByCity(city_name))
   })
 }
 

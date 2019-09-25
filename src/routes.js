@@ -11,7 +11,7 @@ const Routes = () =>{
     return(
         <BrowserRouter>
             <Switch>
-                <Route exact path = "/" component = { ProviderList } />
+                <Route exact path = "/" component = { Search } />
                 <Route exact path = "/profile" component = { Profile } />
                 <Route path = "/search" component = { Search } />
                 <Route path = "/search_result" component = { SearchResult } />
