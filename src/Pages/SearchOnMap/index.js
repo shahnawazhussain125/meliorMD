@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Input, Button, Icon, Tabs, Rate, Breadcrumb, Select } from 'antd';
+import MyGoogleMap from '../../Components/GoogleMap';
 import 'antd/dist/antd.css';
 import './index.css';
 
@@ -283,8 +284,7 @@ class SearchOnMap extends Component {
 
                 <Col span="12">
                     <div className="map-border">
-                        Map Picture here<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <MyGoogleMap/>
                     </div>
                 </Col>
             </Row>

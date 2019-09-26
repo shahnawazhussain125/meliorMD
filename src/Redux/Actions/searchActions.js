@@ -17,13 +17,14 @@ export const searchByState = ( state_name ) =>{
     }
 }
  
-export const searchByCity = (city_name) =>{
+export const searchByProviderCategoryAndCity = (city, taxonomy_description) =>{
         return(dispatch =>{
-            fetch(`${base_url}&city=${city_name}&country_code=US&limit=200`)
+            fetch(`${base_url}&taxonomy_description=${taxonomy_description}&city=${city}&country_code=US&limit=200`)
             .then(response =>{
                 return response.json()
             })
             .then(data =>{
+                console.log({data, name:"searchBy tesonomy"})
                 dispatch({type: "SEARCH_BY_CITY_SUCCESS", data });
             })
             .catch(error =>{
