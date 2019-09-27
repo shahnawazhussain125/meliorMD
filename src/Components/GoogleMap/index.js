@@ -1,122 +1,276 @@
-import React, { Component } from 'react';   
-import { Container, Row, Col} from 'react-bootstrap';
-import { withScriptjs, withGoogleMap,GoogleMap, Marker, DirectionsRenderer} from 'react-google-maps'
-
-class ReactGoogleMaps extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            // a: new google.maps.LatLng(41.8507300, -87.6512600),
-            // b: new google.maps.LatLng(41.8525800, -87.6514100),
-             stations: [
-                {lat: 48.9812840, lng: 21.2171920, name: 'Station 1'},
-                {lat: 48.9832841, lng: 21.2176398, name: 'Station 2'},
-                {lat: 48.9856443, lng: 21.2209088, name: 'Station 3'},
-                {lat: 48.9861461, lng: 21.2261563, name: 'Station 4'},
-                {lat: 48.9874682, lng: 21.2294855, name: 'Station 5'},
-                {lat: 48.9909244, lng: 21.2295512, name: 'Station 6'},
-                {lat: 48.9928871, lng: 21.2292352, name: 'Station 7'},
-                {lat: 48.9921334, lng: 21.2246742, name: 'Station 8'},
-                {lat: 48.9943196, lng: 21.2234792, name: 'Station 9'},
-                {lat: 48.9966345, lng: 21.2221262, name: 'Station 10'},
-                {lat: 48.9981191, lng: 21.2271386, name: 'Station 11'},
-                {lat: 49.0009168, lng: 21.2359527, name: 'Station 12'},
-                {lat: 49.0017950, lng: 21.2392890, name: 'Station 13'},
-                {lat: 48.9991912, lng: 21.2398272, name: 'Station 14'},
-                {lat: 48.9959850, lng: 21.2418410, name: 'Station 15'},
-                {lat: 48.9931772, lng: 21.2453901, name: 'Station 16'},
-                {lat: 48.9963512, lng: 21.2525850, name: 'Station 17'},
-                {lat: 48.9985134, lng: 21.2508423, name: 'Station 18'},
-                {lat: 49.0085000, lng: 21.2508000, name: 'Station 19'},
-                {lat: 49.0093000, lng: 21.2528000, name: 'Station 20'},
-                {lat: 49.0103000, lng: 21.2560000, name: 'Station 21'},
-                {lat: 49.0112000, lng: 21.2590000, name: 'Station 22'},
-                {lat: 49.0124000, lng: 21.2620000, name: 'Station 23'},
-                {lat: 49.0135000, lng: 21.2650000, name: 'Station 24'},
-                {lat: 49.0149000, lng: 21.2680000, name: 'Station 25'},
-                {lat: 49.0171000, lng: 21.2710000, name: 'Station 26'},
-                {lat: 49.0198000, lng: 21.2740000, name: 'Station 27'},
-                {lat: 49.020309268043846, lng: 21.274721856687165, name: 'Station 28'},
-                {lat: 49.02232395017621, lng: 21.279109004057773, name: 'Station 29'},
-                {lat: 49.02402655468863, lng: 21.283334573946604, name: 'Station 30'},
-                {lat: 49.02526126608461, lng: 21.286539058323115, name: 'Station 31'},
-                {lat: 49.0276195039253, lng: 21.292726079965405, name: 'Station 32'},
-                {lat: 49.029537295685316, lng: 21.297751579939245, name: 'Station 33'},
-                {lat: 49.03121534470749, lng: 21.302187985564387, name: 'Station 34'},
-             ]
-        
-         }
-    }
-
-    clickHandler = (event) =>{
-        const coords = {};
-        coords.lat = event.latLng.lat();
-        coords.lng = event.latLng.lng();
-        console.log("clickobj", coords)
-    }
-
-    componentDidMount() {
-        // const DirectionsService = new google.maps.DirectionsService();
-  
-        // DirectionsService.route({
-        //   origin: new google.maps.LatLng(41.8507300, -87.6512600),
-        //   destination: new google.maps.LatLng(41.8525800, -87.6514100),
-        //   travelMode: google.maps.TravelMode.DRIVING,
-        // }, (result, status) => {
-        //   if (status === google.maps.DirectionsStatus.OK) {
-        //     this.setState({
-        //       directions: result,
-        //     });
-        //   } else {
-        //     console.error(`error fetching directions ${result}`);
-        //   }
-        // });
-      }
-    
-
-    render() { 
-        return ( 
-            <Container>
-                <MyMapComponent
-                    isMarkerShown={true}
-                    // googleMapURL="https://maps.googleapis.com/maps/api/js?callback=initMap"
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `600px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                    stations={this.state.stations}
-                    clickHandler={this.clickHandler}
-                    direction ={this.state.a}
-                />
-            </Container>
-         );
-    }
+import React from 'react'
+import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
+import Autocomplete from 'react-google-autocomplete';
+import Geocode from "react-geocode";
+Geocode.setApiKey("AIzaSyDGe5vjL8wBmilLzoJ0jNIwe9SAuH2xS_0");
+Geocode.enableDebug();
+class Map extends React.Component{
+constructor( props ){
+  super( props );
+  this.state = {
+   address: '',
+   city: '',
+   area: '',
+   state: '',
+   mapPosition: {
+    lat: this.props.center.lat,
+    lng: this.props.center.lng
+   },
+   markerPosition: {
+    lat: this.props.center.lat,
+    lng: this.props.center.lng
 }
-
-
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-    <GoogleMap
-        defaultZoom={13}
-        defaultCenter={{ lat: 48.9991912, lng: 21.2171920 }} 
-        onClick={props.clickHandler}
-    >
-        { 
-            props.isMarkerShown 
-            && 
-            props.stations.map((value, index) =>{
-                return(
-                    <span>
-                    <Marker 
-                        position={{ lat: value.lat, lng: value.lng }} 
-                        defaultLabel={value.name}
-                        key={index}
-                    />
-                    <DirectionsRenderer directions={{ lat: value.lat, lng: value.lng }}/>
-                    </span>
-                )
-            })
-        }
-    </GoogleMap>
-))
- 
-export default ReactGoogleMaps;
+  }
+ }
+/**
+  * Get the current address from the default map position and set those values in the state
+  */
+ componentDidMount() {
+  Geocode.fromLatLng( this.state.mapPosition.lat , this.state.mapPosition.lng ).then(
+   response => {
+    const address = response.results[0].formatted_address,
+     addressArray =  response.results[0].address_components,
+     city = this.getCity( addressArray ),
+     area = this.getArea( addressArray ),
+     state = this.getState( addressArray );
+  
+    console.log( 'city', city, area, state );
+  
+    this.setState( {
+     address: ( address ) ? address : '',
+     area: ( area ) ? area : '',
+     city: ( city ) ? city : '',
+     state: ( state ) ? state : '',
+    } )
+   },
+   error => {
+    console.error(error);
+   }
+  );
+ };
+/**
+  * Component should only update ( meaning re-render ), when the user selects the address, or drags the pin
+  *
+  * @param nextProps
+  * @param nextState
+  * @return {boolean}
+  */
+ shouldComponentUpdate( nextProps, nextState ){
+  if (
+   this.state.markerPosition.lat !== this.props.center.lat ||
+   this.state.address !== nextState.address ||
+   this.state.city !== nextState.city ||
+   this.state.area !== nextState.area ||
+   this.state.state !== nextState.state
+  ) {
+   return true
+  } else if ( this.props.center.lat === nextProps.center.lat ){
+   return false
+  }
+ }
+/**
+  * Get the city and set the city input value to the one selected
+  *
+  * @param addressArray
+  * @return {string}
+  */
+ getCity = ( addressArray ) => {
+  let city = '';
+  for( let i = 0; i < addressArray.length; i++ ) {
+   if ( addressArray[ i ].types[0] && 'administrative_area_level_2' === addressArray[ i ].types[0] ) {
+    city = addressArray[ i ].long_name;
+    return city;
+   }
+  }
+ };
+/**
+  * Get the area and set the area input value to the one selected
+  *
+  * @param addressArray
+  * @return {string}
+  */
+ getArea = ( addressArray ) => {
+  let area = '';
+  for( let i = 0; i < addressArray.length; i++ ) {
+   if ( addressArray[ i ].types[0]  ) {
+    for ( let j = 0; j < addressArray[ i ].types.length; j++ ) {
+     if ( 'sublocality_level_1' === addressArray[ i ].types[j] || 'locality' === addressArray[ i ].types[j] ) {
+      area = addressArray[ i ].long_name;
+      return area;
+     }
+    }
+   }
+  }
+ };
+/**
+  * Get the address and set the address input value to the one selected
+  *
+  * @param addressArray
+  * @return {string}
+  */
+ getState = ( addressArray ) => {
+  let state = '';
+  for( let i = 0; i < addressArray.length; i++ ) {
+   for( let i = 0; i < addressArray.length; i++ ) {
+    if ( addressArray[ i ].types[0] && 'administrative_area_level_1' === addressArray[ i ].types[0] ) {
+     state = addressArray[ i ].long_name;
+     return state;
+    }
+   }
+  }
+ };
+/**
+  * And function for city,state and address input
+  * @param event
+  */
+ onChange = ( event ) => {
+  this.setState({ [event.target.name]: event.target.value });
+ };
+/**
+  * This Event triggers when the marker window is closed
+  *
+  * @param event
+  */
+ onInfoWindowClose = ( event ) => {
+};
+/**
+  * When the user types an address in the search box
+  * @param place
+  */
+ onPlaceSelected = ( place ) => {
+const address = place.formatted_address,
+   addressArray =  place.address_components,
+   city = this.getCity( addressArray ),
+   area = this.getArea( addressArray ),
+   state = this.getState( addressArray ),
+   latValue = place.geometry.location.lat(),
+   lngValue = place.geometry.location.lng();
+// Set these values in the state.
+  this.setState({
+   address: ( address ) ? address : '',
+   area: ( area ) ? area : '',
+   city: ( city ) ? city : '',
+   state: ( state ) ? state : '',
+   markerPosition: {
+    lat: latValue,
+    lng: lngValue
+   },
+   mapPosition: {
+    lat: latValue,
+    lng: lngValue
+   },
+  })
+ };
+/**
+  * When the marker is dragged you get the lat and long using the functions available from event object.
+  * Use geocode to get the address, city, area and state from the lat and lng positions.
+  * And then set those values in the state.
+  *
+  * @param event
+  */
+ onMarkerDragEnd = ( event ) => {
+  console.log( 'event', event );
+  let newLat = event.latLng.lat(),
+   newLng = event.latLng.lng(),
+   addressArray = [];
+Geocode.fromLatLng( newLat , newLng ).then(
+   response => {
+    const address = response.results[0].formatted_address,
+     addressArray =  response.results[0].address_components,
+     city = this.getCity( addressArray ),
+     area = this.getArea( addressArray ),
+     state = this.getState( addressArray );
+this.setState( {
+     address: ( address ) ? address : '',
+     area: ( area ) ? area : '',
+     city: ( city ) ? city : '',
+     state: ( state ) ? state : ''
+    } )
+   },
+   error => {
+    console.error(error);
+   }
+  );
+ };
+render(){
+const AsyncMap = withScriptjs(
+   withGoogleMap(
+    props => (
+     <GoogleMap google={this.props.google}
+      defaultZoom={this.props.zoom}
+      defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
+     >
+      {/* For Auto complete Search Box */}
+      <Autocomplete
+       style={{
+        width: '100%',
+        height: '40px',
+        paddingLeft: '16px',
+        marginTop: '2px',
+        marginBottom: '100px'
+       }}
+       onPlaceSelected={ this.onPlaceSelected }
+       types={['(regions)']}
+      />
+{/*Marker*/}
+      <Marker google={this.props.google}
+       name={'Dolores park'}
+          draggable={true}
+          onDragEnd={ this.onMarkerDragEnd }
+             position={{ lat: this.state.markerPosition.lat, lng: this.state.markerPosition.lng }}
+      />
+      <Marker />
+{/* InfoWindow on top of marker */}
+      <InfoWindow
+       onClose={this.onInfoWindowClose}
+       position={{ lat: ( this.state.markerPosition.lat + 0.0018 ), lng: this.state.markerPosition.lng }}
+      >
+       <div>
+        <span style={{ padding: 0, margin: 0 }}>{ this.state.address }</span>
+       </div>
+      </InfoWindow>
+</GoogleMap>
+)
+   )
+  );
+let map;
+  if( this.props.center.lat !== undefined ) {
+   map = <div>
+     <div>
+      <div className="form-group">
+       <label htmlFor="">City</label>
+       <input type="text" name="city" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }/>
+      </div>
+      <div className="form-group">
+       <label htmlFor="">Area</label>
+       <input type="text" name="area" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.area }/>
+      </div>
+      <div className="form-group">
+       <label htmlFor="">State</label>
+       <input type="text" name="state" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.state }/>
+      </div>
+      <div className="form-group">
+       <label htmlFor="">Address</label>
+       <input type="text" name="address" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.address }/>
+      </div>
+     </div>
+     <AsyncMap
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaD7IzDd1Ex6Wm_A02TT3BgCTFgf9K9Pc&libraries=places"
+      loadingElement={
+       <div style={{ height: `100%` }} />
+      }
+      containerElement={
+       <div style={{ height: this.props.height }} />
+      }
+      mapElement={
+       <div style={{ height: `100%` }} />
+      }
+     />
+    </div>
+} else {
+   map = <div style={{height: this.props.height}} />
+  }
+  return( map )
+ }
+}
+export default Map
