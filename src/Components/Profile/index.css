@@ -64,6 +64,7 @@
 }
 
 .request-appoint{
+    width: 100%;
     height: auto;
     border: 3px solid #6D8496;
     border-radius: 20px;
@@ -77,8 +78,13 @@
     color: #ffffff;
 }
 
-.div-profile{
+.div-profile {
     margin-top: 30px;
+    border: 2px solid #E5E8E8;
+}
+
+.div-review {
+    padding: 10px;
     border: 2px solid #E5E8E8;
 }
 
@@ -115,6 +121,38 @@
 
 .book-visit, .day-time{
     color: white;
+}
+
+.time-picker, .date-picker {
+    width: 100%;
+}
+
+.review-rating {
+    font-size: 90%;
+}
+
+.avatar-review {
+    border: 2px solid #E5E8E8;
+}
+
+.people-review-box {
+    border-bottom: 2px solid #E5E8E8;
+}
+
+.review-button {
+    width: 100%;
+    height: 26px;
+    background-color: #EBECEB;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid #DADDDC;
+}
+
+.all-reviews {
+    width: 100%;
+    font-weight: bold;
+    border: 2px solid #DADDDC;
+    background-color: #EFF4F1;
 }
 
 @media screen and (max-width: 1000px) {

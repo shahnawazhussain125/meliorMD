@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
+import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 import moment from 'moment';
@@ -25,7 +25,7 @@ class SearchResult extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" >
-                    <Col sm={5} md={5} xs={24} className="search-content">
+                    <Col lg={5} md={5} sm={5} xs={24} className="search-content">
                         <div>
                             <h1 className="filter">Filter Result</h1>
                         </div>
@@ -121,7 +121,7 @@ class SearchResult extends Component {
                     </Col>
 
 
-                    <Col className="col-profile" sm={12} md={11} xs={24}>
+                    <Col className="col-profile" lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
                                 <div className="div-profile">
@@ -179,7 +179,7 @@ class SearchResult extends Component {
                     </Col>
 
 
-                    <Col className="col-book" sm={7} md={5} xs={24}>
+                    <Col className="col-book" lg={5} md={7} sm={7} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
                                 <div className="div-profile">
@@ -208,12 +208,12 @@ class SearchResult extends Component {
 
                                     <div className="div-pad">
                                         <label><h5 className="span2-text">SELECT DATE</h5></label>
-                                        <DatePicker defaultValue={moment('00/00/2019', dateFormatList[0])} format={dateFormatList} />
+                                        <DatePicker className="date-picker" defaultValue={moment('00/00/2019', dateFormatList[0])} format={dateFormatList} />
                                     </div>
 
                                     <div className="div-pad">
                                         <label><h5 className="span2-text">SELECT TIME</h5></label>
-                                        <TimePicker defaultValue={moment('00:00', format)} format={format} />
+                                        <TimePicker className="time-picker" defaultValue={moment('00:00', format)} format={format} />
                                     </div>
 
                                     <div className="div-pad">
@@ -244,10 +244,141 @@ class SearchResult extends Component {
                         </Row>
                     </Col>
 
-                    <Col span={3} style={{ backgroundColor: '#ffffff' }}>
+                    <Col lg={2} md={0} sm={0} xs={0} style={{ backgroundColor: '#ffffff' }}>
                         <Row type="flex" justify="center">
 
                         </Row>
+                    </Col>
+                </Row>
+
+        {/* ================ Review Section Code ============== */}
+                
+                <Row type="flex">
+
+                    <Col lg={5} md={5} sm={5} xs={0} style={{ backgroundColor: '#ffffff' }}>
+                    <Row type="flex" justify="center">
+                    </Row>
+                    </Col>
+
+            {/*========= Work Here for review ======== */}
+
+                    <Col className="col-profile" lg={12} md={12} sm={12} xs={24}>
+                    <Row type="flex" justify="center"> 
+                    <Col span={22}>
+                    <div className="div-review">
+
+                        <Row type="flex">
+                            <Col lg={7} md={8} sm={9} xs={8}>
+                                <h4>Reviews (32)</h4>
+                            </Col>   
+                            <Col lg={9} md={5} sm={3} xs={6}>
+                            </Col>
+                            <Col lg={8} md={11} sm={12} xs={10}>
+                                <Button className="review-button"><h4>Write a Review</h4></Button>
+                            </Col>
+                        </Row><br/>
+
+                            <Row className="row-review-type" type="flex" justify="space-between">
+                            <Col span={6}>
+                                <Row>
+                                <h5> Explains</h5>
+                                </Row>
+                            </Col>   
+                            <Col span={6}>
+                                <Row>
+                                <h5> Listens</h5>
+                                </Row>
+                            </Col>
+                            <Col span={6}>
+                                <Row>
+                                <h5> Respect & Concer</h5>
+                                </Row>
+                            </Col>
+                            <Col span={6}>
+                                <Row>
+                                <h5> Time Spent with Patient</h5>
+                                </Row>
+                            </Col>
+                            </Row>
+
+                            <Row className="row-review-rate" type="flex" justify="space-between">
+                            <Col span={6}>
+                                <Row>
+                                <Rate className="review-rating"  disabled defaultValue={4} />
+                                </Row>
+                            </Col>   
+                            <Col span={6}>
+                                <Row>
+                                <Rate className="review-rating"  disabled defaultValue={4} />
+                                </Row>
+                            </Col>
+                            <Col span={6}>
+                                <Row>
+                                <Rate className="review-rating"  disabled defaultValue={3} />
+                                </Row>
+                            </Col>
+                            <Col span={6}>
+                                <Row>
+                                <Rate className="review-rating"  disabled defaultValue={5} />
+                                </Row>
+                            </Col>
+                            </Row><br/>
+
+                            <Row className="people-review-box" type="flex">
+                                <Col xl={2} lg={3} md={3} sm={4} xs={4}>
+                                    <div>
+                                    <Avatar className="avatar-review" size="large" src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                                    </div>
+                                </Col>
+
+                                <Col xl={22} lg={21} md={21} sm={20} xs={20}>
+                                <div>
+                                    <Row type="flex">
+                                        <Col span={24}>
+                                        <h5>Kevin Marshall</h5>
+                                        </Col>
+                                    </Row>
+                                    <Row type="flex">
+                                        <Col span={24}>
+                                        <Rate className="review-rating" disabled defaultValue={5} />
+                                        </Col>
+                                    </Row><br/>
+                                </div>
+                                </Col>
+
+                                <Col span={24}>
+                                    <h5 className="review-date">Reviewed on - Aug 29th 2016</h5>
+                                </Col>
+
+                                <Col span={24}>
+                                    <p className="review-text">
+                                        Dr. Abby even gave me a follow up call 3 days after I was home to discuss 
+                                        test results. She is truly an outstanding dentist! I feel very comfortable 
+                                        with her taking care of my medical needs.
+                                    </p>
+                                </Col>
+                            </Row><br/>
+
+                            <Row type="flex">
+                            <Col span={24}>
+                                <Button className="all-reviews">READ ALL REVIEWS</Button>
+                            </Col>
+                        </Row>
+                    </div>
+                    </Col>
+                    </Row>   
+                    </Col>
+
+            {/*========= Review section ended here ========= */}
+
+                    <Col lg={5} md={7} sm={7} xs={0} style={{ backgroundColor: '#ffffff' }}>
+                    <Row type="flex" justify="center">
+                    </Row>
+                    </Col>
+
+                    <Col lg={2} md={0} sm={0} xs={0} style={{ backgroundColor: '#ffffff' }}>
+                    <Row type="flex" justify="center">
+                    </Row>
                     </Col>
                 </Row>
             </div >
