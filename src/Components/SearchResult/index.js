@@ -3,7 +3,7 @@ import { Row, Col, Input, Button, Icon, Checkbox, Breadcrumb, Select, Pagination
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
 import './index.css';
-import dr_image from '../../assets/images/dr_img1.jpg';
+import dr_image from '../../assets/images/dr_img1.webp';
 
 const { Option } = Select;
 
