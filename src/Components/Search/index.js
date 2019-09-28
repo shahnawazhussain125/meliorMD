@@ -145,7 +145,7 @@ class Search extends Component {
                                   </Row>
 
                                   <Row type="flex" justify="center">
-                                    <Col span="24">
+                                    <Col span={24}>
                                       <div style={{ padding: '10px' }}>
                                         <label><h5 style={{ color: '#AEB1B1' }}>HOSPITAL/PRACTICE NAME</h5></label>
                                         <Input
@@ -155,17 +155,17 @@ class Search extends Component {
                                         <br />
                                         <br />
 
-                                        <Col span="11">
+                                        <Col span={11}>
                                           <div>
                                             <label><h5 style={{ color: '#AEB1B1' }}>CITY OR STATE</h5></label>
                                             <Input placeholder="e.g California" />
                                           </div>
                                         </Col>
 
-                                        <Col span="2">
+                                        <Col span={2}>
                                         </Col>
 
-                                        <Col span="11">
+                                        <Col span={11}>
                                           <div>
                                             <label><h5 style={{ color: '#AEB1B1' }}>ZIP CODE</h5></label>
                                             <Input placeholder="e.g California" />
@@ -176,7 +176,7 @@ class Search extends Component {
                                   </Row><br />
 
                                   <Row type="flex" justify="center">
-                                    <Col span="24">
+                                    <Col span={24}>
                                       <h6 style={{ color: '#AEB1B1' }}>TYPE OF PATIENT SERVED</h6>
                                       <div style={{ padding: '10px' }}>
                                         <Checkbox style={{ marginBottom: '10px' }}>
@@ -193,7 +193,7 @@ class Search extends Component {
                                   </Row>
 
                                   <Row type="flex" justify="center">
-                                    <Col span="24">
+                                    <Col span={24}>
                                       <h6 style={{ color: '#AEB1B1' }}>GENDER OF HEALTHCARE PROVIDER</h6>
                                       <div style={{ padding: '10px' }}>
                                         <Checkbox style={{ marginBottom: '10px' }}>
@@ -207,7 +207,7 @@ class Search extends Component {
                                   </Row>
 
                                   <Row type="flex" justify="center">
-                                    <Col span="24">
+                                    <Col span={24}>
                                       <div>
                                         <Button className="button-style2">
                                           SHOW HEALTHCARE PROVIDERS (212 RESULTS)
@@ -216,7 +216,7 @@ class Search extends Component {
                                     </Col>
                                   </Row>
 
-                                  <Col span="24">
+                                  <Col span={24}>
                                     <State history={this.props.history} />
                                   </Col>
                                 </TabPane>

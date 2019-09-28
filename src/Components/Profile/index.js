@@ -233,7 +233,7 @@ class SearchResult extends Component {
                                     
                                     <div className="div-pad">
                                     <Row type="flex" justify="center">
-                                        <Col span="24">
+                                        <Col span={24}>
                                             <Button className="request-appoint">REQUEST<br/>APPOINTMENT</Button>
                                         </Col>
                                     </Row>
