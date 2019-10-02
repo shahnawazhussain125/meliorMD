@@ -98,7 +98,7 @@ class SearchOnMap extends Component {
                                             <Row type="flex" style={{ borderBottom: '2px solid #DDDEE5' }}>
                                                 <div >
                                                     <h4>{value.basic.name}, {value.basic.credential}</h4>
-                                                    <Col span={12}>
+                                                    <Col span={16}>
                                                         <Rate disabled defaultValue={4} />
                                                         <p className="patient-rating">108 Patient Satisfaction Ratings<br />10 Patient Comments</p>
                                                     </Col>
