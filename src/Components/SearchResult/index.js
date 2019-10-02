@@ -28,6 +28,7 @@ class SearchResult extends Component {
         const { results, result_count } = this.props.searchResult;
 
         window.addEventListener("resize", this.checkWindowDimensions());
+        
         this.setState({ results, result_count, filterResults: results, resultToRender: results.slice(0, 10) });
     }
 
@@ -127,6 +128,10 @@ class SearchResult extends Component {
                 data: id
             }
         })
+    }
+
+    goToMap = () =>{
+        this.props.history.push("search_on_map")
     }
 
     render() {
@@ -332,7 +337,7 @@ class SearchResult extends Component {
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>
                                                             <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>{value.taxonomies[0].desc}</span><br />
                                                                 <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                                {value.addresses[0].address_1} - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
+                                                                {value.addresses[0].address_1} - <span className="view-on-map" onClick={this.goToMap}>View on map</span></p>
                                                             <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>

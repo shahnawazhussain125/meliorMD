@@ -236,7 +236,7 @@ const AsyncMap = withScriptjs(
 let map;
   if( this.props.center.lat !== undefined ) {
    map = <div>
-     <div>
+     {/* <div>
       <div className="form-group">
        <label htmlFor="">City</label>
        <input type="text" name="city" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.city }/>
@@ -253,9 +253,9 @@ let map;
        <label htmlFor="">Address</label>
        <input type="text" name="address" className="form-control" onChange={ this.onChange } readOnly="readOnly" value={ this.state.address }/>
       </div>
-     </div>
+     </div> */}
      <AsyncMap
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaD7IzDd1Ex6Wm_A02TT3BgCTFgf9K9Pc&libraries=places"
+      googleMapURL="https://maps.googleapis.com/maps/api/js?libraries=places"
       loadingElement={
        <div style={{ height: `100%` }} />
       }

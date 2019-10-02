@@ -70,8 +70,11 @@ class Search extends Component {
                           onSelect={this.handleSelect("providerCategory")}
                         >
                           <Option value="Anesthesiology">Anesthesiology</Option>
-                          <Option value="Orthopaedic Surgery">Orthopaedic Surgery</Option>
                           <Option value="Dentist">Dentist</Option>
+                          <Option value="Radiology">Radiology</Option>
+                          <Option value="Rheumatology">Rheumatology</Option>
+                          <Option value="Surgery">Orthopaedic Surgery</Option>
+                          <Option value="Physician">Physician</Option>
                           <Option value="Nurse Practitioner Family">Nurse Practitioner Family</Option>
                           <Option value="Physical Therapist Orthopedic">Physical Therapist Orthopedic</Option>
                           <Option value="Social Worker Clinical">Social Worker Clinical</Option>
