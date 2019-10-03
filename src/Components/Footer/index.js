@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Icon } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
-import logo from '../../assets/images/footer-lgo.png';
+import logo from '../../assets/images/footer-lgo.webp';
 
 const IconFont = Icon.createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',

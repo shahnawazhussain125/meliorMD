@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
-import logo from '../../assets/images/md-logo.png';
+import logo from '../../assets/images/md-logo.webp';
 
 class Header extends Component {
 

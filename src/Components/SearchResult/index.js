@@ -3,7 +3,7 @@ import { Row, Col, Input, Button, Icon, Checkbox, Breadcrumb, Select, Pagination
 import { connect } from 'react-redux';
 import 'antd/dist/antd.css';
 import './index.css';
-import dr_image from '../../assets/images/dr_img1.jpg';
+import dr_image from '../../assets/images/dr_img1.webp';
 
 const { Option } = Select;
 
@@ -12,9 +12,15 @@ class SearchResult extends Component {
         super();
         this.state = {
             hide: false,
-            hideAdvSearch: false,
+            hideAdvSearch: true,
             result_count: 0,
-            results: []
+            results: [],
+            filterResults: [],
+            cityName: "",
+            zipCode: "",
+            providerCategory: "",
+            specialProviderCategory: "",
+            gender: "",
         }
     }
 
@@ -22,7 +28,8 @@ class SearchResult extends Component {
         const { results, result_count } = this.props.searchResult;
 
         window.addEventListener("resize", this.checkWindowDimensions());
-        this.setState({ results, result_count, resultToRender:  results.slice(0, 10)});
+        
+        this.setState({ results, result_count, filterResults: results, resultToRender: results.slice(0, 10) });
     }
 
     componentWillUnmount() {
@@ -43,31 +50,92 @@ class SearchResult extends Component {
         }
     }
 
-    handleChange = ( pageNumber ) =>{
-        console.log(pageNumber);
+    handleChange = (pageNumber) => {
 
-        let { results } = this.state;
+        let { filterResults } = this.state;
         let resultToRender = [];
 
-        if( pageNumber === 1)
-        {
-            resultToRender = results.slice(0, 10);
+        if (pageNumber === 1) {
+            resultToRender = filterResults.slice(0, 10);
         }
-        else
-        {   
-            resultToRender = results.slice((pageNumber - 1 ) * 10, pageNumber * 10);
+        else {
+            resultToRender = filterResults.slice((pageNumber - 1) * 10, pageNumber * 10);
         }
-        this.setState({resultToRender});
+        this.setState({ resultToRender });
     }
 
-    pagination = () =>{
-        return({
+    filterFetchResult = (name, value) => {
+        console.log({ name, value })
+        let { cityName, zipCode, providerCategory, gender, specialProviderCategory } = this.state;
+        let filters = {
+            cityName,
+            zipCode,
+            providerCategory,
+            specialProviderCategory,
+            gender
+        }
 
+        filters[name] = value;
+        let { results, filterResults } = this.state;
+        filterResults = results.filter(data => {
+
+            return (
+                data.addresses[0].city.toLowerCase().indexOf(filters.cityName.toLowerCase()) !== -1
+                &&
+                data.addresses[0].postal_code.toLowerCase().indexOf(filters.zipCode.toLowerCase()) !== -1
+                &&
+                data.basic.gender.toLowerCase().indexOf(filters.gender.toLowerCase()) !== -1
+                &&
+                data.taxonomies[0].desc.toLowerCase().indexOf(filters.providerCategory.toLowerCase()) !== -1
+                &&
+                data.taxonomies[0].desc.toLowerCase().indexOf(filters.specialProviderCategory.toLowerCase()) !== -1
+            )
+        });
+        this.setState({ filterResults, ...filters, resultToRender: filterResults.slice(0, 10) })
+
+    }
+
+    handleSelect = name => value => {
+        this.filterFetchResult(name, value);
+    }
+
+    handleFiltersInputChange = name => (event) => {
+        this.filterFetchResult(name, event.target.value);
+    }
+
+    handleFiltersCheckBoxChange = name => (event) => {
+        let maleCheck = this.male.rcCheckbox.state.checked;
+        let femaleCheck = this.female.rcCheckbox.state.checked;
+
+        if (maleCheck === !femaleCheck) {
+            this.filterFetchResult("gender", "");
+        }
+        else {
+            if (maleCheck && femaleCheck) {
+                this.filterFetchResult("gender", name === "male" ? "F" : "M");
+            }
+            else {
+                this.filterFetchResult("gender", event.target.value);
+            }
+
+        }
+    }
+
+    goToProfile = (id) => {
+        this.props.history.push({
+            pathname: '/profile',
+            state: {
+                data: id
+            }
         })
     }
 
+    goToMap = () =>{
+        this.props.history.push("search_on_map")
+    }
+
     render() {
-        const { hide, hideAdvSearch, resultToRender, result_count } = this.state;
+        const { hide, hideAdvSearch, resultToRender, filterResults } = this.state;
         return (
             <div className="provoder-list-body">
                 <Row>
@@ -90,42 +158,59 @@ class SearchResult extends Component {
                                     <Row className="input-spacing">
                                         <div>
                                             <label className="input-label">LOCATIONS BY CITY</label>
-                                            <Input className="search-input" placeholder="E.g San Francisc" />
+                                            <Input className="search-input" placeholder="E.g San Francisc" onChange={this.handleFiltersInputChange('cityName')} />
                                         </div>
                                     </Row>
                                     <Row className="input-spacing">
                                         <div>
                                             <label className="input-label">ZIP COD</label>
-                                            <Input className="search-input" placeholder="Zip cod" />
+                                            <Input className="search-input" placeholder="Zip cod" onChange={this.handleFiltersInputChange('zipCode')} />
                                         </div>
                                     </Row>
                                     <Row className="input-spacing">
                                         <div>
-                                            <label className="input-label">PROVIDER CATEGOR</label>
+                                            <label className="input-label">PROVIDER CATEGORY</label>
                                             <Select
                                                 showSearch
-                                                className="search-input"
-                                                placeholder="Select a provider"
+                                                placeholder="Provider Category"
                                                 optionFilterProp="children"
+                                                className="search-input"
+                                                onSelect={this.handleSelect("providerCategory")}
                                             >
-                                                <Option value="jack">Jack</Option>
-                                                <Option value="lucy">Lucy</Option>
-                                                <Option value="tom">Tom</Option>
+                                                <Option value="">All</Option>
+                                                <Option value="Anesthesiology">Anesthesiology</Option>
+                                                <Option value="Orthopaedic Surgery">Orthopaedic Surgery</Option>
+                                                <Option value="Dentist">Dentist</Option>
+                                                <Option value="Nurse Practitioner Family">Nurse Practitioner Family</Option>
+                                                <Option value="Physical Therapist Orthopedic">Physical Therapist Orthopedic</Option>
+                                                <Option value="Social Worker Clinical">Social Worker Clinical</Option>
+                                                <Option value="Physician Assistant">Physician Assistant</Option>
                                             </Select>
                                         </div>
                                     </Row>
                                     <Row className="input-spacing">
                                         <div className="input-spacing">
-                                            <label className="input-label">SPECIALITY BY PROVIDER CATEGOR</label>
+                                            <label className="input-label">SPECIALITY BY PROVIDER CATEGORY</label>
                                             <Select
                                                 showSearch
                                                 className="search-input"
-                                                placeholder="Select a person"
+                                                placeholder="Select Speciality Provider Category"
                                                 optionFilterProp="children"
+                                                onSelect={this.handleSelect("specialProviderCategory")}
                                             >
-                                                <Option value="jack" select>Obstercician/Gynecologis</Option>
-                                                <Option value="lucy">Lucy</Option>
-                                                <Option value="tom">Tom</Option>
+                                                <Option value="">All</Option>
+                                                <Option value="Obstercician/Gynecologis">Obstercician</Option>
+                                                <Option value="Gynecologis">Gynecologis</Option>
+                                                <Option value="General Practice">General Practice</Option>
+                                                <Option value="Dentist Endodontics">Dentist Endodontics</Option>
+                                                <Option value="Dentist Oral">Dentist Oral</Option>
+                                                <Option value="Maxillofacial Surgery">Maxillofacial Surgery</Option>
+                                                <Option value="Dentist Ora and Maxillofacial Surgery">Dentist Ora and Maxillofacial Surgery</Option>
+                                                <Option value="Endodontist">Endodontist</Option>
+                                                <Option value="Pediatric">Pediatric</Option>
+                                                <Option value="Pediatric Dentist">Pediatric Dentist</Option>
+                                                <Option value="Prosthodontics">Prosthodontics</Option>
+                                                {/* <Option value="Oral and Maxillofacial Surgeon">Oral and Maxillofacial Surgeon</Option> */}
                                             </Select>
                                         </div>
                                         <div className="input-spacing">
@@ -137,9 +222,8 @@ class SearchResult extends Component {
                                                     placeholder="Select a provider"
                                                     optionFilterProp="children"
                                                 >
-                                                    <Option value="jack">Jack</Option>
-                                                    <Option value="lucy">Lucy</Option>
-                                                    <Option value="tom">Tom</Option>
+                                                    <Option value="yes">Yes</Option>
+                                                    <Option value="no">No</Option>
                                                 </Select>
                                             </div>
                                         </div>
@@ -171,10 +255,24 @@ class SearchResult extends Component {
                                                         <p className="input-label">GENDER OF HEALTHCARE PROVIDER</p>
                                                         <ul className="input-ul">
                                                             <li>
-                                                                <Checkbox className="input-checkbox" value="Female">Female</Checkbox>
+                                                                <Checkbox
+                                                                    className="input-checkbox"
+                                                                    ref={(input) => { this.female = input; }}
+                                                                    value="F"
+                                                                    onChange={this.handleFiltersCheckBoxChange('female')}
+                                                                >
+                                                                    Female
+                                                                </Checkbox>
                                                             </li>
                                                             <li>
-                                                                <Checkbox className="input-checkbox" value="Male">Male</Checkbox>
+                                                                <Checkbox
+                                                                    className="input-checkbox"
+                                                                    value="M"
+                                                                    ref={(input) => { this.male = input; }}
+                                                                    onChange={this.handleFiltersCheckBoxChange('male')}
+                                                                >
+                                                                    Male
+                                                                    </Checkbox>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -206,7 +304,7 @@ class SearchResult extends Component {
                             <Col lg={18} md={22} sm={22} xs={24} className="search-result-body-setting" >
                                 <Row>
                                     <Col span={18}>
-                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{result_count} Doctors</span></h1>
+                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{filterResults.length} Doctors</span></h1>
                                     </Col>
                                     <Col span={6} type="flex" justify="flex-end">
                                         <Select
@@ -230,7 +328,7 @@ class SearchResult extends Component {
                                     resultToRender ?
                                         resultToRender.map((value, index) => {
                                             return (
-                                                <Row key={index}  className="profile-list">
+                                                <Row key={index} className="profile-list">
                                                     <Col span={6} className="profile-img-container">
                                                         <img src={dr_image} alt="dr_image" className="profile-img" />
                                                     </Col>
@@ -239,8 +337,8 @@ class SearchResult extends Component {
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>
                                                             <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>{value.taxonomies[0].desc}</span><br />
                                                                 <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                                {value.addresses[0].address_1} - <span style={{ color: "#0F6AB6" }}>View on map</span></p>
-                                                            <Button className="view-profile">VIEW PROFILE</Button>
+                                                                {value.addresses[0].address_1} - <span className="view-on-map" onClick={this.goToMap}>View on map</span></p>
+                                                            <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>
                                                     <Col span={6}>
@@ -259,12 +357,17 @@ class SearchResult extends Component {
                                 }
                             </Col>
                         </Row>
-                        <Row type="flex" justify="center" className="pagination-container">
-                            <Pagination defaultCurrent={1} total={result_count} onChange={this.handleChange}  />
-                        </Row>
+                        {
+                            filterResults.length > 10 ?
+                                < Row type="flex" justify="center" className="pagination-container">
+                                    <Pagination defaultCurrent={1} total={filterResults.length} onChange={this.handleChange} />
+                                </Row>
+                                :
+                                undefined
+                        }
                     </Col>
                 </Row>
-            </div>
+            </div >
         )
     }
 }

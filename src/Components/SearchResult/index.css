@@ -123,6 +123,11 @@
     padding: 0px;
 }
 
+.view-on-map {
+    color: #0F6AB6;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 633px) {
     .profile-list-call-text {
        /* display: inline;  */
