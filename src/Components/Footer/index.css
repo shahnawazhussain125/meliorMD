@@ -2,9 +2,11 @@
     display: flex;
     justify-content: space-around;
     background-color: #f6f9fc;
+    width: 100%;
+    padding: 5px;
 }
 .footer-logo-container {
-    padding-top: 30px;
+    padding-top: 28px;
 }
 
 .links-title h4 {
@@ -22,12 +24,8 @@
     font-size: 12px;
 }
 
-/* .footer-logo {
-
-} */
-
 .footer-logo-text {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .copy-right-container {
@@ -49,4 +47,39 @@
     margin-top: 12px;
     padding-left: 4px;
     padding-right: 4px;
+    width: 100%;
 }
+
+.icon {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 560px) {
+    .melior-logo {
+        width: 120px;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    .melior-logo {
+        width: 110px;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    .melior-logo {
+        width: 107px;
+    }
+    .footer-logo-container {
+        padding-top: 25px;
+    }
+    .li-padding {
+        padding-top: 9px;
+    }
+    .icon {
+        font-size: 22px;
+        padding-top: 14px;
+        padding-left: 15px;
+    }
+  }
