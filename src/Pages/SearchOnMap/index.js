@@ -28,7 +28,7 @@ class SearchOnMap extends Component {
         return (
             <div>
                 <Row>
-                    <Col span={12}>
+                    <Col lg={12} md={12} sm={24} xs={24}>
                         <Row type="flex" justify='center'>
                             <Col span={24}>
                                 <Input
@@ -86,8 +86,10 @@ class SearchOnMap extends Component {
                             </Col>
                         </Row>
                         {
+            //================== Card from here =========================//
                             results.map((value, index) => {
                                 return (
+                                    <Col lg={12} md={12} sm={24} xs={24}>
                                     <Row type="flex" justify="center" className="card-style" key={index}>
                                         <Col span={6}>
                                             <Row>
@@ -120,6 +122,7 @@ class SearchOnMap extends Component {
                                             </Row>
                                         </Col>
                                     </Row>
+                                    </Col>
                                 )
                             })
                         }
