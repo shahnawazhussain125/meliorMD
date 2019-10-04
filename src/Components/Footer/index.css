@@ -12,7 +12,7 @@
 .links-title h4 {
     padding-top: 30px;
     font-weight: bold;
-    color: #565758;
+    color: #47495A !important;
 }
 
 .links-list ul{
@@ -22,15 +22,18 @@
 
 .links-list li {
     font-size: 12px;
+    color: #6B7C93;
 }
 
 .footer-logo-text {
     font-size: 12px;
+    color: #6B7C93;
 }
 
 .copy-right-container {
     font-size: 12px;
     padding-top: 5px;
+    color: #8F9EA6;
 }
 
 .terms-privacy {
@@ -41,6 +44,7 @@
     display: inline;
     font-size: 10px;
     padding: 5px;
+    color: #8F9EA6;
 }
 
 .footer-div{
@@ -54,32 +58,3 @@
     padding-top: 15px;
     font-size: 20px;
 }
-
-@media screen and (max-width: 560px) {
-    .melior-logo {
-        width: 120px;
-    }
-  }
-
-  @media screen and (max-width: 470px) {
-    .melior-logo {
-        width: 110px;
-    }
-  }
-
-  @media screen and (max-width: 410px) {
-    .melior-logo {
-        width: 107px;
-    }
-    .footer-logo-container {
-        padding-top: 25px;
-    }
-    .li-padding {
-        padding-top: 9px;
-    }
-    .icon {
-        font-size: 22px;
-        padding-top: 14px;
-        padding-left: 15px;
-    }
-  }

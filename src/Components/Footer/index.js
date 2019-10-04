@@ -14,91 +14,71 @@ class Footer extends Component {
         return (
             <div className="footer-div">
                 <Row className="footer">
-                    <Col lg={2} md={1} sm={0} xs={0}></Col>
-
-                    <Col lg={6} md={6} sm={6} xs={7} className="footer-logo-container">
-                        <Row className="footer-logo">
-                            <img className="melior-logo" src={logo} alt="logo" />
-                        </Row>
-                        <Row className="footer-logo-text">
-                            <p>
-                                MeliorMD is a one stop shop for finding health care providers 
-                                across specialties. Finding a healthcare provider can be
-                            </p>
-                        </Row>
-                    </Col>
-
-                    <Col lg={0} md={0} sm={0} xs={1}></Col>
-
-                    <Col lg={4} md={4} sm={4} xs={6} className="border-black">
-                        <Row className="links-title">
-                            <h4>FEATURES</h4>
-                        </Row>
-                        <Row className="links-list">
-                            <ul>
-                                <li className="li-padding">Find Doctors</li>
-                                <li className="li-padding">Add a provider listing</li>
-                                <li className="li-padding">About</li>
-                                <li className="li-padding">Mission</li>
-                            </ul>
-                        </Row>
-                    </Col>
-
-                    <Col lg={4} md={4} sm={4} xs={5} className="border-black">
-                        <Row className="links-title">
-                            <h4>COMPANY</h4>
-                        </Row>
-                        <Row className="links-list">
-                            <ul>
-                                <li className="li-padding">About Us</li>
-                                <li className="li-padding">Pricing</li>
-                                <li className="li-padding">Careers</li>
-                                <li className="li-padding">Contact Us</li>
-                            </ul>
-                        </Row>
-                    </Col>
-
-                    <Col lg={0} md={0} sm={0} xs={1}></Col>
-
-                    <Col lg={4} md={4} sm={4} xs={4} className="border-black">
+                    <Col lg={8} md={5} sm={5} xs={5}></Col>
+                    <Col span={14}>
+                        <Col lg={11} md={24} sm={24} xs={24} className="footer-logo-container">
+                            <Row className="footer-logo">
+                                <img className="melior-logo" src={logo} alt="logo" />
+                            </Row>
+                            <Row className="footer-logo-text">
+                                <p>
+                                    MeliorMD is a one stop shop for finding health care providers
+                                    across specialties. Finding a healthcare provider can be
+                                </p>
+                            </Row>
+                        </Col>
+                        <Col lg={5} md={8} sm={24} xs={24} className="border-black">
+                            <Row className="links-title">
+                                <h4>FEATURES</h4>
+                            </Row>
+                            <Row className="links-list">
+                                <ul>
+                                    <li className="li-padding">Find Doctors</li>
+                                    <li className="li-padding">Add a provider listing</li>
+                                    <li className="li-padding">About</li>
+                                    <li className="li-padding">Mission</li>
+                                </ul>
+                            </Row>
+                        </Col>
+                        <Col lg={4} md={8} sm={24} xs={24} className="border-black">
+                            <Row className="links-title">
+                                <h4>COMPANY</h4>
+                            </Row>
+                            <Row className="links-list">
+                                <ul>
+                                    <li className="li-padding">About Us</li>
+                                    <li className="li-padding">Pricing</li>
+                                    <li className="li-padding">Careers</li>
+                                    <li className="li-padding">Contact Us</li>
+                                </ul>
+                            </Row>
+                        </Col>
+                        <Col lg={3} md={8} sm={24} xs={24} className="border-black">
                         <Row className="links-title">
                             <h4>FOLLOW</h4>
                         </Row>
-                        <Row type="flex">
-                                <Col lg={6} md={6} sm={6} xs={24}>
-                                    <Icon type="linkedin" className="icon" />
-                                </Col>
-
-                                <Col lg={1} md={1} sm={1} xs={0}></Col>
-
-                                <Col lg={6} md={6} sm={6} xs={24}>
-                                    <IconFont type="icon-facebook" className="icon" />
-                                </Col>
-
-                                <Col lg={1} md={1} sm={1} xs={0}></Col>
-
-                                <Col lg={6} md={6} sm={6} xs={24}>
-                                    <IconFont type="icon-twitter" className="icon" />
-                                </Col>
-                            <br />
+                        <Row type="flex" justify="space-between">
+                            <Icon type="linkedin" className="icon" />
+                            <IconFont type="icon-facebook" className="icon" />
+                            <IconFont type="icon-twitter" className="icon" />
                         </Row>
                     </Col>
-
-                    <Col lg={2} md={1} sm={0} xs={0}></Col>
+                    </Col>
+                    <Col lg={3} md={5} sm={5} xs={5}></Col>
                 </Row>
 
                 <Row type="flex" justify="space-around">
-                    <div className="copy-right-container">
+                    <Row className="copy-right-container">
                         <p>© 2019 CityNetworksGroup. All rights reserved</p>
-                    </div>
-                    <div className="footer-bottom">
+                    </Row>
+                    <Row className="footer-bottom">
                         <ul className="terms-privacy">
                             <li>Legal</li>
                             <li>Terms</li>
                             <li>Privacy</li>
                             <li>devias.i</li>
                         </ul>
-                    </div>
+                    </Row>
                 </Row>
             </div>
         )
