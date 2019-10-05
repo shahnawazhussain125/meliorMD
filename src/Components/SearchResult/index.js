@@ -329,10 +329,12 @@ class SearchResult extends Component {
                                         resultToRender.map((value, index) => {
                                             return (
                                                 <Row key={index} className="profile-list">
-                                                    <Col span={6} className="profile-img-container">
-                                                        <img src={dr_image} alt="dr_image" className="profile-img" />
+                                                    <Col lg={6}  md={6} sm={6} xs={24}>  
+                                                        <Row className="profile-img-container">
+                                                            <img src={dr_image} alt="dr_image" className="profile-img" />
+                                                        </Row>
                                                     </Col>
-                                                    <Col span={12}>
+                                                    <Col lg={12} md={12} sm={12} xs={24}  >
                                                         <Row>
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>
                                                             <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>{value.taxonomies[0].desc}</span><br />
@@ -341,12 +343,12 @@ class SearchResult extends Component {
                                                             <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>
-                                                    <Col span={6}>
+                                                    <Col lg={6}  md={6} sm={6} xs={24}>  
                                                         <Row className="profile-list-call-container">
-                                                            <div>
+                                                            <Row>
                                                                 <p className="profile-list-call profile-list-call-text">CALL</p>
-                                                                <h3 className="profile-list-call" style={{ color: '#0F6AB6' }}>{value.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{value.number.toString().substring(7)}</h3>
-                                                            </div>
+                                                                <h3 className="profile-list-call profile-list-call-no">{value.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{value.number.toString().substring(7)}</h3>
+                                                            </Row>
                                                         </Row>
                                                     </Col>
                                                 </Row>
