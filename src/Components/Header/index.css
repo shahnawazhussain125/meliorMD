@@ -1,28 +1,40 @@
+
+.header-div {
+    width: 100%;
+    background-color: #2c61ad;
+}
 .header-bar
 {
     background-color: #2c61ad;
     color: white;
-    height: 50px;
+    width: 100%;
 }
-
+.side-bar{
+    font-size: large;
+    font-weight: bolder;
+    width: 100%;
+    color: white;
+    background-color: #2c61ad;
+    margin-top: 10px;
+    margin-left: 2px;
+    border: 0px;
+}
 .header-logo
 {
-    margin-left: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
-
 .navbar 
 {
     display: flex;
     justify-content: flex-end;
     padding-right: 10px; 
 }
-
 .navbar-links
 {
     display: block;
     list-style: none;
 }
-
 .navbar-links li {
     display: inline-block;
     margin: 5px;
@@ -34,7 +46,6 @@
     margin-top: 20px;
     border-bottom: 3px solid white;
 }
-
 .vl {
     display: flex;
     justify-content: center;
@@ -44,7 +55,6 @@
     height: 40px;
     margin-top: 5px;
 }
-
 .provider-button
 {
     background-color: white;
@@ -53,4 +63,11 @@
     border: none;
     font-size: 10px;
     text-transform: uppercase;
+    width: 90%;
 }
+
+@media screen and (max-width: 600px) {
+    .header-logo{
+        margin-left: 0px;
+    }
+  }
