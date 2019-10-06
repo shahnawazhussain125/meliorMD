@@ -3,22 +3,9 @@ import { Row, Col, Button, Icon } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 import logo from '../../assets/images/md-logo.webp';
-import DrawerTab from '../Drawer/index'
+import DrawerTab from '../Drawer'
 
 class Header extends Component {
-  state = { visible: false };
-
-  showDrawer = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
-  };
 
     render() {
         return (
@@ -26,9 +13,7 @@ class Header extends Component {
                 <Row type="flex" className="header-bar">
                 <Col lg={5} md={5} sm={8} xs={8}>
                     <Col span={6}>
-                        <Button className="side-bar" onClick={this.showDrawer}>
-                            <Icon type="menu" />
-                        </Button>
+                        <DrawerTab/>
                     </Col>
                     <Col span={14}>
                         <img className="header-logo" src={logo} alt="logo" />

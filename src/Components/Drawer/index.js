@@ -1,6 +1,8 @@
+import React, { Component } from 'react'
+
 import { Drawer } from 'antd';
 
-class App extends React.Component {
+class CustomDrawer extends Component {
   state = { visible: false };
 
   showDrawer = () => {
@@ -34,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, mountNode);
+export default CustomDrawer;
