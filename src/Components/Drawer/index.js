@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import { Drawer, Button } from 'antd';
 
-import { Drawer, Row, Col } from 'antd';
-
-class CustomDrawer extends Component {
-  state = { visible: true };
+class CustomDrawer extends Component 
+{
+  state = { visible: false };
 
   showDrawer = () => {
     this.setState({
@@ -19,7 +19,10 @@ class CustomDrawer extends Component {
 
   render() {
     return (
-      <div className="side-bar-div">
+      <div>
+        <Button type="primary" onClick={this.showDrawer}>
+          Open
+        </Button>
         <Drawer
         style={{textDecoration:'#2c61ad'}}
           title="Tab to view page"

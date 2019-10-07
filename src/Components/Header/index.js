@@ -12,9 +12,6 @@ class Header extends Component {
             <div className="header-div">
                 <Row type="flex" className="header-bar">
                 <Col lg={5} md={5} sm={8} xs={8}>
-                    <Col span={6}>
-                        <DrawerTab/>
-                    </Col>
                     <Col span={14}>
                         <img className="header-logo" src={logo} alt="logo" />
                     </Col>
@@ -36,6 +33,9 @@ class Header extends Component {
                                 <Button type="primary" className="provider-button">Provider Login</Button>
                             </div>
                         </div>
+                    </Col>
+                    <Col  lg={0} md={0} sm={8} xs={8}>
+                        <DrawerTab/>
                     </Col>
                 </Row>
             </div>
