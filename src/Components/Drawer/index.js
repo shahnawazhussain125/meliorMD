@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import { Drawer, Button } from 'antd';
 
-import { Drawer } from 'antd';
-
-class CustomDrawer extends Component {
+class CustomDrawer extends Component 
+{
   state = { visible: false };
 
   showDrawer = () => {
@@ -20,6 +20,9 @@ class CustomDrawer extends Component {
   render() {
     return (
       <div>
+        <Button type="primary" onClick={this.showDrawer}>
+          Open
+        </Button>
         <Drawer
           title="Basic Drawer"
           placement="right"
