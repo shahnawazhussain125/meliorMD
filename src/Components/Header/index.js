@@ -19,7 +19,7 @@ class Header extends Component {
                         <img className="header-logo" src={logo} alt="logo" />
                     </Col>
                 </Col>
-                    <Col lg={15} md={15} sm={0} xs={0}>
+                    <Col lg={16} md={15} sm={0} xs={0}>
                         <div className="navbar">
                             <ul className="navbar-links">
                                 <li>ABOUT</li>
@@ -29,7 +29,8 @@ class Header extends Component {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={4} md={4} sm={8} xs={8}>
+                    <Col lg={0} md={0} sm={10} xs={8}></Col>
+                    <Col lg={3} md={4} sm={6} xs={8}>
                         <div className="vl">
                             <div>
                                 <Button type="primary" className="provider-button">Provider Login</Button>
