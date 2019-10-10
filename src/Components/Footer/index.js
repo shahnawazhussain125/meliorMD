@@ -58,9 +58,9 @@ class Footer extends Component {
                             <h4>FOLLOW</h4>
                         </Row>
                         <Row type="flex" justify="space-between">
-                            <Icon type="linkedin" className="icon" />
-                            <IconFont type="icon-facebook" className="icon" />
-                            <IconFont type="icon-twitter" className="icon" />
+                            <Icon type="linkedin" className="icon icon-social" />
+                            <IconFont type="icon-facebook" className="icon icon-social" />
+                            <IconFont type="icon-twitter" className="icon icon-social" />
                         </Row>
                     </Col>
                     </Col>

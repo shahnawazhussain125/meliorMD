@@ -96,7 +96,7 @@ class Search extends Component {
                   <Col md={6} sm={6} xs={23}>
                     <Row type="flex" justify="center">
                       <div className="button-div">
-                        <Button className="button-style" onClick={this.handleSearch}>SEARCH <Icon type="arrow-right" className="icon" style={{ color: "white" }} /></Button>
+                        <Button className="button-style" onClick={this.handleSearch}>SEARCH <Icon type="arrow-right" className="icon icon-arrow " /></Button>
                       </div>
                     </Row>
                   </Col>
@@ -153,7 +153,6 @@ class Search extends Component {
                                         <label><h5 style={{ color: '#AEB1B1' }}>HOSPITAL/PRACTICE NAME</h5></label>
                                         <Input
                                           placeholder="Search by business name"
-                                          prefix={<Icon type="user" className="icon" />}
                                         />
                                         <br />
                                         <br />
