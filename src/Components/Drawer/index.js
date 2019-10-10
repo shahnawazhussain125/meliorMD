@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Drawer, Button, Row, Col } from 'antd';
+import { Drawer, Col, Row, Button, Icon } from 'antd';
+import './index.css';
 
 class CustomDrawer extends Component 
 {
@@ -20,23 +21,30 @@ class CustomDrawer extends Component
   render() {
     return (
       <div>
-        <Button type="primary" onClick={this.showDrawer}>
-          Open
+        <Button className="drawer-button" onClick={this.showDrawer}>
+          <Icon type="menu" />
         </Button>
         <Drawer
-        style={{textDecoration:'#2c61ad'}}
-          title="Tab to view page"
-          placement="right"
-          closable={false}
-          onClose={this.onClose}
-          visible={this.state.visible}
+            title="Menu"
+            placement="right"
+            closable={false}
+            onClose={this.onClose}
+            visible={this.state.visible}
         >
-          <Row type="flex" justufy="center">
+          <Row type="flex" justufy="center"  className="drawer">
             <Col span={24}>
-              <Row type="flex" className="sidebar-tabs"><h4>ABOUT</h4></Row>
-              <Row type="flex" className="sidebar-tabs"><h4>DIRECTORY</h4></Row>
-              <Row type="flex" className="sidebar-tabs"><h4>CONTACT US</h4></Row>
-              <Row type="flex" className="sidebar-tabs"><h4>ADD A PROVIDER LIST</h4></Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>ABOUT</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>DIRECTORY</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>CONTACT US</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>ADD A PROVIDER LIST</h4></Button>
+              </Row>
             </Col>
           </Row>
         </Drawer>

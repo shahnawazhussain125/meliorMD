@@ -11,11 +11,14 @@ class Header extends Component {
         return (
             <div className="header-div">
                 <Row type="flex" className="header-bar">
-                <Col lg={5} md={5} sm={8} xs={8}>
-                    <Col span={14}>
-                        <img className="header-logo" src={logo} alt="logo" />
+                    <Col lg={0} md={0} sm={2} xs={3}>
+                        <DrawerTab/>
                     </Col>
-                </Col>
+                    <Col lg={5} md={5} sm={14} xs={13}>
+                        <Col span={14}>
+                            <img className="header-logo" src={logo} alt="logo" />
+                        </Col>
+                    </Col>
                     <Col lg={16} md={15} sm={0} xs={0}>
                         <div className="navbar">
                             <ul className="navbar-links">
@@ -26,16 +29,13 @@ class Header extends Component {
                             </ul>
                         </div>
                     </Col>
-                    <Col lg={0} md={0} sm={10} xs={8}></Col>
+                    <Col lg={0} md={0} sm={2} xs={0}></Col>
                     <Col lg={3} md={4} sm={6} xs={8}>
                         <div className="vl">
                             <div>
                                 <Button type="primary" className="provider-button">Provider Login</Button>
                             </div>
                         </div>
-                    </Col>
-                    <Col  lg={0} md={0} sm={8} xs={8}>
-                        <DrawerTab/>
                     </Col>
                 </Row>
             </div>
