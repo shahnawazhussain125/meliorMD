@@ -45,7 +45,7 @@ class Search extends Component {
   }
 
   handleCheck = (event) =>{
-    console.log("Event", event.target)
+    
   }
 
 
