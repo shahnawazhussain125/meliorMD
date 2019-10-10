@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Input, Icon, Rate, Breadcrumb, Select, Button } from 'antd';
+import { Row, Col, Input, Icon, Rate, Breadcrumb, Select, Button, Typography } from 'antd';
 import MyGoogleMap from '../../Components/GoogleMap';
 import 'antd/dist/antd.css';
 import './index.css';
@@ -28,7 +28,7 @@ class SearchOnMap extends Component {
         return (
             <div>
                 <Row>
-                    <Col lg={12} md={12} sm={24} xs={24}>
+                    <Col lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify='center'>
                             <Col span={24}>
                                 <Input
@@ -89,35 +89,42 @@ class SearchOnMap extends Component {
             //================== Card from here =========================//
                             results.map((value, index) => {
                                 return (
-                                    <Col lg={12} md={12} sm={24} xs={24}>
+                                    <Col lg={24} md={24} sm={24} xs={24}>
                                     <Row type="flex" justify="center" className="card-style" key={index}>
-                                        <Col span={6}>
+                                        <Col xl={5} lg={6} md={6} sm={6} xs={6}>
                                             <Row>
                                                 <img src={dr_image} alt="dr_image" width="100%"/>
                                             </Row>
                                         </Col>
-                                        <Col span={18}>
-                                            <Row type="flex" style={{ borderBottom: '2px solid #DDDEE5' }}>
+                                        <Col xl={19} lg={18} md={18} sm={18} xs={18}>
+                                            <Row type="flex" className="class-detail-row">
                                                 <div >
                                                     <h4>{value.basic.name}, {value.basic.credential}</h4>
-                                                    <Col span={16}>
-                                                        <Rate disabled defaultValue={4} />
+                                                    <Col xxl={17} xl={16} lg={15} md={15} sm={15} xs={15}>
+                                                        <Rate className="rate-icons" disabled defaultValue={4} />
                                                         <p className="patient-rating">108 Patient Satisfaction Ratings<br />10 Patient Comments</p>
                                                     </Col>
-                                                    <Col span={8}>
-                                                        <Row >
-                                                            <p className="provider-info provider-info-title">DEPARTMENTS</p>
-                                                            <p className="provider-info ">{value.taxonomies[0].desc}</p>
-                                                            <p className="provider-info provider-info-title">LOCATIONS</p>
-                                                            <p className="provider-info">{value.addresses[0].address_1} </p>
+                                                    <Col xxl={7} xl={8} lg={9} md={9} sm={9} xs={9}>
+                                                        {/* <Row type="flex"></Row>
+                                                        <Row type="flex"></Row> */}
+                                                        <Row type="flex">
+                                                            <h5 className="provider-info-title">DEPARTMENTS</h5>
+                                                            <Typography className="provider-info">{value.taxonomies[0].desc}</Typography>
+                                                            <h5 className="provider-info-title">LOCATIONS</h5>
+                                                            <Typography className="provider-info">{value.addresses[0].address_1} </Typography>
                                                         </Row>
                                                     </Col>
                                                 </div>
                                             </Row>
                                             <Row type="flex">
-                                                <Col span={16}><h6>View on Map | Directions</h6></Col>
-                                                <Col span={8}>
-                                                    <Button className="button-appointment">REQUEST APPOINTMENT >></Button>
+                                                <Col className="view-on-map-col" xxl={18} xl={17} lg={15} md={13} sm={14} xs={15}><h6>View on Map | Directions</h6></Col>
+                                                <Col xxl={6} xl={7} lg={9} md={11} sm={10} xs={9}>
+                                                    <Button className="button-appointment">
+                                                        <Row type="flex" justify="space-around">
+                                                                <Col lg={10} md={10} sm={24} xs={24}>Request </Col>
+                                                                <Col lg={14} md={14} sm={24} xs={24}>appointment</Col>  
+                                                        </Row>
+                                                    </Button>
                                                 </Col>
                                             </Row>
                                         </Col>
@@ -128,7 +135,7 @@ class SearchOnMap extends Component {
                         }
                     </Col>
 
-                    <Col span={12}>
+                    <Col lg={12} md={12} sm={12} xs={24}>
                         <div className="map-border">
                             <MyGoogleMap
                                 searchResult={results}

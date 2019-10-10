@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { Drawer, Col, Row, Button, Icon } from 'antd';
+import './index.css';
 
-import { Drawer } from 'antd';
-
-class CustomDrawer extends Component {
+class CustomDrawer extends Component 
+{
   state = { visible: false };
 
   showDrawer = () => {
@@ -20,16 +21,32 @@ class CustomDrawer extends Component {
   render() {
     return (
       <div>
+        <Button className="drawer-button" onClick={this.showDrawer}>
+          <Icon type="menu" />
+        </Button>
         <Drawer
-          title="Basic Drawer"
-          placement="right"
-          closable={false}
-          onClose={this.onClose}
-          visible={this.state.visible}
+            title="Menu"
+            placement="right"
+            closable={false}
+            onClose={this.onClose}
+            visible={this.state.visible}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+          <Row type="flex" justufy="center"  className="drawer">
+            <Col span={24}>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>ABOUT</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>DIRECTORY</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>CONTACT US</h4></Button>
+              </Row>
+              <Row type="flex" justify="center" className="sidebar-tabs">
+                <Button className="button-style"><h4>ADD A PROVIDER LIST</h4></Button>
+              </Row>
+            </Col>
+          </Row>
         </Drawer>
       </div>
     );
