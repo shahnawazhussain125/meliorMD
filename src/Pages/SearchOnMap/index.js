@@ -48,12 +48,12 @@ class SearchOnMap extends Component {
                             </Col>
                         </Row>
                         <Row className="search-row">
-                            <Col span={6}>
-                                <span className="num-doctors">{result_count} Doctors</span>
+                            <Col lg={10} md={10} sm={24} xs={24}>
+                                <span className="num-doctors">{result_count} <span style={{color:'#727573'}}> Doctors</span></span>
                             </Col>
-                            <Col span={5}></Col>
-                            <Col span={3}><div style={{ marginTop: '10%', margin: '1px' }}>More Filters</div></Col>
-                            <Col span={5}>
+                            <Col lg={1} md={1} sm={1} xs={1}></Col>
+                            <Col lg={3} md={3} sm={5} xs={4}><div className="more-filter">More Filters</div></Col>
+                            <Col lg={5} md={5} sm={9} xs={10}>
                                 <Select
                                     className="show-search"
                                     showSearch
@@ -69,7 +69,7 @@ class SearchOnMap extends Component {
                                 </Select>
                             </Col>
 
-                            <Col span={5}>
+                            <Col lg={5} md={5} sm={9} xs={9}>
                                 <Select
                                     className="show-search"
                                     showSearch
@@ -141,7 +141,7 @@ class SearchOnMap extends Component {
                                 searchResult={results}
                                 google={this.props.google}
                                 center={{ lat: 18.5204, lng: 73.8567 }}
-                                height='300px'
+                                height='400px'
                                 zoom={15} />
                         </div>
                     </Col>
