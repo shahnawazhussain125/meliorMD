@@ -322,6 +322,8 @@ class SearchResult extends Component {
                             </Col>
                         </Row>
 
+        {/*================= Card here ================= */}
+
                         <Row type="flex" justify="center">
                             <Col lg={18} md={22} sm={22} xs={24}>
                                 {
@@ -329,11 +331,16 @@ class SearchResult extends Component {
                                         resultToRender.map((value, index) => {
                                             return (
                                                 <Row key={index} className="profile-list">
-                                                    <Col lg={6}  md={6} sm={6} xs={24}>  
-                                                        <Row className="profile-img-container">
-                                                            <img src={dr_image} alt="dr_image" className="profile-img" />
-                                                        </Row>
-                                                    </Col>
+                                                    {/* <Row type="flex" justify="center"> */}
+                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                        <Col lg={6} md={6} sm={6} xs={12}>  
+                                                            <Row className="profile-img-container">
+                                                                <img src={dr_image} alt="dr_image" className="profile-img" />
+                                                            </Row>
+                                                        </Col>
+                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    {/* </Row> */}
+                                                    
                                                     <Col lg={12} md={12} sm={12} xs={24}  >
                                                         <Row>
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>

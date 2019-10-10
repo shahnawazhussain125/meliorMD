@@ -141,7 +141,7 @@ class SearchOnMap extends Component {
                                 searchResult={results}
                                 google={this.props.google}
                                 center={{ lat: 18.5204, lng: 73.8567 }}
-                                height='400px'
+                                height='530px'
                                 zoom={15} />
                         </div>
                     </Col>
