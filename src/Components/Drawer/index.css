@@ -4,13 +4,12 @@
 }
 
 .ant-drawer-header {
-    background-color: #2c61ad;
-    color: white;
+    background-color: #002050;
+    color: white !important;
 }
 
-.button-style {
-    border: 0px;
-    margin: 10px;
+.links {
+    /* color: white !important; */
 }
 
 .drawer-button {

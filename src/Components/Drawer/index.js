@@ -31,19 +31,19 @@ class CustomDrawer extends Component
             onClose={this.onClose}
             visible={this.state.visible}
         >
-          <Row type="flex" justufy="center"  className="drawer">
+          <Row type="flex" justufy="left"  className="drawer">
             <Col span={24}>
-              <Row type="flex" justify="center" className="sidebar-tabs">
-                <Button className="button-style"><h4>ABOUT</h4></Button>
+              <Row  className="sidebar-tabs">
+                <p className="links">ABOUT</p>
               </Row>
-              <Row type="flex" justify="center" className="sidebar-tabs">
-                <Button className="button-style"><h4>DIRECTORY</h4></Button>
+              <Row  className="sidebar-tabs">
+                <p className="links">DIRECTORY</p>
               </Row>
-              <Row type="flex" justify="center" className="sidebar-tabs">
-                <Button className="button-style"><h4>CONTACT US</h4></Button>
+              <Row  className="sidebar-tabs">
+                <p className="links">CONTACT US</p>
               </Row>
-              <Row type="flex" justify="center" className="sidebar-tabs">
-                <Button className="button-style"><h4>ADD A PROVIDER LIST</h4></Button>
+              <Row  className="sidebar-tabs">
+                <p className="links">ADD A PROVIDER LIST</p>
               </Row>
             </Col>
           </Row>
