@@ -45,7 +45,6 @@ class Search extends Component {
   }
 
   handleCheck = (event) =>{
-    
   }
 
 
