@@ -28,7 +28,7 @@ class SearchResult extends Component {
         const { results, result_count } = this.props.searchResult;
 
         window.addEventListener("resize", this.checkWindowDimensions());
-        
+
         this.setState({ results, result_count, filterResults: results, resultToRender: results.slice(0, 10) });
     }
 
@@ -130,7 +130,7 @@ class SearchResult extends Component {
         })
     }
 
-    goToMap = () =>{
+    goToMap = () => {
         this.props.history.push("search_on_map")
     }
 
@@ -322,7 +322,7 @@ class SearchResult extends Component {
                             </Col>
                         </Row>
 
-        {/*================= Card here ================= */}
+                        {/*================= Card here ================= */}
 
                         <Row type="flex" justify="center">
                             <Col lg={18} md={22} sm={22} xs={24}>
@@ -332,15 +332,15 @@ class SearchResult extends Component {
                                             return (
                                                 <Row key={index} className="profile-list">
                                                     {/* <Row type="flex" justify="center"> */}
-                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
-                                                        <Col lg={6} md={6} sm={6} xs={12}>  
-                                                            <Row className="profile-img-container">
-                                                                <img src={dr_image} alt="dr_image" className="profile-img" />
-                                                            </Row>
-                                                        </Col>
-                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    <Col lg={6} md={6} sm={6} xs={12}>
+                                                        <Row className="profile-img-container">
+                                                            <img src={dr_image} alt="dr_image" className="profile-img" />
+                                                        </Row>
+                                                    </Col>
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
                                                     {/* </Row> */}
-                                                    
+
                                                     <Col lg={12} md={12} sm={12} xs={24}  >
                                                         <Row>
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>
@@ -350,7 +350,7 @@ class SearchResult extends Component {
                                                             <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>
-                                                    <Col lg={6}  md={6} sm={6} xs={24}>  
+                                                    <Col lg={6} md={6} sm={6} xs={24}>
                                                         <Row className="profile-list-call-container">
                                                             <Row>
                                                                 <p className="profile-list-call profile-list-call-text">CALL</p>

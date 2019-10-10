@@ -44,6 +44,10 @@ class Search extends Component {
 
   }
 
+  handleCheck = (event) =>{
+    console.log("Event", event.target)
+  }
+
 
   render() {
     const { cityName, providerCategory } = this.state;
@@ -117,16 +121,16 @@ class Search extends Component {
                                   <Row type="flex">
                                     <Col span={12} xs={23}>
                                       <div className="check-box-container">
-                                        <Checkbox className="check-box">
-                                          <span className="check-box-text">General Dentist </span>
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="General Dentist" >
+                                          <span className="check-box-text" >General Dentist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box">
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Endodontist">
                                           <span className="check-box-text">Endodontist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box">
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Oral and Maxillofacial Surgeon">
                                           <span className="check-box-text">Oral and Maxillofacial Surgeon</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box">
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Orthodontist">
                                           <span className="check-box-text">Orthodontist</span>
                                         </Checkbox><br />
                                       </div>
@@ -134,13 +138,13 @@ class Search extends Component {
 
                                     <Col span={12} xs={23}>
                                       <div className="check-box-container2">
-                                        <Checkbox className="check-box">
-                                          <span className="check-box-text">Pediatric Dentist </span>
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Pediatric Dentist">
+                                          <span className="check-box-text">Pediatric Dentist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box">
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Periodontist">
                                           <span className="check-box-text">Periodontist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box">
+                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Prosthodontics">
                                           <span className="check-box-text">Prosthodontics </span>
                                         </Checkbox>
                                       </div>
