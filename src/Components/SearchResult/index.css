@@ -53,10 +53,6 @@
     /* height: 160px; */
 }
 
-.profile-img-container {
-    /* height: 140px; */
-}
-
 .h4-card {
     margin: 0px;
     padding: 0px;
@@ -88,7 +84,6 @@
     border-radius: 5px;
 }
 
-
 .view-profile{
     display: inline;
     border: 2px solid #6D8496;
@@ -100,7 +95,7 @@
 
 .profile-list-call-container {
     margin-top: 0px;
-    margin-top: 30%;
+    margin-top: 15%;
 }
 
 .profile-list-call {
@@ -128,6 +123,7 @@
 }
 
 .search-result-number {
+    color: #0F6AB6;
     margin: 0px;
     padding: 0px;
 }
