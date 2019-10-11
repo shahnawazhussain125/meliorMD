@@ -29,6 +29,14 @@
     margin: 8px;
 }
 
+.provide-list-container {
+    margin-top: 10px;
+    height: 450px;
+    border: 1px solid rgb(226, 226, 226);
+    overflow-y: scroll;
+    
+}
+
 .view-on-map-col {
     padding: 5px;
 }
@@ -51,7 +59,7 @@
 }
 
 .provider-info {
-    font-size: 14px;
+    font-size: 12px;
     margin: 3px 0px;
     width: 100%;
 }

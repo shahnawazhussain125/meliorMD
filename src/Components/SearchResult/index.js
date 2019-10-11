@@ -28,7 +28,7 @@ class SearchResult extends Component {
         const { results, result_count } = this.props.searchResult;
 
         window.addEventListener("resize", this.checkWindowDimensions());
-        
+
         this.setState({ results, result_count, filterResults: results, resultToRender: results.slice(0, 10) });
     }
 
@@ -130,7 +130,7 @@ class SearchResult extends Component {
         })
     }
 
-    goToMap = () =>{
+    goToMap = () => {
         this.props.history.push("search_on_map")
     }
 
@@ -303,10 +303,10 @@ class SearchResult extends Component {
                         <Row type="flex" justify="center">
                             <Col lg={18} md={22} sm={22} xs={24} className="search-result-body-setting" >
                                 <Row>
-                                    <Col span={18}>
-                                        <h1 className="search-result-number"><span style={{ color: "#0F6AB6" }}>{filterResults.length} Doctors</span></h1>
+                                    <Col lg={18} md={18} sm={15} xs={15}>
+                                        <h1 className="search-result-number">{filterResults.length} <span style={{ color: "#000000" }}> Doctors</span></h1>
                                     </Col>
-                                    <Col span={6} type="flex" justify="flex-end">
+                                    <Col lg={6} md={6} sm={9} xs={9} type="flex" justify="flex-end">
                                         <Select
                                             showSearch
                                             style={{ width: '100%' }}
@@ -322,7 +322,7 @@ class SearchResult extends Component {
                             </Col>
                         </Row>
 
-        {/*================= Card here ================= */}
+                        {/*================= Card here ================= */}
 
                         <Row type="flex" justify="center">
                             <Col lg={18} md={22} sm={22} xs={24}>
@@ -331,30 +331,38 @@ class SearchResult extends Component {
                                         resultToRender.map((value, index) => {
                                             return (
                                                 <Row key={index} className="profile-list">
-                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
-                                                    <Col lg={6} md={6} sm={6} xs={12}>  
+
+                                                    <Col xl={5} lg={6} md={6} sm={6} xs={12}>  
                                                         <Row className="profile-img-container">
                                                             <img src={dr_image} alt="dr_image" className="profile-img" />
                                                         </Row>
-                                                        </Col>
-                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    </Col>
 
-                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
-                                                    <Col lg={12} md={12} sm={12} xs={12}>
-                                                        <Row>
-                                                            <h4>{value.basic.name}, {value.basic.credential}</h4>
-                                                            <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>{value.taxonomies[0].desc}</span><br />
-                                                                <span style={{ fontSize: '10px !important' }}>ADDRESS</span><br />
-                                                                {value.addresses[0].address_1} - <span className="view-on-map" onClick={this.goToMap}>View on map</span></p>
+                                                    <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                                                        <Row type="flex">
+                                                            <Row style={{width:'100%'}} type="flex">
+                                                                <h4>{value.basic.name}, {value.basic.credential}</h4>
+                                                            </Row>
+                                                            <Row style={{width:'100%'}} type="flex">
+                                                                <h5 style={{ color: "#0F6AB6",fontSize: '12px' }}>{value.taxonomies[0].desc}</h5>
+                                                            </Row>
+                                                            <Row style={{width:'100%'}} type="flex">
+                                                                <h5 style={{ fontSize: '10px !important' }}>ADDRESS</h5>
+                                                            </Row>
+                                                            <Row style={{width:'100%'}} type="flex">
+                                                                <h5>{value.addresses[0].address_1} -
+                                                                <span className="view-on-map" onClick={this.goToMap}> View on map</span></h5> 
+                                                            </Row>
                                                             <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>
-                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
 
-                                                    <Col lg={6}  md={6} sm={6} xs={24}>  
+                                                    <Col xl={6} lg={6} md={6} sm={6} xs={24}>  
                                                         <Row className="profile-list-call-container">
-                                                            <Row>
+                                                            <Row type="flex" justify="center">
                                                                 <p className="profile-list-call profile-list-call-text">CALL</p>
+                                                            </Row>
+                                                            <Row type="flex" justify="center">
                                                                 <h3 className="profile-list-call profile-list-call-no">{value.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{value.number.toString().substring(7)}</h3>
                                                             </Row>
                                                         </Row>
