@@ -331,17 +331,16 @@ class SearchResult extends Component {
                                         resultToRender.map((value, index) => {
                                             return (
                                                 <Row key={index} className="profile-list">
-                                                    {/* <Row type="flex" justify="center"> */}
-                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
-                                                        <Col lg={6} md={6} sm={6} xs={12}>  
-                                                            <Row className="profile-img-container">
-                                                                <img src={dr_image} alt="dr_image" className="profile-img" />
-                                                            </Row>
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    <Col lg={6} md={6} sm={6} xs={12}>  
+                                                        <Row className="profile-img-container">
+                                                            <img src={dr_image} alt="dr_image" className="profile-img" />
+                                                        </Row>
                                                         </Col>
-                                                        <Col lg={0} md={0} sm={0} xs={6}></Col>
-                                                    {/* </Row> */}
-                                                    
-                                                    <Col lg={12} md={12} sm={12} xs={24}  >
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+                                                    <Col lg={12} md={12} sm={12} xs={12}>
                                                         <Row>
                                                             <h4>{value.basic.name}, {value.basic.credential}</h4>
                                                             <p style={{ fontSize: '12px' }}><span style={{ color: "#0F6AB6" }}>{value.taxonomies[0].desc}</span><br />
@@ -350,6 +349,8 @@ class SearchResult extends Component {
                                                             <Button className="view-profile" onClick={() => this.goToProfile(value)}>VIEW PROFILE</Button>
                                                         </Row>
                                                     </Col>
+                                                    <Col lg={0} md={0} sm={0} xs={6}></Col>
+
                                                     <Col lg={6}  md={6} sm={6} xs={24}>  
                                                         <Row className="profile-list-call-container">
                                                             <Row>
