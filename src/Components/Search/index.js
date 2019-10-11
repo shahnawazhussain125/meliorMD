@@ -17,7 +17,30 @@ class Search extends Component {
     this.state = {
       cityName: "",
       providerCategory: "Anesthesiology",
+      general_dentist: "",
+      endodontist: "",
+      oral_and_maxillofacial_surgeon: "",
+      orthodontist: "",
+      pediatric_dentist: "",
+      periodontist: "",
+      prosthodontics: "",
+      searchResult: [],
+      filterData: [],
+      male: "",
+      fmale: "",
+      gender: false,
+      taxonomy: false
     }
+  }
+
+  componentDidMount() {
+    if (this.props.searchResult.results) {
+      this.setState({ searchResult: this.props.searchResult.results })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ searchResult: nextProps.searchResult.results })
   }
 
   handleChange = name => (event) => {
@@ -28,23 +51,140 @@ class Search extends Component {
     this.setState({ [name]: value });
   }
 
-  handleSearch = () =>{
-    const { cityName, providerCategory} = this.state;
-    if( cityName === "" && cityName === " " )
-    {
-        alert("Enter any city");
+  handleTaxonomyChange = (event) => {
+
+    let name = event.target.name;
+    let value = event.target.value;
+
+    const { 
+      general_dentist,
+      endodontist,
+      oral_and_maxillofacial_surgeon,
+      orthodontist,
+      pediatric_dentist,
+      periodontist,
+      prosthodontics,
+      taxonomy
+    } = this.state;
+    let taxonomies = { 
+      general_dentist,
+      endodontist,
+      oral_and_maxillofacial_surgeon,
+      orthodontist,
+      pediatric_dentist,
+      periodontist,
+      prosthodontics,
+      taxonomy
+    };
+
+    if (event.target.checked) {
+      this.setState({
+        [name]: value, taxonomy: true
+      }, () => {
+        this.filterDentist();
+      });
     }
-    else
-    {
+    else {
+      taxonomies[name] = "";
+      if (
+        (taxonomies.general_dentist !== "") === 
+        (taxonomies.endodontist !== "") === 
+        (taxonomies.oral_and_maxillofacial_surgeon !== "") === 
+        (taxonomies.orthodontist !== "") === 
+        (taxonomies.pediatric_dentist !== "")  === 
+        (taxonomies.periodontist !== "")  === 
+        (taxonomies.prosthodontics !== "")
+        ) {
+        this.setState({
+          [name]: "", taxonomy: false
+        }, () => {
+          this.filterDentist();
+        });
+      }
+      else {
+        this.setState({
+          [name]: "", taxonomy: true
+        }, () => {
+          this.filterDentist();
+        });
+        this.setState({})
+      }
+    }
+  }
+
+  handleGenderChange = (event) => {
+
+    let name = event.target.name;
+    let value = event.target.value;
+
+    const { male, female } = this.state;
+    let genders = { male, female };
+
+    if (event.target.checked) {
+      this.setState({
+        [name]: value, gender: true
+      }, () => {
+        this.filterDentist();
+      });
+    }
+    else {
+      genders[name] = "";
+      if ((genders.male !== "") === (genders.female !== "")) {
+        this.setState({
+          [name]: "", gender: false
+        }, () => {
+          this.filterDentist();
+        });
+      }
+      else {
+        this.setState({
+          [name]: "", gender: true
+        }, () => {
+          this.filterDentist();
+        });
+        this.setState({})
+      }
+    }
+  }
+
+  handleSearch = () => {
+    const { cityName, providerCategory } = this.state;
+    if (cityName === "" && cityName === " ") {
+      alert("Enter any city");
+    }
+    else {
       this.props.searchByProviderCategoryAndCity(cityName, providerCategory);
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  filterDentist = () => {
+    const {
+      general_dentist,
+      endodontist,
+      oral_and_maxillofacial_surgeon,
+      orthodontist,
+      pediatric_dentist,
+      periodontist,
+      prosthodontics,
+      searchResult, male, female, gender, taxonomy } = this.state;
 
-  }
-
-  handleCheck = (event) =>{
+    let filterData = searchResult.filter((element) => {
+      return (
+        (
+          taxonomy ===
+          (element.taxonomies[0].desc === general_dentist ||
+          element.taxonomies[0].desc === endodontist ||
+          element.taxonomies[0].desc === oral_and_maxillofacial_surgeon ||
+          element.taxonomies[0].desc === orthodontist ||
+          element.taxonomies[0].desc === pediatric_dentist ||
+          element.taxonomies[0].desc === periodontist ||
+          element.taxonomies[0].desc === prosthodontics)
+        )
+        && (gender === (element.basic.gender === male || element.basic.gender === female))
+      )
+    })
+    console.log({ filterData });
+    this.setState({ filterData });
   }
 
 
@@ -120,16 +260,16 @@ class Search extends Component {
                                   <Row type="flex">
                                     <Col span={12} xs={23}>
                                       <div className="check-box-container">
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="General Dentist" >
-                                          <span className="check-box-text" >General Dentist</span>
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="general_dentist" value="Dentist General Practice"  >
+                                          <span className="check-box-text">General Dentist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Endodontist">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="endodontist" value="Endodontist">
                                           <span className="check-box-text">Endodontist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Oral and Maxillofacial Surgeon">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="oral_and_maxillofacial_surgeon" value="Dentist Oral and Maxillofacial Surgery">
                                           <span className="check-box-text">Oral and Maxillofacial Surgeon</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Orthodontist">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="orthodontist" value="Orthodontist">
                                           <span className="check-box-text">Orthodontist</span>
                                         </Checkbox><br />
                                       </div>
@@ -137,13 +277,13 @@ class Search extends Component {
 
                                     <Col span={12} xs={23}>
                                       <div className="check-box-container2">
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Pediatric Dentist">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="pediatric_dentist" value="Pediatric Dentist">
                                           <span className="check-box-text">Pediatric Dentist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Periodontist">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="periodontist" value="Periodontist">
                                           <span className="check-box-text">Periodontist</span>
                                         </Checkbox><br />
-                                        <Checkbox className="check-box" onChange={this.handleCheck} value="Prosthodontics">
+                                        <Checkbox className="check-box" onChange={this.handleTaxonomyChange} name="prosthodontics" value="Dentist Prosthodontics">
                                           <span className="check-box-text">Prosthodontics </span>
                                         </Checkbox>
                                       </div>
@@ -201,10 +341,20 @@ class Search extends Component {
                                     <Col span={24}>
                                       <h6 style={{ color: '#AEB1B1' }}>GENDER OF HEALTHCARE PROVIDER</h6>
                                       <div style={{ padding: '10px' }}>
-                                        <Checkbox style={{ marginBottom: '10px' }}>
+                                        <Checkbox
+                                          style={{ marginBottom: '10px' }}
+                                          name="female"
+                                          value="F"
+                                          onChange={this.handleGenderChange}
+                                        >
                                           <span className="check-box-text">Female </span>
                                         </Checkbox><br />
-                                        <Checkbox style={{ marginBottom: '10px' }}>
+                                        <Checkbox
+                                          style={{ marginBottom: '10px' }}
+                                          name="male"
+                                          value="M"
+                                          onChange={this.handleGenderChange}
+                                        >
                                           <span className="check-box-text">Male </span>
                                         </Checkbox>
                                       </div>
@@ -215,7 +365,7 @@ class Search extends Component {
                                     <Col span={24}>
                                       <div>
                                         <Button className="button-style2">
-                                          SHOW HEALTHCARE PROVIDERS (212 RESULTS)
+                                          SHOW HEALTHCARE PROVIDERS ({this.state.filterData.length} RESULTS)
                                       </Button>
                                       </div>
                                     </Col>
@@ -247,7 +397,6 @@ class Search extends Component {
                     <Col span={1}></Col>
                   </Row>
                 }
-
               </span>
             </div>
           </Col>

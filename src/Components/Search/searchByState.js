@@ -14,7 +14,7 @@ class SearchByState extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.searchResult.result_count) {
             console.log("history", this.props)
-            this.props.history.push('search_result');
+            // this.props.history.push('search_result');
         }
     }
     render() {
