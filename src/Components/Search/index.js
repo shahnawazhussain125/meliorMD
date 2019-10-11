@@ -28,6 +28,9 @@ class Search extends Component {
       filterData: [],
       male: "",
       fmale: "",
+      zipCode: "",
+      stateName: "",
+      practiceName: "",
       gender: false,
       taxonomy: false
     }
@@ -112,6 +115,14 @@ class Search extends Component {
     }
   }
 
+  handleInputTextChange = name => event =>{
+      this.setState({ 
+        [name]: event.target.value 
+      }, ()=>{
+        this.filterDentist();
+      })
+  }
+
   handleGenderChange = (event) => {
 
     let name = event.target.name;
@@ -166,7 +177,7 @@ class Search extends Component {
       pediatric_dentist,
       periodontist,
       prosthodontics,
-      searchResult, male, female, gender, taxonomy } = this.state;
+      searchResult, male, female, gender, taxonomy, zipCode, stateName, practiceName } = this.state;
 
     let filterData = searchResult.filter((element) => {
       return (
@@ -180,7 +191,16 @@ class Search extends Component {
           element.taxonomies[0].desc === periodontist ||
           element.taxonomies[0].desc === prosthodontics)
         )
-        && (gender === (element.basic.gender === male || element.basic.gender === female))
+        &&
+        element.basic.name.toLowerCase().indexOf(practiceName.toLowerCase()) !== -1
+        &&
+        element.addresses[0].state.toLowerCase().indexOf(stateName.toLowerCase()) !== -1
+        &&
+        element.addresses[0].city.toLowerCase().indexOf(stateName.toLowerCase()) !== -1
+        &&
+        element.addresses[0].postal_code.toLowerCase().indexOf(zipCode.toLowerCase()) !== -1
+        && 
+        (gender === (element.basic.gender === male || element.basic.gender === female))
       )
     })
     console.log({ filterData });
@@ -214,14 +234,14 @@ class Search extends Component {
                         >
                           <Option value="Anesthesiology">Anesthesiology</Option>
                           <Option value="Dentist">Dentist</Option>
+                          <Option value="Nurse Practitioner Family">Nurse Practitioner Family</Option>
+                          <Option value="Surgery">Orthopaedic Surgery</Option>
+                          <Option value="Physical Therapist Orthopedic">Physical Therapist Orthopedic</Option>
+                          <Option value="Physician">Physician</Option>
+                          <Option value="Physician Assistant">Physician Assistant</Option>
                           <Option value="Radiology">Radiology</Option>
                           <Option value="Rheumatology">Rheumatology</Option>
-                          <Option value="Surgery">Orthopaedic Surgery</Option>
-                          <Option value="Physician">Physician</Option>
-                          <Option value="Nurse Practitioner Family">Nurse Practitioner Family</Option>
-                          <Option value="Physical Therapist Orthopedic">Physical Therapist Orthopedic</Option>
                           <Option value="Social Worker Clinical">Social Worker Clinical</Option>
-                          <Option value="Physician Assistant">Physician Assistant</Option>
                         </Select>
                       </div>
                     </Row>
@@ -296,6 +316,7 @@ class Search extends Component {
                                         <label><h5 style={{ color: '#AEB1B1' }}>HOSPITAL/PRACTICE NAME</h5></label>
                                         <Input
                                           placeholder="Search by business name"
+                                          onChange={this.handleInputTextChange("practiceName")}
                                         />
                                         <br />
                                         <br />
@@ -303,7 +324,7 @@ class Search extends Component {
                                         <Col span={11}>
                                           <div>
                                             <label><h5 style={{ color: '#AEB1B1' }}>CITY OR STATE</h5></label>
-                                            <Input placeholder="e.g California" />
+                                            <Input placeholder="e.g California" onChange={this.handleInputTextChange("stateName")} />
                                           </div>
                                         </Col>
 
@@ -313,7 +334,7 @@ class Search extends Component {
                                         <Col span={11}>
                                           <div>
                                             <label><h5 style={{ color: '#AEB1B1' }}>ZIP CODE</h5></label>
-                                            <Input placeholder="e.g California" />
+                                            <Input placeholder="e.g California" onChange={this.handleInputTextChange("zipCode")} />
                                           </div>
                                         </Col>
                                       </div>
