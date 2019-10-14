@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Drawer, Col, Row, Button, Icon } from 'antd';
 import './index.css';
 
-class CustomDrawer extends Component 
-{
+class CustomDrawer extends Component {
   state = { visible: false };
 
   showDrawer = () => {
@@ -25,25 +24,28 @@ class CustomDrawer extends Component
           <Icon type="menu" />
         </Button>
         <Drawer
-            title="Menu"
-            placement="right"
-            closable={false}
-            onClose={this.onClose}
-            visible={this.state.visible}
+          title="Menu"
+          placement="left"
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}
         >
-          <Row type="flex" justufy="left"  className="drawer">
+          <Row type="flex" justufy="left" className="drawer">
             <Col span={24}>
-              <Row  className="sidebar-tabs">
-                <p className="links">ABOUT</p>
+              <Row className="sidebar-tabs">
+                <p className="links">About</p>
               </Row>
-              <Row  className="sidebar-tabs">
-                <p className="links">DIRECTORY</p>
+              <Row className="sidebar-tabs">
+                <p className="links">Directory</p>
               </Row>
-              <Row  className="sidebar-tabs">
-                <p className="links">CONTACT US</p>
+              <Row className="sidebar-tabs">
+                <p className="links">Contact Us</p>
               </Row>
-              <Row  className="sidebar-tabs">
-                <p className="links">ADD A PROVIDER LIST</p>
+              <Row className="sidebar-tabs">
+                <p className="links">Add Prvider List</p>
+              </Row>
+              <Row className="sidebar-tabs">
+                <p className="links">Prvider Login</p>
               </Row>
             </Col>
           </Row>

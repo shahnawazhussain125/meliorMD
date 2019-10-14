@@ -8,14 +8,19 @@
   margin-top: 30px;
   width: 100%;
   background-color: #5D89C7;
-  border-radius: 30px;
+  border-radius: 15px;
   opacity: 0.9;
+}
+
+.filter-container {
+  background-color: white;
+  padding: 10px;
 }
 
 .card-container>.ant-tabs-card>.ant-tabs-content {
   height: auto;
   margin-top: -16px;
-  border: 2px gray;
+  border: 2px rgb(179, 179, 179);
 }
 
 .card-container>.ant-tabs-card>.ant-tabs-content>.ant-tabs-tabpane {
@@ -25,7 +30,7 @@
 }
 
 .card-container>.ant-tabs-card>.ant-tabs-bar {
-  border-color: gray;
+  border-color: #e8e8e8 !important;
 }
 
 .card-container>.ant-tabs-card>.ant-tabs-bar .ant-tabs-tab {
@@ -34,7 +39,7 @@
 }
 
 .card-container>.ant-tabs-card>.ant-tabs-bar .ant-tabs-tab-active {
-  border-color: gray;
+  border-color: #e8e8e8 !important;
   background: #fff;
 }
 
@@ -120,6 +125,34 @@
   font-size: 15px !important;
   padding: 8px 0px !important;
 }
+
+
+/* /////////////// Find in the list ///////////////////////// */
+
+.find-a-listing {
+  background-color: white;
+  padding: 20px 10px 10px;
+}
+
+.find-a-listing > h3 {
+  color: #1890ff;
+}
+
+/* ////////////// Staerch by State //////////// */
+
+.search-by-state {
+  background-color: white;
+  border: 0.5px solid #e8e8e8 ;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.search-by-state-title {
+  color: #1890ff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 
 @media screen and (max-width: 480px) {
   .mobile-responsive-search {
