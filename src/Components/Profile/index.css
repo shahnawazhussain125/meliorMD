@@ -53,8 +53,16 @@
     padding: 10px;
 }
 
-.font{
+.font1, .font2, .font3 {
     color: #696A6A;
+}
+
+.font1 {
+    background-color: #EBECEB;
+}
+
+.profile-rate {
+    font-size: 15px;
 }
 
 .contact-num{

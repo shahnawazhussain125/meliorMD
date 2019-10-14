@@ -150,15 +150,30 @@ class Profle extends Component {
                                                             <Col span={10}>
                                                                 <img src={profileImg} width="100%" alt="profleImg" />
                                                             </Col>
-                                                            <Col span={14}>
-                                                                <span><h6 className="font">{data.taxonomies[0].desc}</h6></span>
-                                                                <span className="font">{data.basic.name}, {data.basic.credential}</span>
-                                                                <span><Rate disabled defaultValue={3} /><span> 4.9 out of 5</span></span>
-                                                                <span><h5 className="font">ADDRESS<br />{data.addresses[0].address_1} - <span>view map</span></h5></span>
-                                                                <span>
-                                                                    <span className="span-call">CALL</span><br />
-                                                                    <span className="contact-num">{data.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{data.number.toString().substring(7)}</span>
-                                                                </span><br /><br />
+                                                            <Col style={{paddingLeft:'7px'}} span={14}>
+                                                                <Row>
+                                                                    <span><h5 className="font1">{data.taxonomies[0].desc}</h5></span>
+                                                                </Row>
+                                                                <Row>
+                                                                    <span className="font2">{data.basic.name}, {data.basic.credential}</span>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Col span={24}>
+                                                                        <span><Rate className="profile-rate" disabled defaultValue={3}/></span>
+                                                                    </Col>
+                                                                    <Col span={24}>
+                                                                        <span> 4.9 out of 5</span>
+                                                                    </Col>
+                                                                <Row>
+                                                                    <span><h5 className="font3">ADDRESS<br />{data.addresses[0].address_1} - <span>view map</span></h5></span>
+                                                                </Row>
+                                                                <Row>
+                                                                    <span>
+                                                                        <span className="span-call">CALL</span><br />
+                                                                        <span className="contact-num">{data.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{data.number.toString().substring(7)}</span>
+                                                                    </span>
+                                                                </Row>
+                                                            </Row>
                                                             </Col>
                                                         </Row>
                                                         <div className="div-text">
