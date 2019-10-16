@@ -44,6 +44,13 @@ class Search extends Component {
     this.setState({ hide: !this.state.hide });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.searchResult.result_count && this.state.hide) {
+      this.props.history.push('search_result');
+    }
+  }
+
+
 
   render() {
     const { cityName, providerCategory, hide } = this.state;
@@ -119,7 +126,7 @@ class Search extends Component {
               <Row className="card-container filter-container" >
                 <Tabs type="card">
                   <TabPane tab="Dentistry" key="1">
-                    <DentistryFilter hide={hide} history={this.props.history}/>
+                    <DentistryFilter hide={hide} history={this.props.history} />
                   </TabPane>
 
                   <TabPane tab="Physicians" key="2">

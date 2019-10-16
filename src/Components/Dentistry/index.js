@@ -25,18 +25,28 @@ class Dentistry extends Component {
             stateName: "",
             practiceName: "",
             gender: false,
-            taxonomy: false
+            taxonomy: false,
+            isShow: false
         }
     }
 
     componentDidMount() {
-        if (this.props.searchResult.results) {
+        if (this.props.searchResult.results ) {
             this.setState({ searchResult: this.props.searchResult.results })
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({ searchResult: nextProps.searchResult.results })
+        if( !this.state.isShow )
+        {
+            this.setState({ 
+                searchResult: nextProps.searchResult.results,
+                filterData: nextProps.searchResult.results
+            })
+        }
+        else {
+            this.props.history.push("/search_result");
+        }
     }
 
     handleChange = name => (event) => {
@@ -189,13 +199,15 @@ class Dentistry extends Component {
         this.setState({ filterData });
     }
 
-    goToSearchResultPage = () =>{
-        this.props.history.push("/search_result");
-    }
-
     showHealthProvider = () =>{
-        this.props.updateFilterResult(this.state.filterData);
-        this.goToSearchResultPage();
+        const { filterData } = this.state;
+        this.setState({isShow: true}, () =>{
+            this.props.updateFilterResult({
+                results: filterData,
+                result_count: filterData.length
+            });
+
+        })
     }
 
     render() {

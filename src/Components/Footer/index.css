@@ -56,8 +56,7 @@
 }
 
 .icon-social {
-    /* color: rgba(0, 0, 0, .25); */
-    color: #2c61ad;
+    color: rgba(0, 0, 0, .25);
     padding-top: 15px;
     font-size: 20px;
 }
