@@ -137,7 +137,7 @@ class SearchResult extends Component {
     render() {
         const { hide, hideAdvSearch, resultToRender, filterResults } = this.state;
         return (
-            <div className="provoder-list-body">
+            <div className="search-result-body">
                 <Row>
                     <Col>
                         <Breadcrumb className="bread-crumb">

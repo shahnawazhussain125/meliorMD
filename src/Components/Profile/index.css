@@ -1,7 +1,6 @@
 
-.provoder-list-body {
+.profile-body {
     background-color: white !important;
-    background-image: none;
 }
 
 .bread-crumb {
@@ -9,30 +8,6 @@
     padding: 5px; 
     padding-left: 15px;
     border-bottom: 1px solid #E0E1E2;
-}
-
-.search-content {
-    padding: 2%;
-    background-color: #F1F4F6;
-    border-right: 1px solid #E0E1E2;
-}
-
-.search-input {
-    width: 100%;
-}
-
-.input-ul {
-    list-style: none;
-    padding: 0%;
-}
-
-.input-checkbox {
-    font-size: 10px;
-}
-
-.input-label {
-    font-size: 9px;
-    font-weight: bold;
 }
 
 .h5-style{

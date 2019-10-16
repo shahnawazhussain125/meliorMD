@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
+import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, TimePicker, Tooltip, DatePicker } from 'antd';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import profileImg from '../../assets/images/dr_img1.webp';
@@ -27,7 +27,7 @@ class Profle extends Component {
     render() {
         const { data } = this.state;
         return (
-            <div className="provoder-list-body">
+            <div className="profile-body">
                 <Row>
                     <Col>
                         <Breadcrumb className="bread-crumb">
