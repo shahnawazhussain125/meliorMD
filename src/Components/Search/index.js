@@ -10,43 +10,17 @@ import './index.css';
 
 const { TabPane } = Tabs;
 const { Option } = Select;
-const { Panel } = Collapse;
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
       hide: true,
-      male: "",
-      fmale: "",
-      zipCode: "",
       cityName: "",
-      stateName: "",
-      gender: false,
-      filterData: [],
-      taxonomy: false,
-      endodontist: "",
-      practiceName: "",
-      periodontist: "",
-      searchResult: [],
-      orthodontist: "",
-      prosthodontics: "",
-      general_dentist: "",
-      pediatric_dentist: "",
       providerCategory: "Anesthesiology",
-      oral_and_maxillofacial_surgeon: "",
     }
   }
 
-  componentDidMount() {
-    if (this.props.searchResult.results) {
-      this.setState({ searchResult: this.props.searchResult.results })
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ searchResult: nextProps.searchResult.results })
-  }
 
   handleChange = name => (event) => {
     this.setState({ [name]: event.target.value });
@@ -54,110 +28,6 @@ class Search extends Component {
 
   handleSelect = name => value => {
     this.setState({ [name]: value });
-  }
-
-  handleTaxonomyChange = (event) => {
-
-    let name = event.target.name;
-    let value = event.target.value;
-
-    const {
-      general_dentist,
-      endodontist,
-      oral_and_maxillofacial_surgeon,
-      orthodontist,
-      pediatric_dentist,
-      periodontist,
-      prosthodontics,
-      taxonomy
-    } = this.state;
-    let taxonomies = {
-      general_dentist,
-      endodontist,
-      oral_and_maxillofacial_surgeon,
-      orthodontist,
-      pediatric_dentist,
-      periodontist,
-      prosthodontics,
-      taxonomy
-    };
-
-    if (event.target.checked) {
-      this.setState({
-        [name]: value, taxonomy: true
-      }, () => {
-        this.filterDentist();
-      });
-    }
-    else {
-      taxonomies[name] = "";
-      if (
-        (taxonomies.general_dentist !== "") ===
-        (taxonomies.endodontist !== "") ===
-        (taxonomies.oral_and_maxillofacial_surgeon !== "") ===
-        (taxonomies.orthodontist !== "") ===
-        (taxonomies.pediatric_dentist !== "") ===
-        (taxonomies.periodontist !== "") ===
-        (taxonomies.prosthodontics !== "")
-      ) {
-        this.setState({
-          [name]: "", taxonomy: false
-        }, () => {
-          this.filterDentist();
-        });
-      }
-      else {
-        this.setState({
-          [name]: "", taxonomy: true
-        }, () => {
-          this.filterDentist();
-        });
-        this.setState({})
-      }
-    }
-  }
-
-  handleInputTextChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    }, () => {
-      this.filterDentist();
-    })
-  }
-
-  handleGenderChange = (event) => {
-
-    let name = event.target.name;
-    let value = event.target.value;
-
-    const { male, female } = this.state;
-    let genders = { male, female };
-
-    if (event.target.checked) {
-      this.setState({
-        [name]: value, gender: true
-      }, () => {
-        this.filterDentist();
-      });
-    }
-    else {
-      genders[name] = "";
-      if ((genders.male !== "") === (genders.female !== "")) {
-        this.setState({
-          [name]: "", gender: false
-        }, () => {
-          this.filterDentist();
-        });
-      }
-      else {
-        this.setState({
-          [name]: "", gender: true
-        }, () => {
-          this.filterDentist();
-        });
-        this.setState({})
-      }
-    }
   }
 
   handleSearch = () => {
@@ -168,45 +38,6 @@ class Search extends Component {
     else {
       this.props.searchByProviderCategoryAndCity(cityName, providerCategory);
     }
-  }
-
-  filterDentist = () => {
-    const {
-      general_dentist,
-      endodontist,
-      oral_and_maxillofacial_surgeon,
-      orthodontist,
-      pediatric_dentist,
-      periodontist,
-      prosthodontics,
-      searchResult, male, female, gender, taxonomy, zipCode, stateName, practiceName } = this.state;
-
-    let filterData = searchResult.filter((element) => {
-      return (
-        (
-          taxonomy ===
-          (element.taxonomies[0].desc === general_dentist ||
-            element.taxonomies[0].desc === endodontist ||
-            element.taxonomies[0].desc === oral_and_maxillofacial_surgeon ||
-            element.taxonomies[0].desc === orthodontist ||
-            element.taxonomies[0].desc === pediatric_dentist ||
-            element.taxonomies[0].desc === periodontist ||
-            element.taxonomies[0].desc === prosthodontics)
-        )
-        &&
-        element.basic.name.toLowerCase().indexOf(practiceName.toLowerCase()) !== -1
-        &&
-        element.addresses[0].state.toLowerCase().indexOf(stateName.toLowerCase()) !== -1
-        &&
-        element.addresses[0].city.toLowerCase().indexOf(stateName.toLowerCase()) !== -1
-        &&
-        element.addresses[0].postal_code.toLowerCase().indexOf(zipCode.toLowerCase()) !== -1
-        &&
-        (gender === (element.basic.gender === male || element.basic.gender === female))
-      )
-    })
-    console.log({ filterData });
-    this.setState({ filterData });
   }
 
   handleHide = () => {
