@@ -2,6 +2,7 @@
 .header-div {
     width: 100%;
     background-color: #2c61ad;
+    height: 57px;
 }
 .header-bar
 {
@@ -21,7 +22,7 @@
 }
 .header-logo
 {
-    margin-top: 0px;
+    margin-top: 5px;
     margin-left: 5px;
 }
 .navbar 

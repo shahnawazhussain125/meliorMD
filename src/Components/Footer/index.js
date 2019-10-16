@@ -16,7 +16,7 @@ class Footer extends Component {
                 <Row className="footer">
                     <Col lg={8} md={5} sm={5} xs={5}></Col>
                     <Col span={14}>
-                        <Col lg={11} md={24} sm={24} xs={24} className="footer-logo-container">
+                        <Col lg={10} md={24} sm={24} xs={24} className="footer-logo-container">
                             <Row className="footer-logo">
                                 <img className="melior-logo" src={logo} alt="logo" />
                             </Row>
@@ -27,6 +27,7 @@ class Footer extends Component {
                                 </p>
                             </Row>
                         </Col>
+                        <Col lg={1} md={0} sm={0} xs={0}></Col>
                         <Col lg={5} md={8} sm={24} xs={24} className="border-black">
                             <Row className="links-title">
                                 <h4>FEATURES</h4>
