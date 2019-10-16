@@ -13,6 +13,15 @@
   opacity: 0.9;
 }
 
+.div-container-hide {
+  margin-top: 130px;
+  margin-bottom: 200px;
+  width: 100%;
+  background-color: #5D89C7;
+  border-radius: 15px;
+  opacity: 0.9;
+}
+
 .filter-container {
   background-color: white;
   padding: 10px;

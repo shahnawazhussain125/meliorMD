@@ -58,7 +58,7 @@ class Search extends Component {
       <div className="provoder-list-body">
         <Row className="row-container">
           <Col lg={12} md={15} sm={20} xs={23}>
-            <Row className="div-container">
+            <Row className= {hide ? "div-container-hide" : "div-container"} >
               <span style={{ padding: '15px' }}>
                 <h1 className="text-style1">Find your best Physicians</h1>
                 <h2 className="text-style2">meliorMD will help you in that important decision</h2>
