@@ -29,6 +29,12 @@ const searchReducer = (state = initialState, action) => {
                 data: [],
                 searchByCityError: action.error
             })
+        case "Update_Filter-Result":
+            return ({
+                ...state,
+                data: action.data,
+                error: null
+            })
         default:
             return state;
     }

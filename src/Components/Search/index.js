@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Tabs, Collapse, Select } from 'antd';
+import { Row, Col, Input, Button, Icon, Tabs, Select } from 'antd';
 import State from './searchByState';
 import DentistryFilter from '../Dentistry';
 import { searchByProviderCategoryAndCity } from '../../Redux/Actions/searchActions';
@@ -119,7 +119,7 @@ class Search extends Component {
               <Row className="card-container filter-container" >
                 <Tabs type="card">
                   <TabPane tab="Dentistry" key="1">
-                    <DentistryFilter />
+                    <DentistryFilter hide={hide} history={this.props.history}/>
                   </TabPane>
 
                   <TabPane tab="Physicians" key="2">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Checkbox, Input, Button } from 'antd';
 import { connect } from 'react-redux';
+import { updateFilterResult } from '../../Redux/Actions/searchActions';
 import 'antd/dist/antd.css';
 
 class Dentistry extends Component {
@@ -102,7 +103,6 @@ class Dentistry extends Component {
                 }, () => {
                     this.filterDentist();
                 });
-                this.setState({})
             }
         }
     }
@@ -187,6 +187,15 @@ class Dentistry extends Component {
         })
         console.log({ filterData });
         this.setState({ filterData });
+    }
+
+    goToSearchResultPage = () =>{
+        this.props.history.push("/search_result");
+    }
+
+    showHealthProvider = () =>{
+        this.props.updateFilterResult(this.state.filterData);
+        this.goToSearchResultPage();
     }
 
     render() {
@@ -301,7 +310,7 @@ class Dentistry extends Component {
                 <Row type="flex" justify="center">
                     <Col span={24}>
                         <div>
-                            <Button className="button-style2">
+                            <Button className="button-style2" onClick={this.showHealthProvider}>
                                 SHOW HEALTHCARE PROVIDERS ({this.state.filterData.length} RESULTS)
                             </Button>
                         </div>
@@ -319,7 +328,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return ({})
+    return ({
+        updateFilterResult: (data) =>dispatch(updateFilterResult(data))
+    })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dentistry);
