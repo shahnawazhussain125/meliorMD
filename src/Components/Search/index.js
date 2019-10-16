@@ -16,24 +16,25 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      cityName: "",
-      providerCategory: "Anesthesiology",
-      general_dentist: "",
-      endodontist: "",
-      oral_and_maxillofacial_surgeon: "",
-      orthodontist: "",
-      pediatric_dentist: "",
-      periodontist: "",
-      prosthodontics: "",
-      searchResult: [],
-      filterData: [],
+      hide: true,
       male: "",
       fmale: "",
       zipCode: "",
+      cityName: "",
       stateName: "",
-      practiceName: "",
       gender: false,
-      taxonomy: false
+      filterData: [],
+      taxonomy: false,
+      endodontist: "",
+      practiceName: "",
+      periodontist: "",
+      searchResult: [],
+      orthodontist: "",
+      prosthodontics: "",
+      general_dentist: "",
+      pediatric_dentist: "",
+      providerCategory: "Anesthesiology",
+      oral_and_maxillofacial_surgeon: "",
     }
   }
 
@@ -208,14 +209,18 @@ class Search extends Component {
     this.setState({ filterData });
   }
 
+  handleHide = () => {
+    this.setState({ hide: !this.state.hide });
+  }
+
 
   render() {
-    const { cityName, providerCategory } = this.state;
+    const { cityName, providerCategory, hide } = this.state;
     return (
       <div className="provoder-list-body">
         <Row className="row-container">
           <Col lg={12} md={15} sm={20} xs={23}>
-            <div className="div-container">
+            <Row className="div-container">
               <span style={{ padding: '15px' }}>
                 <h1 className="text-style1">Find your best Physicians</h1>
                 <h2 className="text-style2">meliorMD will help you in that important decision</h2>
@@ -223,7 +228,7 @@ class Search extends Component {
                   <Col md={10} sm={10} xs={23}>
                     <Row type="flex" justify="center">
                       <div className="div-input1">
-                        <label><h6 className="h6-style">SPECIALITY BY PROVIDER CATEGORY</h6></label>
+                        <label className="input-label">SPECIALITY BY PROVIDER CATEGORY</label>
                         <Select
                           showSearch
                           placeholder="Sort by"
@@ -250,7 +255,7 @@ class Search extends Component {
                   <Col md={8} sm={8} xs={23}>
                     <Row type="flex" justify="center">
                       <div className="div-input2">
-                        <label><h6 className="h6-style">LOCATION BY CITY</h6></label>
+                        <label className="input-label">LOCATION BY CITY</label>
                         <Input className="input2" placeholder="E.g San Francisc" value={cityName} onChange={this.handleChange("cityName")} />
                       </div>
                     </Row>
@@ -264,39 +269,47 @@ class Search extends Component {
                     </Row>
                   </Col>
                 </Row>
+                <Row>
+                  <Col>
+                    <label className="input-label show-btn" onClick={this.handleHide}>{hide ? "SHOW" : "HIDE"} ADVANCED SEARCH <Icon type={hide ? "caret-right" : "caret-down"} /></label >
+                  </Col>
+                </Row>
               </span>
-            </div>
-          </Col>
-        </Row>
-        <Row className="row-container">
-          <Col lg={12} md={15} sm={20} xs={23}>
-            <Row className="find-a-listing">
-                <h3>Find a listing</h3>             
-            </Row>
-            <Row className="card-container filter-container" >
-              <Tabs type="card">
-                <TabPane tab="Dentistry" key="1">
-                  <DentistryFilter />
-                </TabPane>
-
-                <TabPane tab="Physicians" key="2">
-                  <p>Content of Tab Pane 2</p>
-                  <p>Content of Tab Pane 2</p>
-                  <p>Content of Tab Pane 2</p>
-                </TabPane>
-
-                <TabPane tab="Other Healthcare Providers" key="3">
-                  <p>Content of Tab Pane 3</p>
-                  <p>Content of Tab Pane 3</p>
-                  <p>Content of Tab Pane 3</p>
-                </TabPane>
-              </Tabs>
-            </Row>
-            <Row>
-              <State history={this.props.history} />
             </Row>
           </Col>
         </Row>
+        {
+          !hide &&
+          <Row className="row-container">
+            <Col lg={12} md={15} sm={20} xs={23}>
+              <Row className="find-a-listing">
+                <h3>Find a listing</h3>
+              </Row>
+              <Row className="card-container filter-container" >
+                <Tabs type="card">
+                  <TabPane tab="Dentistry" key="1">
+                    <DentistryFilter />
+                  </TabPane>
+
+                  <TabPane tab="Physicians" key="2">
+                    <p>Content of Tab Pane 2</p>
+                    <p>Content of Tab Pane 2</p>
+                    <p>Content of Tab Pane 2</p>
+                  </TabPane>
+
+                  <TabPane tab="Other Healthcare Providers" key="3">
+                    <p>Content of Tab Pane 3</p>
+                    <p>Content of Tab Pane 3</p>
+                    <p>Content of Tab Pane 3</p>
+                  </TabPane>
+                </Tabs>
+              </Row>
+              <Row>
+                <State history={this.props.history} />
+              </Row>
+            </Col>
+          </Row>
+        }
 
       </div>
     )

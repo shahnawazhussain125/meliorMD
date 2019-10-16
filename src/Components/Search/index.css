@@ -62,9 +62,14 @@
   font-size: 20px;
 }
 
-.h6-style {
+.input-label {
   color: #ffffff;
   font-family: arial;
+}
+
+.show-btn {
+  cursor: pointer;
+  padding-left: 20px;
 }
 
 .button-style {
