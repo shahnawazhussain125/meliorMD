@@ -66,7 +66,7 @@ class Search extends Component {
                   <Col md={10} sm={10} xs={23}>
                     <Row type="flex" justify="center">
                       <div className="div-input1">
-                        <label className="input-label">SPECIALITY BY PROVIDER CATEGORY</label>
+                        <label className="search-input-label">SPECIALITY BY PROVIDER CATEGORY</label>
                         <Select
                           showSearch
                           placeholder="Sort by"
@@ -93,7 +93,7 @@ class Search extends Component {
                   <Col md={8} sm={8} xs={23}>
                     <Row type="flex" justify="center">
                       <div className="div-input2">
-                        <label className="input-label">LOCATION BY CITY</label>
+                        <label className="search-input-label">LOCATION BY CITY</label>
                         <Input className="input2" placeholder="E.g San Francisc" value={cityName} onChange={this.handleChange("cityName")} />
                       </div>
                     </Row>
@@ -109,7 +109,7 @@ class Search extends Component {
                 </Row>
                 <Row>
                   <Col>
-                    <label className="input-label show-btn" onClick={this.handleHide}>{hide ? "SHOW" : "HIDE"} ADVANCED SEARCH <Icon type={hide ? "caret-right" : "caret-down"} /></label >
+                    <label className="search-input-label show-btn" onClick={this.handleHide}>{hide ? "SHOW" : "HIDE"} ADVANCED SEARCH <Icon type={hide ? "caret-right" : "caret-down"} /></label >
                   </Col>
                 </Row>
               </span>
