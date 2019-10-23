@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Checkbox, Input, Button } from 'antd';
 import { connect } from 'react-redux';
+import { updateFilterResult } from '../../Redux/Actions/searchActions';
 import 'antd/dist/antd.css';
 
 class Dentistry extends Component {
@@ -24,18 +25,28 @@ class Dentistry extends Component {
             stateName: "",
             practiceName: "",
             gender: false,
-            taxonomy: false
+            taxonomy: false,
+            isShow: false
         }
     }
 
     componentDidMount() {
-        if (this.props.searchResult.results) {
+        if (this.props.searchResult.results ) {
             this.setState({ searchResult: this.props.searchResult.results })
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({ searchResult: nextProps.searchResult.results })
+        if( !this.state.isShow )
+        {
+            this.setState({ 
+                searchResult: nextProps.searchResult.results,
+                filterData: nextProps.searchResult.results
+            })
+        }
+        else {
+            this.props.history.push("/search_result");
+        }
     }
 
     handleChange = name => (event) => {
@@ -102,7 +113,6 @@ class Dentistry extends Component {
                 }, () => {
                     this.filterDentist();
                 });
-                this.setState({})
             }
         }
     }
@@ -187,6 +197,17 @@ class Dentistry extends Component {
         })
         console.log({ filterData });
         this.setState({ filterData });
+    }
+
+    showHealthProvider = () =>{
+        const { filterData } = this.state;
+        this.setState({isShow: true}, () =>{
+            this.props.updateFilterResult({
+                results: filterData,
+                result_count: filterData.length
+            });
+
+        })
     }
 
     render() {
@@ -301,7 +322,7 @@ class Dentistry extends Component {
                 <Row type="flex" justify="center">
                     <Col span={24}>
                         <div>
-                            <Button className="button-style2">
+                            <Button className="button-style2" onClick={this.showHealthProvider}>
                                 SHOW HEALTHCARE PROVIDERS ({this.state.filterData.length} RESULTS)
                             </Button>
                         </div>
@@ -319,7 +340,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return ({})
+    return ({
+        updateFilterResult: (data) =>dispatch(updateFilterResult(data))
+    })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dentistry);

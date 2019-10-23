@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Drawer, Col, Row, Button, Icon } from 'antd';
+import { Drawer, Col, Row, Icon } from 'antd';
 import './index.css';
 
 class CustomDrawer extends Component {
@@ -20,9 +20,9 @@ class CustomDrawer extends Component {
   render() {
     return (
       <div>
-        <Button className="drawer-button" onClick={this.showDrawer}>
-          <Icon type="menu" />
-        </Button>
+
+        <Icon type="menu"  className="drawer-button" onClick={this.showDrawer}/>
+    
         <Drawer
           title="Menu"
           placement="left"

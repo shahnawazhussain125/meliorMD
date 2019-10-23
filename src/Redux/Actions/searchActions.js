@@ -32,3 +32,9 @@ export const searchByProviderCategoryAndCity = (city, taxonomy_description) =>{
             })
         })
 }
+
+export const updateFilterResult = (data) =>{
+    return(dispatch =>{
+        dispatch({type: "Update_Filter-Result", data });
+    })
+}

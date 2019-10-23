@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, Select, TimePicker, Tooltip, DatePicker } from 'antd';
+import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, TimePicker, Tooltip, DatePicker } from 'antd';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import profileImg from '../../assets/images/dr_img1.webp';
 import 'antd/dist/antd.css';
 import './index.css';
 
-
-const InputGroup = Input.Group;
 const { TabPane } = Tabs;
-const { Option } = Select;
 const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 const format = 'HH:mm';
 
@@ -30,7 +27,7 @@ class Profle extends Component {
     render() {
         const { data } = this.state;
         return (
-            <div className="provoder-list-body">
+            <div className="profile-body">
                 <Row>
                     <Col>
                         <Breadcrumb className="bread-crumb">
@@ -41,100 +38,6 @@ class Profle extends Component {
                     </Col>
                 </Row>
                 <Row type="flex" justify="center">
-                    <Col lg={5} md={5} sm={5} xs={24} className="search-content">
-                        <div>
-                            <h1 className="filter">Filter Result</h1>
-                        </div>
-                        <div>
-                            <div>
-                                <label className="input-label">LOCATIONS BY CITY</label>
-                                <Input className="search-input" placeholder="E.g San Francisc" />
-                            </div><br />
-                        </div>
-                        <div>
-                            <div>
-                                <label className="input-label">ZIP COD</label>
-                                <Input className="search-input" placeholder="Zip cod" />
-                            </div><br />
-                        </div>
-                        <div>
-                            <div>
-                                <label className="input-label">PROVIDER CATEGOR</label>
-                                <Select
-                                    showSearch
-                                    className="search-input"
-                                    placeholder="Select a provider"
-                                    optionFilterProp="children"
-                                >
-                                    <Option value="jack">Jack</Option>
-                                    <Option value="lucy">Lucy</Option>
-                                    <Option value="tom">Tom</Option>
-                                </Select>
-                            </div><br />
-                        </div>
-                        <div>
-                            <div>
-                                <label className="input-label">SPECIALITY BY PROVIDER CATEGOR</label>
-                                <Select
-                                    showSearch
-                                    className="search-input"
-                                    placeholder="Select a person"
-                                    optionFilterProp="children"
-                                >
-                                    <Option value="jack" select>Obstercician/Gynecologis</Option>
-                                    <Option value="lucy">Lucy</Option>
-                                    <Option value="tom">Tom</Option>
-                                </Select>
-                            </div>
-                            <div><br />
-                                <div>
-                                    <label className="input-label">HEALTH INSURANCE</label>
-                                    <Select
-                                        showSearch
-                                        className="search-input"
-                                        placeholder="Select a provider"
-                                        optionFilterProp="children"
-                                    >
-                                        <Option value="jack">Jack</Option>
-                                        <Option value="lucy">Lucy</Option>
-                                        <Option value="tom">Tom</Option>
-                                    </Select>
-                                </div>
-                            </div><br /><br />
-                            <Row>
-                                <div>
-                                    <p>HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>
-                                </div>
-                            </Row>
-                            <Row>
-                                <div>
-                                    <p className="input-label">TYPE OF PATIENT SERVED</p>
-                                    <ul className="input-ul">
-                                        <li>
-                                            <Checkbox className="input-checkbox" value="Adults Only">Adults Only</Checkbox>
-                                        </li>
-                                        <li>
-                                            <Checkbox className="input-checkbox" value="Both Adults and Children">Both Adults and Children</Checkbox>
-                                        </li>
-                                        <li>
-                                            <Checkbox className="input-checkbox" value="Children & Adolescents Only">Children & Adolescents Only</Checkbox>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p className="input-label">GENDER OF HEALTHCARE PROVIDER</p>
-                                    <ul className="input-ul">
-                                        <li>
-                                            <Checkbox className="input-checkbox" value="Female">Female</Checkbox>
-                                        </li>
-                                        <li>
-                                            <Checkbox className="input-checkbox" value="Male">Male</Checkbox>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </Row>
-                        </div>
-                    </Col>
                     <Col className="col-profile" lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
@@ -150,7 +53,7 @@ class Profle extends Component {
                                                             <Col span={10}>
                                                                 <img src={profileImg} width="100%" alt="profleImg" />
                                                             </Col>
-                                                            <Col style={{paddingLeft:'7px'}} span={14}>
+                                                            <Col style={{ paddingLeft: '7px' }} span={14}>
                                                                 <Row>
                                                                     <span><h5 className="font1">{data.taxonomies[0].desc}</h5></span>
                                                                 </Row>
@@ -159,21 +62,21 @@ class Profle extends Component {
                                                                 </Row>
                                                                 <Row>
                                                                     <Col span={24}>
-                                                                        <span><Rate className="profile-rate" disabled defaultValue={3}/></span>
+                                                                        <span><Rate className="profile-rate" disabled defaultValue={3} /></span>
                                                                     </Col>
                                                                     <Col span={24}>
                                                                         <span> 4.9 out of 5</span>
                                                                     </Col>
-                                                                <Row>
-                                                                    <span><h5 className="font3">ADDRESS<br />{data.addresses[0].address_1} - <span>view map</span></h5></span>
+                                                                    <Row>
+                                                                        <span><h5 className="font3">ADDRESS<br />{data.addresses[0].address_1} - <span>view map</span></h5></span>
+                                                                    </Row>
+                                                                    <Row>
+                                                                        <span>
+                                                                            <span className="span-call">CALL</span><br />
+                                                                            <span className="contact-num">{data.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{data.number.toString().substring(7)}</span>
+                                                                        </span>
+                                                                    </Row>
                                                                 </Row>
-                                                                <Row>
-                                                                    <span>
-                                                                        <span className="span-call">CALL</span><br />
-                                                                        <span className="contact-num">{data.number.toString().substring(0, 7).match(/.{1,3}/g).join(".")}{data.number.toString().substring(7)}</span>
-                                                                    </span>
-                                                                </Row>
-                                                            </Row>
                                                             </Col>
                                                         </Row>
                                                         <div className="div-text">
@@ -217,12 +120,10 @@ class Profle extends Component {
                             </Col>
                         </Row>
                     </Col>
-
-
-                    <Col className="col-book" lg={5} md={7} sm={7} xs={24}>
+                    <Col className="col-book" lg={6} md={8} sm={8} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
-                                <div className="div-profile">
+                                <div className="book-visit-container">
                                     <div className="div-head">
                                         <h2 className="book-visit">BOOK A VISIT</h2>
                                         <h5 className="day-time">Monday to Friday 09.00am-06.00pm</h5>
@@ -274,7 +175,7 @@ class Profle extends Component {
                                     <div className="div-pad">
                                         <Row type="flex" justify="center">
                                             <Col span={24}>
-                                                <Button className="request-appoint">REQUEST<br />APPOINTMENT</Button>
+                                                <Button className="request-appoint">REQUEST APPOINTMENT</Button>
                                             </Col>
                                         </Row>
                                     </div>
@@ -283,26 +184,16 @@ class Profle extends Component {
                             </Col>
                         </Row>
                     </Col>
-
-                    <Col lg={2} md={0} sm={0} xs={0} style={{ backgroundColor: '#ffffff' }}>
-                        <Row type="flex" justify="center">
-
-                        </Row>
-                    </Col>
                 </Row>
 
                 {/* ================ Review Section Code ============== */}
 
-                <Row type="flex">
+                <Row type="flex" justify="center">
 
-                    <Col lg={5} md={5} sm={5} xs={0} style={{ backgroundColor: '#ffffff' }}>
-                        <Row type="flex" justify="center">
-                        </Row>
-                    </Col>
-
+                  
                     {/*========= Work Here for review ======== */}
 
-                    <Col className="col-profile" lg={12} md={12} sm={12} xs={24}>
+                    <Col className="col-profile col-review" lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify="center">
                             <Col span={22}>
                                 <div className="div-review">
@@ -408,17 +299,7 @@ class Profle extends Component {
                             </Col>
                         </Row>
                     </Col>
-
-                    {/*========= Review section ended here ========= */}
-
-                    <Col lg={5} md={7} sm={7} xs={0} style={{ backgroundColor: '#ffffff' }}>
-                        <Row type="flex" justify="center">
-                        </Row>
-                    </Col>
-
-                    <Col lg={2} md={0} sm={0} xs={0} style={{ backgroundColor: '#ffffff' }}>
-                        <Row type="flex" justify="center">
-                        </Row>
+                    <Col className="col-book" lg={6} md={8} sm={8} xs={24}>
                     </Col>
                 </Row>
             </div >

@@ -12,7 +12,9 @@ class Header extends Component {
             <div className="header-div">
                 <Row type="flex" className="header-bar">
                     <Col lg={0} md={0} sm={2} xs={4}>
-                        <DrawerTab/>
+                        <Row type="flex" justify="center" align="middle">
+                            <DrawerTab/>
+                        </Row>
                     </Col>
                     <Col lg={5} md={5} sm={14} xs={16}>
                         <Row type="flex" justify="center">

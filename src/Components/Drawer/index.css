@@ -11,9 +11,11 @@
 .drawer-button {
     border-radius: 50%;
     background-color: #2c61ad;
-    margin-top: 8px;
+    margin-top: 20px;
     margin-left: 3px;
     border: 0px;
     color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 

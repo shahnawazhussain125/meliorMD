@@ -6,15 +6,22 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 class SearchByState extends Component {
+    constructor(){
+        super();
+        this.state = {
+            isState: false,
+        }
+    }
 
     handleClick = (state_name) => {
-        this.props.searchByState(state_name);
+        this.setState({isState: true}, () =>{
+            this.props.searchByState(state_name);
+        })
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.searchResult.result_count) {
-            console.log("history", this.props)
-            // this.props.history.push('search_result');
+        if (nextProps.searchResult.result_count && this.state.isState) {
+            this.props.history.push('search_result');
         }
     }
     render() {
@@ -26,7 +33,7 @@ class SearchByState extends Component {
                     </Row>
                     <Row type="flex" justify="space-between">
                         <Col md={4} xs={8}>
-                            <div className="state-name">
+                            <Row className="state-name">
                                 <p onClick={() => this.handleClick("AL")}>Alabama</p>
                                 <p onClick={() => this.handleClick("AK")}>Alaska</p>
                                 <p onClick={() => this.handleClick("AZ")}>Arizona</p>
@@ -37,10 +44,10 @@ class SearchByState extends Component {
                                 <p onClick={() => this.handleClick("DE")}>Delaware</p>
                                 <p onClick={() => this.handleClick("FL")}>Florida</p>
                                 <p onClick={() => this.handleClick("GA")}>Georgia</p>
-                            </div>
+                            </Row>
                         </Col>
                         <Col md={4} xs={8}>
-                            <div className="state-name">
+                            <Row className="state-name">
                                 <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                 <p onClick={() => this.handleClick("IL")}>Illinois</p>
                                 <p onClick={() => this.handleClick("IN")}>Indiana</p>
@@ -51,10 +58,10 @@ class SearchByState extends Component {
                                 <p onClick={() => this.handleClick("ME")}>Maine</p>
                                 <p onClick={() => this.handleClick("MD")}>Maryland</p>
                                 <p onClick={() => this.handleClick("MA")}>Massachusetts</p>
-                            </div>
+                            </Row>
                         </Col>
                         <Col md={4} xs={8}>
-                            <div className="state-name" >
+                            <Row className="state-name" >
                                 <p onClick={() => this.handleClick("MN")}>Minnesota</p>
                                 <p onClick={() => this.handleClick("MS")}>Mississippi</p>
                                 <p onClick={() => this.handleClick("MO")}>Missouri</p>
@@ -65,10 +72,10 @@ class SearchByState extends Component {
                                 <p onClick={() => this.handleClick("NJ")}>New Jersey</p>
                                 <p onClick={() => this.handleClick("NM")}>New Mexico</p>
                                 <p onClick={() => this.handleClick("NY")}>New York</p>
-                            </div>
+                            </Row>
                         </Col>
                         <Col md={4} xs={8}>
-                            <div className="state-name">
+                            <Row className="state-name">
                                 <p onClick={() => this.handleClick("ND")}>North Dakota</p>
                                 <p onClick={() => this.handleClick("OH")}>Ohio</p>
                                 <p onClick={() => this.handleClick("OK")}>Oklahoma</p>
@@ -80,10 +87,10 @@ class SearchByState extends Component {
                                 <p onClick={() => this.handleClick("SD")}>South Dakota</p>
                                 <p onClick={() => this.handleClick("TN")}>Tennessee</p>
                                 <p onClick={() => this.handleClick("TX")}>Texas</p>
-                            </div>
+                            </Row>
                         </Col>
                         <Col md={4} xs={8}>
-                            <div className="state-name">
+                            <Row className="state-name">
                                 <p onClick={() => this.handleClick("UT")}>Utah</p>
                                 <p onClick={() => this.handleClick("VT")}>Vermont</p>
                                 <p onClick={() => this.handleClick("VA")}>Virginia</p>
@@ -95,12 +102,12 @@ class SearchByState extends Component {
                                 <p onClick={() => this.handleClick("ID")}>Idaho</p>
                                 <p onClick={() => this.handleClick("MI")}>Michigan</p>
                                 <p onClick={() => this.handleClick("NC")}>North Carolia</p>
-                            </div>
+                            </Row>
                         </Col>
                         <Col xs={8}>
-                            <div className="state-name">
+                            <Row className="state-name">
                                 <p></p>
-                            </div>
+                            </Row>
                         </Col>
                     </Row>    
                 </Col>
