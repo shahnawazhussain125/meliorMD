@@ -39,7 +39,7 @@ class Header extends Component {
                             />
                         </Row>
                         <Row type="flex">
-                            <h5>Password Strength: <span><i>Strong</i></span></h5>
+                            <h5>Password Strength : <span className="pass-strength"><i>Strong</i></span></h5>
                         </Row>
                         <Row type="flex">
                                 <Checkbox className="check-box">

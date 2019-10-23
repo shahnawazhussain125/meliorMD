@@ -19,6 +19,9 @@
 .input-password {
     margin-top: 25px;
 }
+.pass-strength {
+    color: #5694D9;
+}
 .check-box {
     margin-top: 25px;
 }
