@@ -1,0 +1,43 @@
+
+.login-box {
+    margin-top: 20%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #F8FBFF;
+    box-shadow: #F7F7F7 0px 0px 4px 4px;
+}
+/* .username-icon {
+    font-size: 20px;
+} */
+.input-name {
+    margin-top: 30px;
+}
+.input-email {
+    margin-top: 25px;
+}
+.input-password {
+    margin-top: 25px;
+}
+.check-box {
+    margin-top: 25px;
+}
+.forgot-pass-text {
+    margin-top: 27px;
+    color: rgba(180, 180, 180, 0.979);
+}
+.signup-button {
+    width: 40%;
+    background-color: #5694D9;
+    color: white;
+    font-weight: normal;
+}
+.new-to-melior-text {
+    margin-top: 8px;
+}
+.login-button {
+    border: 0px;
+    opacity: 1;
+    color: #5694D9;
+    background-color: white;
+}

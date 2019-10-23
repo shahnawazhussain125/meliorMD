@@ -5,6 +5,8 @@ import SearchResult from './Components/SearchResult';
 import Search from './Components/Search';
 import Profile from './Components/Profile';
 import SearchOnMap from './Pages/SearchOnMap';
+import Login from './Components/Login'
+import Signup from './Components/Signup'
 
 
 const Routes = () =>{
@@ -16,6 +18,8 @@ const Routes = () =>{
                 <Route path = "/search" component = { Search } />
                 <Route path = "/search_result" component = { SearchResult } />
                 <Route path = "/search_on_map" component = { SearchOnMap } />
+                <Route path = "/login" component = { Login } />
+                <Route path = "/signup" component = { Signup } />
                 {/* <Route path = "/updateproduct/:id" component= {UpdateProduct} /> */}
             </Switch>
         </BrowserRouter>
