@@ -1,5 +1,10 @@
+.signup-container {
+    background-image: url('../../assets/images/background-image.webp');
+    background-size: 100%;
+    
+}
 
-.login-box {
+.signup-box {
     margin-top: 20%;
     margin-bottom: 2%;
     border-radius: 10px;
