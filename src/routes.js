@@ -7,6 +7,7 @@ import Profile from './Components/Profile';
 import SearchOnMap from './Pages/SearchOnMap';
 import Login from './Components/Login'
 import Signup from './Components/Signup'
+import AddProviderListing from './Components/AddProviderListing'
 
 
 const Routes = () =>{
@@ -20,6 +21,7 @@ const Routes = () =>{
                 <Route path = "/search_on_map" component = { SearchOnMap } />
                 <Route path = "/login" component = { Login } />
                 <Route path = "/signup" component = { Signup } />
+                <Route path = "/add_provider_listing" component = { AddProviderListing } />
                 {/* <Route path = "/updateproduct/:id" component= {UpdateProduct} /> */}
             </Switch>
         </BrowserRouter>

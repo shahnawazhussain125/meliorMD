@@ -5,7 +5,7 @@ import './index.css';
 import logo from '../../assets/images/md-logo.webp';
 import DrawerTab from '../Drawer'
 
-class Header extends Component {
+class Login extends Component {
 
     render() {
         return (
@@ -59,4 +59,4 @@ class Header extends Component {
 }
 
 
-export default Header;
+export default Login;

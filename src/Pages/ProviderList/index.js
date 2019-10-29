@@ -36,23 +36,6 @@ class ProviderList extends Component {
                                 </Row>
                             </InputGroup>
                         </Row>
-                        {/* <Row gutter={24}>
-                                    <Col span={8}>
-                                        <Row>
-                                            <label>SPECIALITY BY PROVIDER CATEGORY</label>
-                                            <Input className="full-width-input" defaultValue="0871" />
-                                        </Row>
-                                    </Col>
-                                    <Col span={8}>
-                                        <Row>
-                                            <label>LOCATIONS BY CITY</label>
-                                            <Input  className="full-width-input" defaultValue="26888888" />
-                                        </Row>
-                                    </Col>
-                                    <Col span={8}>
-                                        <Button>Search</Button>
-                                    </Col>
-                                </Row> */}
 
                         <div>
                             <p>HIDE ADVANCED SEARCH <Icon type="caret-right" /></p>

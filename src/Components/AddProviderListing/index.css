@@ -1,0 +1,74 @@
+.provider-info-form {
+    margin-top: 30px;
+}
+.provider-info-text {
+    color: rgb(85, 85, 221);
+}
+.input-name-col1 {
+    padding-right: 5px;
+}
+.input-name-col3 {
+    padding-left: 5px;
+}
+.row-radio-gender {
+    margin-top: 15px;
+}
+.row-address {
+    margin-top: 15px;
+}
+.input-address-col1 {
+    padding-right: 5px;
+}
+.input-address-col3 {
+    padding-left: 5px;
+}
+.input-address-col4 {
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.input-address-col5 {
+    padding-top: 5px;
+}
+.input-address-col6 {
+    padding-left: 5px;
+    margin-top: 5px;
+}
+.row-phone-number {
+    margin-top: 15px;
+}
+.row-email {
+    margin-top: 15px;
+}
+.row-medical-school {
+    margin-top: 15px;
+}
+.year-star {
+    color: red;
+}
+.medical-school-col {
+    padding-right: 5px;
+}
+.row-residency-training {
+    margin-top: 15px;
+}
+.residency-training-col {
+    padding-right: 5px;
+}
+.row-american-board {
+    margin-top: 15px;
+}
+.row-specialty {
+    margin-top: 15px;
+}
+.row-practice-name {
+    margin-top: 15px;
+}
+.row-health-insurance {
+    margin-top: 15px;
+}
+.row-health-insurance2 {
+    margin-top: 15px;
+}
+.row-radio-accept-patient {
+    margin-top: 15px;
+}

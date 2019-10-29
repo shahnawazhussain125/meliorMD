@@ -5,7 +5,7 @@ import './index.css';
 import logo from '../../assets/images/md-logo.webp';
 import DrawerTab from '../Drawer'
 
-class Header extends Component {
+class Signup extends Component {
 
     render() {
         return (
@@ -39,12 +39,13 @@ class Header extends Component {
                             />
                         </Row>
                         <Row type="flex">
-                            <h5>Password Strength : <span className="pass-strength"><i>Strong</i></span></h5>
+                            <h5>Password Strength : </h5><h5 className="pass-strength"><i> Strong</i></h5>
                         </Row>
                         <Row type="flex">
                                 <Checkbox className="check-box">
-                                    <span className="span2-text">I agree with <a>Privacy Policy</a></span>
+                                    <span className="span2-text">I agree with </span>
                                 </Checkbox>
+                                <a className="privacy-policy">Privacy Policy</a>
                         </Row>
                         <Row className="input-password" type="flex" justify="center">
                             <Button className="signup-button">Sign up</Button>
@@ -63,4 +64,4 @@ class Header extends Component {
 }
 
 
-export default Header;
+export default Signup;
