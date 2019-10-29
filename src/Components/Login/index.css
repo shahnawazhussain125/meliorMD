@@ -1,4 +1,7 @@
-
+.login-container {
+    background-image: url('../../assets/images/background-image.webp');
+    background-size: 100%;
+}
 .login-box {
     margin-top: 20%;
     margin-bottom: 2%;

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MeliorMD",
+  "name": "MeliorMD is a one stop shop for finding health care providers across specialties.",
   "icons": [
     {
       "src": "favicon.ico",
