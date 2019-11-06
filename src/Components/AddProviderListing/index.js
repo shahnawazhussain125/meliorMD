@@ -109,7 +109,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Phone number</h4>
                             </Col>
-                            <Col span={14} className="input-number-col">
+                            <Col  md={14} sm={14} xs={19} className="input-number-col">
                                 <Row type="flex">
                                     <Input
                                         className="phone-number"
@@ -123,7 +123,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>email</h4>
                             </Col>
-                            <Col span={14} className="input-email-col">
+                            <Col  md={13} sm={14} xs={19} className="input-email-col">
                                 <Row type="flex">
                                     <Input
                                         className="email"
@@ -187,7 +187,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>American Board of Medical Specialties Certification</h4>
                             </Col>
-                            <Col span={19} className="american-board-col" >
+                            <Col  md={19} sm={20} xs={24} className="american-board-col" >
                                 <Row type="flex">
                                     <Input
                                         className="american-board"
