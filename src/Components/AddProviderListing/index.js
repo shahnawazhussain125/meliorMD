@@ -11,10 +11,9 @@ class AddProviderListing extends Component {
     render() {
         return (
             <div>
-                <Row type="flex">
-                    <Col span={8}></Col>
+                <Row type="flex" justify="center">
 
-                    <Col span={8}>
+                    <Col xxl={8} xl={9} lg={10} md={14} sm={18} xs={23}>
                         {/* ======== Form Row 1 ======== */}
                         <Row type="flex" className="provider-info-form">
                             <h2 className="provider-info-text">Providers Information</h2>
@@ -206,7 +205,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Taxonomy ID</h4>
                             </Col>
-                            <Col span={13} className="taxonomy-id-col" >
+                            <Col md={13} sm={14} xs={17} className="taxonomy-id-col" >
                                 <Row type="flex">
                                     <Input
                                         className="taxonomy-id"
@@ -220,7 +219,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Specialty</h4>
                             </Col>
-                            <Col span={13} className="specialty-col" >
+                            <Col md={13} sm={14} xs={17} className="specialty-col" >
                                 <Row type="flex">
                                     <Input
                                         className="specialty"
@@ -234,7 +233,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Practice name</h4>
                             </Col>
-                            <Col span={13} className="practice-name-col" >
+                            <Col md={13} sm={14} xs={17} className="practice-name-col" >
                                 <Row type="flex">
                                     <Input
                                         className="practice-name"
@@ -248,7 +247,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Healthcare Insurance Accepted</h4>
                             </Col>
-                            <Col span={13} className="health-insurance-col" >
+                            <Col md={13} sm={14} xs={17} className="health-insurance-col" >
                                 <Row type="flex">
                                     <Input
                                         className="health-insurance"
@@ -262,7 +261,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Healthcare Insurance Accepted 2</h4>
                             </Col>
-                            <Col span={13} className="health-insurance2-col" >
+                            <Col md={13} sm={14} xs={17} className="health-insurance2-col" >
                                 <Row type="flex">
                                     <Input
                                         className="health-insurance2"
@@ -306,121 +305,121 @@ class AddProviderListing extends Component {
                             </Col>
                             <Col span={24}>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Sunday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Monday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Tuesday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Wednesday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Thursday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Friday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
                                 <Row type="flex" className="row-select-office-hours">
-                                    <Col span={6}>
+                                    <Col md={6} sm={6} xs={24}>
                                         <Checkbox>Saturday</Checkbox>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography>From</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
-                                    <Col span={2}>
+                                    <Col md={2} sm={2} xs={3}>
                                         <Typography style={{textAlign:'center'}}>To</Typography>
                                     </Col>
-                                    <Col span={7}>
+                                    <Col md={7} sm={7} xs={9}>
                                         <TimePicker placeholder="select" className="time-picker" size="small"/>
                                     </Col>
                                 </Row>
@@ -432,7 +431,6 @@ class AddProviderListing extends Component {
                         </Row>
                     </Col>
 
-                    <Col span={8}></Col>
                 </Row>
             </div>
         )
