@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Button } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
-import logo from '../../assets/images/md-logo.webp';
+// import logo from '../../assets/images/md-logo.webp';
+import logo from "../../assets/images/meliorMD-logo-no-background.svg";
 import DrawerTab from '../Drawer'
 
 class Header extends Component {

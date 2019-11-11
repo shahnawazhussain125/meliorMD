@@ -1,20 +1,32 @@
 .login-container {
     background-image: url('../../assets/images/background-image.webp');
     background-size: 100%;
+    padding-bottom: 8%;
 }
-.login-box {
+.row-login-box {
     margin-top: 20%;
     margin-bottom: 2%;
     border-radius: 10px;
-    padding: 10px;
+    padding: 25px;
     background-color: #F8FBFF;
-    box-shadow: #F7F7F7 0px 0px 4px 4px;
+    /* box-shadow: #F7F7F7 0px 0px 4px 4px; */
 }
 /* .username-icon {
     font-size: 20px;
 } */
+.login-logo {
+    width: 200px;
+    border-radius: 4px;
+    background-color: #19488b;
+    /* margin-top: 10px; */
+    margin-bottom: 5px;
+    padding: 4px;
+}
 .input-email {
     margin-top: 30px;
+}
+.username-icon {
+    color: rgba(128, 128, 128, 0.986);
 }
 .input-password {
     margin-top: 25px;
@@ -22,9 +34,20 @@
 .check-box {
     margin-top: 25px;
 }
-.forgot-pass-text {
-    margin-top: 27px;
-    color: rgba(180, 180, 180, 0.979);
+.span2-text {
+    color: gray;
+}
+.row-remember-forgot-pass {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.h5-forgot-password {
+    margin-top: 18px;
+    color: gray; 
+}
+.row-signin-button {
+    margin-top: 8px;
+    margin-bottom: 5px;
 }
 .signin-button {
     width: 40%;

@@ -1,29 +1,29 @@
 .signup-container {
     background-image: url('../../assets/images/background-image.webp');
     background-size: 100%;
-    /* width: 0%; */
-    /* height: 100%; */
-    /* background-repeat: no-repeat; */
 }
 .signup-logo {
     width: 200px;
-    border-radius: 2px;
-    background-color: #2c61ad;
+    border-radius: 4px;
+    background-color: #19488b;
+    /* margin-top: 10px; */
+    margin-bottom: 5px;
+    padding: 4px;
 }
 .signup-box {
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 2%;
     border-radius: 10px;
-    padding: 10px;
+    padding: 25px;
     background-color: #F8FBFF;
     /* box-shadow: rgb(240, 239, 239) 0px 0px 2px 2px; */
 }
 .row-input-name {
-    margin-top: 30px;
+    margin-top: 15px;
     border: 0px;
 }
 .check-box,.privacy-polic,.row-signup-button {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .input-name,.input-email,.input-password {
     box-shadow: rgb(240, 239, 239) 1px 0px 3px 3px;
@@ -33,20 +33,20 @@
 .pass-strength {
     color: #5694D9;
 }
-.forgot-pass-text {
+/* .forgot-pass-text {
     margin-top: 27px;
     color: rgba(180, 180, 180, 0.979);
     color: rgba(128, 128, 128, 0.986);
-}
+} */
 .signup-button {
     width: 40%;
     background-color: #5694D9;
     color: white;
     font-weight: normal;
 }
-.new-to-melior-text {
+/* .new-to-melior-text {
     margin-top: 8px;
-}
+} */
 .login-button {
     border: 0px;
     opacity: 1;
@@ -57,11 +57,11 @@
 .username-icon {
     color: rgba(128, 128, 128, 0.986);
 } 
-.row-login {
+/* .row-login {
     margin-bottom: 100px;
-}
+} */
 @media screen and (max-width: 380px) {
     .signup-box {
-        margin-top: 15%;
+        margin-top: 14%;
     }
   }
