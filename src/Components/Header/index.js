@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'antd';
+import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './index.css';
 // import logo from '../../assets/images/md-logo.webp';
@@ -37,6 +38,7 @@ class Header extends Component {
                         <div className="vl">
                             <div>
                                 <Button type="primary" className="provider-button">Provider Login</Button>
+                                {/* <Link to="login">Provider Login</Link> */}
                             </div>
                         </div>
                     </Col>

@@ -5,7 +5,59 @@ import "antd/dist/antd.css";
 import "./index.css";
 import logo from "../../assets/images/meliorMD-logo-no-background.svg";
 
+import fire from '../../Authentication/fire'
+import { connect } from 'react-redux';
+import { signin, signout } from '../../Redux/Actions/authAction'
+
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email:'',
+      password:'',
+      usersCollection: fire.firestore().collection('users')
+    }
+  }
+  componentDidMount()
+    {
+      console.log("Signin", this.state.userType)
+      if(this.props.user)
+      {
+        // this.props.history.push(`/${this.props.userType}`);
+      }
+    }
+    onClickLogin = (e) =>{
+      e.preventDefault();
+      const { email, password } = this.state;
+  
+      if(email !== "" && password !== "" )
+      {
+        this.props.signin({ email, password });
+      }
+      else
+      {
+        alert("Some field is empty");
+      }
+    }
+    logOut = () =>{
+      this.props.signout();
+      this.props.history.push('./MainPage');
+    }
+    handleStatus = name => event => {
+      this.setState({ [name]: event.target.value });
+    };
+    componentWillReceiveProps(nextProps)
+    {
+      if(nextProps.user)
+      {
+        this.handleClose();
+        this.props.history.push(`/${ nextProps.userType }`);
+      }
+      else
+      {
+        alert(nextProps.signInError);
+      }
+    };
   render() {
     return (
       <Row type="flex" justify="center" className="login-container">
@@ -20,11 +72,11 @@ class Login extends Component {
             <Row className="input-email" type="flex" justify="center">
               <Input
                 placeholder="Username or Email"
+                value={this.state.email}
                 prefix={
                   <Icon
                     className="username-icon"
                     type="mail"
-                    // style={{ color: "rgba(0,0,0,.25)" }}
                   />
                 }
               />
@@ -32,11 +84,11 @@ class Login extends Component {
             <Row className="input-password" type="flex" justify="center">
               <Input
                 placeholder="Password"
+                value={this.state.password}
                 prefix={
                   <Icon
                     className="username-icon"
                     type="lock"
-                    // style={{ color: "rgba(0,0,0,.25)" }}
                   />
                 }
               />
@@ -54,7 +106,11 @@ class Login extends Component {
               </Col>
             </Row>
             <Row className="row-signin-button" type="flex" justify="center">
-              <Button className="signin-button">Sign in</Button>
+              <Button 
+                onClick={this.onClickLogin} 
+                className="signin-button"
+                >Sign in
+              </Button>
             </Row>
           </Row>
           <Row type="flex" className="row-signup" justify="center">
@@ -67,5 +123,21 @@ class Login extends Component {
     );
   }
 }
+const mapStateToProps = (state) =>{
+  console.log("Global State", state);
+  return({
+    user: state.authReducer.user,
+    userType: state.authReducer.userType,
+    signInError: state.authReducer.signInError,
+  })
+}
 
-export default Login;
+const mapDispatchToProps = (dispatch) =>{
+  return({
+      signin: (userData) => dispatch(signin(userData)),
+      signout: () => dispatch(signout()),
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// export default Login;
