@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
 import logo from "../../assets/images/meliorMD-logo-no-background.svg";
-
-import fire from '../../Authentication/fire'
 import { connect } from 'react-redux';
-import { signin, signout } from '../../Redux/Actions/authAction'
+import { bindActionCreators } from 'redux';
+import * as authActionCreater from '../../Redux/Actions/authAction'
+
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email:'',
-      password:'',
-      usersCollection: fire.firestore().collection('users')
+      password:''
     }
   }
+
   componentDidMount()
     {
       console.log("Signin", this.state.userType)
@@ -26,6 +26,7 @@ class Login extends Component {
         // this.props.history.push(`/${this.props.userType}`);
       }
     }
+
     onClickLogin = (e) =>{
       e.preventDefault();
       const { email, password } = this.state;
@@ -124,20 +125,14 @@ class Login extends Component {
   }
 }
 const mapStateToProps = (state) =>{
-  console.log("Global State", state);
   return({
+    isLoading: state.authReducer.isLoading,
     user: state.authReducer.user,
-    userType: state.authReducer.userType,
-    signInError: state.authReducer.signInError,
   })
 }
 
-const mapDispatchToProps = (dispatch) =>{
-  return({
-      signin: (userData) => dispatch(signin(userData)),
-      signout: () => dispatch(signout()),
-  })
-}
+const mapDispatchToProps = (dispatch) =>({
+  authActionCreater: bindActionCreators(authActionCreater, dispatch)
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-// export default Login;

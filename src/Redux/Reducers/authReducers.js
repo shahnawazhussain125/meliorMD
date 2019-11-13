@@ -1,60 +1,39 @@
+import * as types from '../types';
 
 const initialState = {
-    authError: null,
-    companies: [],
-    students: []
+    isLoading: false,
+    errorMessage: null,
+    user: null
 }
 
-const  authReducer = ( state = initialState, action) => {
-    console.log("action.type", action.type)
-     switch (action.type) 
-    {
-        case "LOGIN_SUCCESS":
+const authReducer = (state = initialState, action) => {
+
+    switch (action.type) {
+        case types.START_LOADING:
             return {
                 ...state,
-                user: action.user,
-                userType: action.userType,
-                name: action.name,
-                authError: null
+                isLoading: true,
+                progress: action.payload
             };
 
-        case "LOGIN_FAIL":
+        case types.END_LOADING:
             return {
                 ...state,
-                error: action.error,
-                authError: "Login Fail"
-        };
-
-        case "SIGNUP_SUCCESS":
-            return {
-                ...state,
-                user: action.user,
-                type: action.userType,
-                name: action.name,
-                authError: null
+                isLoading: false,
+                progress: action.payload
             };
 
-        case "SIGNUP_FAIL":
+        case types.SET_USER_DATA_SUCCESS:
             return {
                 ...state,
-                error: action.error,
-                authError: "singOut Fail"
+                user: action.payload,
+                errorMessage: null
             };
-        
-        case "SIGNOUT_SUCCESS":
+        case types.SET_USER_DATA_SUCCESS:
             return {
                 ...state,
                 user: null,
-                name: action.name,
-                type: action.userType,
-                authError: null
-            };
-
-        case "SIGNOUT_FAIL":
-            return {
-                ...state,
-                error: action.error,
-                authError: "Login Fail"
+                errorMessage: action.payload
             };
         default:
             return state;
