@@ -1,4 +1,4 @@
-import firebase from '../../config/firebase';;
+import firebase from '../../config/firebase';
 import * as types from '../types';
 
 export const signOut = (history) => dispatch => {
@@ -63,11 +63,12 @@ export const signIn = (auth_data, history) => dispatch => {
                 payload: null
             })
             dispatch({ type: types.SET_USER_DATA_ERROR, payload: null })
+            alert(error.message)
         })
 }
 
 
-export const signUp = (auth_data) => dispatch => {
+export const signUp = (auth_data, history) => dispatch => {
 
     console.log('auth_data', auth_data)
 

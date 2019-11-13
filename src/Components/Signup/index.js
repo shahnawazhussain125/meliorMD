@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
 import { connect } from 'react-redux';
-import { signup } from '../../Redux/Actions/authAction';
+import { bindActionCreators } from 'redux';
+import * as authActionCreater from '../../Redux/Actions/authAction';
 import logo from "../../assets/images/meliorMD-logo-no-background.svg";
 
 class SignUp extends Component {
@@ -17,37 +18,25 @@ class SignUp extends Component {
       password: '',
     }
   }
-  // componentDidMount()
-  //   {
-  //     if(this.props.user)
-  //     {
-  //       console.log('User type', this.props.userType)
-  //       this.props.history.push(`/${this.props.userType}`);
-  //     }
-  //   }
-    componentWillReceiveProps(nextprops)
-    {
-      if(nextprops.user) {
-        this.props.history.push(`/${ nextprops.userType }`)
-      } else {
-        alert(nextprops.signUpError);
-      }
-    }    
-    // handleChange = name => e=>{
-    //   this.setState({[name]: e.target.value});
-    // }
-    onClickSignup = () =>{
-      const { name, email, password } = this.state;
-      if(name !== "" && email !== "" && password !== "" && name !== " " && email !== " " )
-      {
-        this.props.signup({ name, email, password });
-        alert("Signup Successful");
-      }
-      else
-      {
-        alert("In complete fields");
-      }
+
+  componentWillReceiveProps(nextprops) {
+    if (nextprops.user) {
+      this.props.history.push(`/${nextprops.userType}`)
+    } else {
+      alert(nextprops.signUpError);
     }
+  }
+
+  onClickSignup = () => {
+    const { name, email, password } = this.state;
+    if (name !== "" && email !== "" && password !== "" && name !== " " && email !== " ") {
+      this.props.authActionCreater.signUp({ name, email, password }, this.props.history);
+      alert("Signup Successful");
+    }
+    else {
+      alert("In complete fields");
+    }
+  }
   render() {
     return (
       <Row type="flex" justify="center" className="signup-container">
@@ -68,7 +57,7 @@ class SignUp extends Component {
                   <Icon
                     className="username-icon"
                     type="user"
-                    // style={{ color: "rgba(0,0,0,.25)" }}
+                  // style={{ color: "rgba(0,0,0,.25)" }}
                   />
                 }
               />
@@ -82,7 +71,7 @@ class SignUp extends Component {
                   <Icon
                     className="username-icon"
                     type="mail"
-                    // style={{ color: "rgba(0,0,0,.25)" }}
+                  // style={{ color: "rgba(0,0,0,.25)" }}
                   />
                 }
               />
@@ -96,7 +85,7 @@ class SignUp extends Component {
                   <Icon
                     className="username-icon"
                     type="lock"
-                    // style={{ color: "rgba(128, 128, 128, 0.986)" }}
+                  // style={{ color: "rgba(128, 128, 128, 0.986)" }}
                   />
                 }
               />
@@ -129,21 +118,19 @@ class SignUp extends Component {
   }
 }
 
-const mapStateToProps = (state) =>{
-  return {
-    signUpError: state.authReducer.signUpError,
+
+const mapStateToProps = (state) => {
+  return ({
+    isLoading: state.authReducer.isLoading,
     user: state.authReducer.user,
-    userType: state.authReducer.userType,
-  }
+  })
 }
-const mapDispatchToProps = (dispatch) =>{
-  return {
-    signup: (userData) => dispatch(signup(userData))
-  }
-}
-SignUp.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-  
+
+const mapDispatchToProps = (dispatch) => ({
+  authActionCreater: bindActionCreators(authActionCreater, dispatch)
+})
+
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
-// export default SignUp;
+
+
+
