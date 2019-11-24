@@ -1,40 +1,61 @@
-const base_url = 'https://cors-anywhere.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?version=2.0&enumeration_type=NPI-1';
+import * as types from '../types';
+import { base_url } from '../../utils/constants';
 
-export const searchByState = ( state_name ) =>{
-    return(dispatch) =>{
-     
-        fetch(`${base_url}&city=APO&state=${state_name}&country_code=US&limit=200`)
-        .then(response =>{
+export const searchByState = (state_name) => dispatch => {
+   
+    dispatch({
+        type: types.START_LOADING,
+        payload: "Loading!... Please wait"
+    })
+
+    fetch(`${base_url}&city=APO&state=${state_name}&country_code=US&limit=200`)
+        .then(response => {
             return response.json()
         })
-        .then(data =>{
-            console.log("data ===>  ", data);
-            dispatch({type: "SEARCH_BY_STATE_SUCCESS", data });
+        .then(data => {
+            dispatch({
+                type: types.END_LOADING,
+                payload: null
+            })
+            dispatch({ type: types.SEARCH_BY_STATE_SUCCESS, data });
         })
-        .catch(error =>{
-            dispatch({type: "SEARCH_BY_STATE_ERROR", error: error.message});
+        .catch(error => {
+            dispatch({
+                type: types.END_LOADING,
+                payload: null
+            })
+            dispatch({ type: types.SEARCH_BY_STATE_ERROR, error: error.message });
         })
-    }
+
 }
- 
-export const searchByProviderCategoryAndCity = (city, taxonomy_description) =>{
-        return(dispatch =>{
-            fetch(`${base_url}&taxonomy_description=${taxonomy_description}&city=${city}&country_code=US&limit=200`)
-            .then(response =>{
-                return response.json()
+
+export const searchByProviderCategoryAndCity = (city, taxonomy_description) => dispatch => {
+    dispatch({
+        type: types.START_LOADING,
+        payload: "Loading!... Please wait"
+    })
+
+    fetch(`${base_url}&taxonomy_description=${taxonomy_description}&city=${city}&country_code=US&limit=200`)
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            dispatch({
+                type: types.END_LOADING,
+                payload: null
             })
-            .then(data =>{
-                console.log({data, name:"searchBy tesonomy"})
-                dispatch({type: "SEARCH_BY_CITY_SUCCESS", data });
+
+            dispatch({ type: types.SEARCH_BY_CITY_SUCCESS, data });
+        })
+        .catch(error => {
+            dispatch({
+                type: types.END_LOADING,
+                payload: null
             })
-            .catch(error =>{
-                dispatch({type: "SEARCH_BY_CITY_ERROR", error: error.message});
-            })
+            dispatch({ type: types.SEARCH_BY_CITY_ERROR, error: error.message });
         })
 }
 
-export const updateFilterResult = (data) =>{
-    return(dispatch =>{
-        dispatch({type: "Update_Filter-Result", data });
-    })
+export const updateFilterResult = (data) => dispatch => {
+    dispatch({ type: types.UPDATE_FILTER_RESULT, data });
 }

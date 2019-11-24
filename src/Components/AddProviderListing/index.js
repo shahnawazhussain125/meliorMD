@@ -7,6 +7,36 @@ import logo from '../../assets/images/md-logo.webp';
 import DrawerTab from '../Drawer'
 
 class AddProviderListing extends Component {
+    constructor() {
+        super();
+        this.state={
+            first_name: "",
+            initial: "",
+            last_name: "",
+            gender: "",
+            address: {
+                num:"",
+                street_no: "",
+                suite: "",
+                city: "",
+                state: "",
+                zip: "",
+            },
+            phone_no: "",
+            email: "",
+            medical_school: "",
+            medical_school_year: "",
+            residency_training: "",
+            residency_training_year: "",
+            certifice: [""],
+            practice_info: {
+                taxonomy_id: "",
+                specialty: "",
+                practice_name: "",
+                 
+            }
+        }
+    }
 
     render() {
         return (
@@ -159,7 +189,7 @@ class AddProviderListing extends Component {
                         </Row>
                         {/*========== Form Row 7 ======== */}
                         <Row type="flex" className="row-residency-training">
-                            <Col span={19} className="residency-training-col">
+                            <Col span={16} className="residency-training-col">
                                 <Row type="flex">
                                     <h4>Residency Training</h4>
                                 </Row>
@@ -181,6 +211,17 @@ class AddProviderListing extends Component {
                                     />
                                 </Row>
                             </Col>
+                            <Col span={2} style={{
+                                            marginLeft: 10,
+                                            paddingTop: 35,
+                                            borderWidth: 2,
+                                            borderColor: "black",
+                                            justifyContent: "center",
+                                            cursor: "pointer"
+                                        }}>
+                                            {/* onClick={() => this.addCertificate()} */}
+                                        <Icon type="plus-circle" />
+                                    </Col>    
                         </Row>
                         {/*========== Form Row 8 ======== */}
                         <Row type="flex" className="row-american-board">
@@ -189,10 +230,23 @@ class AddProviderListing extends Component {
                             </Col>
                             <Col  md={19} sm={20} xs={24} className="american-board-col" >
                                 <Row type="flex">
-                                    <Input
-                                        className="american-board"
-                                        placeholder="Urology"
-                                    />
+                                    <Col>
+                                        <Input
+                                            className="american-board"
+                                            placeholder="Urology"
+                                        />
+                                    </Col>
+                                    <Col  style={{
+                                            marginLeft: 10,
+                                            paddingTop: 8,
+                                            borderWidth: 2,
+                                            borderColor: "black",
+                                            justifyContent: "center",
+                                            cursor: "pointer"
+                                        }}>
+                                            {/* onClick={() => this.addCertificate()} */}
+                                        <Icon type="plus-circle" />
+                                    </Col>                                    
                                 </Row>
                             </Col>
                         </Row>
@@ -220,12 +274,42 @@ class AddProviderListing extends Component {
                                 <h4>Specialty</h4>
                             </Col>
                             <Col md={13} sm={14} xs={17} className="specialty-col" >
-                                <Row type="flex">
+                                <Col  md={22} sm={22} xs={22}>
                                     <Input
                                         className="specialty"
                                         placeholder="dentist, physician and other"
                                     />
-                                </Row>
+                                </Col>
+                                <Col span={1}  style={{
+                                            marginLeft: 10,
+                                            paddingTop: 8,
+                                            borderWidth: 2,
+                                            borderColor: "black",
+                                            justifyContent: "center",
+                                            cursor: "pointer"
+                                        }}>
+                                            {/* onClick={() => this.addCertificate()} */}
+                                        <Icon type="plus-circle" />
+                                    </Col>    
+                            </Col>
+                            <Col md={13} sm={14} xs={17} className="specialty-col" >
+                                <Col  md={22} sm={22} xs={22}>
+                                    <Input
+                                        className="specialty"
+                                        placeholder="dentist, physician and other"
+                                    />
+                                </Col>
+                                <Col span={1}  style={{
+                                            marginLeft: 10,
+                                            paddingTop: 8,
+                                            borderWidth: 2,
+                                            borderColor: "black",
+                                            justifyContent: "center",
+                                            cursor: "pointer"
+                                        }}>
+                                            {/* onClick={() => this.addCertificate()} */}
+                                        <Icon type="plus-circle" />
+                                    </Col>    
                             </Col>
                         </Row>
                         {/*========== Form Row 12 ======== */}
@@ -247,7 +331,7 @@ class AddProviderListing extends Component {
                             <Col span={24}>
                                 <h4>Healthcare Insurance Accepted</h4>
                             </Col>
-                            <Col md={13} sm={14} xs={17} className="health-insurance-col" >
+                            <Col span={22} className="health-insurance-col" >
                                 <Row type="flex">
                                     <Input
                                         className="health-insurance"
@@ -255,6 +339,17 @@ class AddProviderListing extends Component {
                                     />
                                 </Row>
                             </Col>
+                            <Col span={1}  style={{
+                                            marginLeft: 10,
+                                            paddingTop: 8,
+                                            borderWidth: 2,
+                                            borderColor: "black",
+                                            justifyContent: "center",
+                                            cursor: "pointer"
+                                        }}>
+                                            {/* onClick={() => this.addCertificate()} */}
+                                        <Icon type="plus-circle" />
+                                    </Col>  
                         </Row>
                         {/*========== Form Row 14 ======== */}
                         <Row type="flex" className="row-health-insurance2">
