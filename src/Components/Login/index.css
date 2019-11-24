@@ -13,7 +13,8 @@
 .login-logo {
     width: 200px;
     border-radius: 4px;
-    background-color: #19488b;
+    background-color: #183761;
+    opacity: 1;
     margin-bottom: 5px;
     padding: 4px;
 }
@@ -46,7 +47,7 @@
 }
 .signin-button {
     width: 40%;
-    background-color: #5694D9;
+    background-color: #5D89C7;
     color: white;
     font-weight: normal;
 }
