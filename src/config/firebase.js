@@ -1,7 +1,8 @@
 
-  // Initialize Firebase
   import firebase from 'firebase'
   import 'firebase/firestore';
+  import 'firebase/auth'
+  import 'firebase/app'
   
     const config = {
       apiKey: "AIzaSyAkHMCThgrFgXehmqMM2GAt9q5U_MdBefs",
@@ -11,6 +12,7 @@
       storageBucket: "online-parking-system-9c30f.appspot.com",
       messagingSenderId: "446689556232"
     };
-    const fire = firebase.initializeApp(config);
-    export default fire;
+    firebase.initializeApp(config);
+
+    export default firebase;
   

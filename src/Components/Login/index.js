@@ -4,60 +4,51 @@ import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
 import logo from "../../assets/images/meliorMD-logo-no-background.svg";
-
-import fire from '../../Authentication/fire'
 import { connect } from 'react-redux';
-import { signin, signout } from '../../Redux/Actions/authAction'
+import { bindActionCreators } from 'redux';
+import * as authActionCreater from '../../Redux/Actions/authAction'
+
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:'',
-      password:'',
-      usersCollection: fire.firestore().collection('users')
+      email: '',
+      password: ''
     }
   }
-  componentDidMount()
+
+  componentDidMount() {
+    console.log("Signin", this.state.userType)
+    if (this.props.user) {
+      // this.props.history.push(`/${this.props.userType}`);
+    }
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { email, password } = this.state;
+
+    let test =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    
+    if (test === false) {
+      alert("Please enter a volid email");
+    }
+    else if( password.trim().length <= 0)
     {
-      console.log("Signin", this.state.userType)
-      if(this.props.user)
-      {
-        // this.props.history.push(`/${this.props.userType}`);
-      }
+      alert("Please enter password")
     }
-    onClickLogin = (e) =>{
-      e.preventDefault();
-      const { email, password } = this.state;
-  
-      if(email !== "" && password !== "" )
-      {
-        this.props.signin({ email, password });
-      }
-      else
-      {
-        alert("Some field is empty");
-      }
+    else {
+      this.props.authActionCreater.signIn({email, password}, this.props.history);
     }
-    logOut = () =>{
-      this.props.signout();
-      this.props.history.push('./MainPage');
-    }
-    handleStatus = name => event => {
-      this.setState({ [name]: event.target.value });
-    };
-    componentWillReceiveProps(nextProps)
-    {
-      if(nextProps.user)
-      {
-        this.handleClose();
-        this.props.history.push(`/${ nextProps.userType }`);
-      }
-      else
-      {
-        alert(nextProps.signInError);
-      }
-    };
+  }
+
+
+  handeTextChange = event => {
+    this.setState({ [event.target.name]: event.target.value});
+  };
+
   render() {
     return (
       <Row type="flex" justify="center" className="login-container">
@@ -67,11 +58,13 @@ class Login extends Component {
               <img className="login-logo" src={logo} alt="logo" />
             </Row>
             <Row type="flex" justify="center">
-              <h4 style={{textAlign:"center"}}>Welcome back! Please login to continue.</h4>
+              <h4 style={{ textAlign: "center" }}>Welcome back! Please login to continue.</h4>
             </Row>
             <Row className="input-email" type="flex" justify="center">
               <Input
                 placeholder="Username or Email"
+                name="email"
+                onChange={this.handeTextChange}
                 value={this.state.email}
                 prefix={
                   <Icon
@@ -84,7 +77,10 @@ class Login extends Component {
             <Row className="input-password" type="flex" justify="center">
               <Input
                 placeholder="Password"
+                type="password"
                 value={this.state.password}
+                name="password"
+                onChange={this.handeTextChange}
                 prefix={
                   <Icon
                     className="username-icon"
@@ -106,10 +102,10 @@ class Login extends Component {
               </Col>
             </Row>
             <Row className="row-signin-button" type="flex" justify="center">
-              <Button 
-                onClick={this.onClickLogin} 
+              <Button
+                onClick={this.handleSubmit}
                 className="signin-button"
-                >Sign in
+              >Sign in
               </Button>
             </Row>
           </Row>
@@ -123,21 +119,16 @@ class Login extends Component {
     );
   }
 }
-const mapStateToProps = (state) =>{
-  console.log("Global State", state);
-  return({
+
+const mapStateToProps = (state) => {
+  return ({
+    isLoading: state.authReducer.isLoading,
     user: state.authReducer.user,
-    userType: state.authReducer.userType,
-    signInError: state.authReducer.signInError,
   })
 }
 
-const mapDispatchToProps = (dispatch) =>{
-  return({
-      signin: (userData) => dispatch(signin(userData)),
-      signout: () => dispatch(signout()),
-  })
-}
+const mapDispatchToProps = (dispatch) => ({
+  authActionCreater: bindActionCreators(authActionCreater, dispatch)
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-// export default Login;
