@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Input, Icon, Checkbox } from "antd";
+import { Row, Col, Button, Input, Icon, Checkbox, Spin, Alert } from "antd";
 import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
@@ -30,23 +30,22 @@ class Login extends Component {
 
     const { email, password } = this.state;
 
-    let test =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-    
+    let test = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
     if (test === false) {
       alert("Please enter a volid email");
     }
-    else if( password.trim().length <= 0)
-    {
+    else if (password.trim().length <= 0) {
       alert("Please enter password")
     }
     else {
-      this.props.authActionCreater.signIn({email, password}, this.props.history);
+      this.props.authActionCreater.signIn({ email, password }, this.props.history);
     }
   }
 
 
   handeTextChange = event => {
-    this.setState({ [event.target.name]: event.target.value});
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
@@ -115,6 +114,24 @@ class Login extends Component {
             </h4>
           </Row>
         </Col>
+        {
+          this.props.isLoading ?
+            (<Spin
+              tip="Loading..."
+              size="large"
+              style={{
+                display: "flex",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                zIndex: 10,
+                backgroundColor: "rgba(0, 0, 0, 0.9)",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}>
+            </Spin>) : null
+        }
       </Row>
     );
   }

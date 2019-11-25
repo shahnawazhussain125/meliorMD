@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Input, Icon, Checkbox } from "antd";
-import PropTypes from 'prop-types';
+import { Row, Col, Button, Input, Icon, Checkbox, Spin, Alert } from "antd";
 import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
@@ -27,16 +26,30 @@ class SignUp extends Component {
     }
   }
 
-  onClickSignup = () => {
+  handleChange = (name, event) => {
+    this.setState({ [name]: event.target.value });
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
     const { name, email, password } = this.state;
-    if (name !== "" && email !== "" && password !== "" && name !== " " && email !== " ") {
-      this.props.authActionCreater.signUp({ name, email, password }, this.props.history);
-      alert("Signup Successful");
+
+    let test = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
+    if (name.trim().length === 0) {
+      alert("Please enter your name");
+    }
+    else if (test === false) {
+      alert("Please enter a volid email");
+    }
+    else if (password.trim().length <= 0) {
+      alert("Please enter password")
     }
     else {
-      alert("In complete fields");
+      this.props.authActionCreater.signUp({ name, email, password }, this.props.history);
     }
   }
+
   render() {
     return (
       <Row type="flex" justify="center" className="signup-container">
@@ -51,7 +64,7 @@ class SignUp extends Component {
             <Row className="row-input-name" type="flex" justify="center">
               <Input
                 placeholder="Name"
-                value={this.state.name}
+                onChange={(event) => this.handleChange("name", event)}
                 className="input-name"
                 prefix={
                   <Icon
@@ -65,13 +78,12 @@ class SignUp extends Component {
             <Row className="row-input-email" type="flex" justify="center">
               <Input
                 placeholder="Username or Email"
-                value={this.state.email}
                 className="input-email"
+                onChange={(event) => this.handleChange("email", event)}
                 prefix={
                   <Icon
                     className="username-icon"
                     type="mail"
-                  // style={{ color: "rgba(0,0,0,.25)" }}
                   />
                 }
               />
@@ -79,13 +91,13 @@ class SignUp extends Component {
             <Row className="row-input-password" type="flex" justify="center">
               <Input
                 placeholder="Password"
-                value={this.state.password}
+                type="password"
+                onChange={(event) => this.handleChange("password", event)}
                 className="input-password"
                 prefix={
                   <Icon
                     className="username-icon"
                     type="lock"
-                  // style={{ color: "rgba(128, 128, 128, 0.986)" }}
                   />
                 }
               />
@@ -106,13 +118,31 @@ class SignUp extends Component {
               </Checkbox>
             </Row>
             <Row className="row-signup-button" type="flex" justify="center">
-              <Button className="signup-button">Sign up</Button>
+              <Button className="signup-button" onClick={(e) => this.handleClick(e)}>Sign up</Button>
             </Row>
           </Row>
           <Row className="row-login" type="flex" justify="center">
             <h4 className="new-to-melior-text">Existing User? <Link to="login">Login</Link></h4>
           </Row>
         </Col>
+        {
+          this.props.isLoading ?
+            (<Spin
+              tip="Loading..."
+              size="large"
+              style={{
+                display: "flex",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                zIndex: 10,
+                backgroundColor: "rgba(0, 0, 0, 0.9)",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}>
+            </Spin>) : null
+        }
       </Row>
     );
   }

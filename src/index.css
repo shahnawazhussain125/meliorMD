@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.ant-spin-dot-item {
+  background-color: white !important;
+}
+
+.ant-spin-text {
+  color: white !important;
+  margin-top: 15px;
+}

@@ -22,7 +22,6 @@ const Routes = () =>{
                 <Route path = "/login" component = { Login } />
                 <Route path = "/signup" component = { Signup } />
                 <Route path = "/add_provider_listing" component = { AddProviderListing } />
-                {/* <Route path = "/updateproduct/:id" component= {UpdateProduct} /> */}
             </Switch>
         </BrowserRouter>
     )
