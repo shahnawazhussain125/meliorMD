@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Router, Link } from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
 // import logo from '../../assets/images/md-logo.webp';
@@ -11,7 +11,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="header-div">
+            <Router className="header-div">
                 <Row type="flex" className="header-bar">
                     <Col lg={0} md={0} sm={2} xs={4}>
                         <Row type="flex" justify="center" align="middle">
@@ -29,7 +29,7 @@ class Header extends Component {
                                 <li>ABOUT</li>
                                 <li>DIRECTORY</li>
                                 <li>CONTACT US</li>
-                                <li>ADD A PROVIDER LIST</li>
+                                <li><Link to="/login" >ADD A PROVIDER LIST</Link></li>
                             </ul>
                         </div>
                     </Col>
@@ -43,7 +43,7 @@ class Header extends Component {
                         </div>
                     </Col>
                 </Row>
-            </div>
+            </Router>
         )
     }
 }
