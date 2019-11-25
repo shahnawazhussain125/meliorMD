@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, Input, TimePicker, Radio, Checkbox, Icon, Typography} from 'antd';
 import Header from '../Header';
-import moment from 'moment';
+import Footer from '../Footer';
 import 'antd/dist/antd.css';
 import './index.css';
-import logo from '../../assets/images/md-logo.webp';
-import DrawerTab from '../Drawer'
 
 class AddProviderListing extends Component {
     constructor() {
@@ -529,6 +527,7 @@ class AddProviderListing extends Component {
                     </Col>
 
                 </Row>
+                <Footer/>
             </div>
         )
     }

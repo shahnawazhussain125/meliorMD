@@ -8,6 +8,8 @@ import { bindActionCreators } from 'redux';
 import * as authActionCreater from '../../Redux/Actions/authAction';
 import logo from "../../assets/images/Group24.svg";
 import Header from '../Header';
+import Footer from '../Footer';
+
 
 class SignUp extends Component {
   constructor(props) {
@@ -147,6 +149,7 @@ class SignUp extends Component {
             </Spin>) : null
         }
       </Row>
+        <Footer/>
       </div>
     );
   }

@@ -6,6 +6,7 @@ import './index.css';
 import { connect } from 'react-redux';
 import dr_image from '../../assets/images/dr_img.webp';
 import Header from '../../Components/Header';
+import Footer from '../../Components/Footer';
 
 const { Option } = Select;
 
@@ -156,6 +157,7 @@ class SearchOnMap extends Component {
                     </Col>
 
                 </Row>
+                <Footer/>
             </div>
         )
     }

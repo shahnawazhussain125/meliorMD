@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Button, Input, Icon, Checkbox, Spin, Alert } from "antd";
 import Header from '../Header';
+import Footer from '../Footer';
 import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
@@ -136,6 +137,7 @@ class Login extends Component {
             </Spin>) : null
         }
       </Row>
+        <Footer/>
      </div>
     );
   }

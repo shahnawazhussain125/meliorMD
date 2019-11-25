@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 import dr_image from '../../assets/images/dr_img1.webp';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const { Option } = Select;
 
@@ -389,6 +390,7 @@ class SearchResult extends Component {
                         </Col>
                     </Row>
                 </div >
+                <Footer/>
             </div>
         )
     }

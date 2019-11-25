@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header';
+import Footer from '../Footer';
 import { Row, Col, Input, Button, Icon, Tabs, Select, Spin } from 'antd';
 import State from './searchByState';
 import DentistryFilter from '../Dentistry';
@@ -169,6 +170,7 @@ class Search extends Component {
               </Spin>) : null
           }
         </div>
+        <Footer/>
       </div>
     )
   }

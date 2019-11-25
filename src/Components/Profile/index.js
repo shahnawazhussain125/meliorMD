@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Input, Button, Icon, Avatar, Tabs, Breadcrumb, Rate, Checkbox, TimePicker, Tooltip, DatePicker } from 'antd';
 import Header from '../Header';
+import Footer from '../Footer';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import profileImg from '../../assets/images/dr_img1.webp';
@@ -28,7 +29,6 @@ class Profle extends Component {
         return (
             <div>
                 <Header />
-
                 <div className="profile-body">
                     <Row>
                         <Col>
@@ -305,6 +305,7 @@ class Profle extends Component {
                         </Col>
                     </Row>
                 </div >
+                <Footer/>
             </div>
         )
     }

@@ -9,7 +9,6 @@ import Login from './Components/Login'
 import Signup from './Components/Signup'
 import AddProviderListing from './Components/AddProviderListing'
 
-
 const Routes = () =>{
     return(
         <BrowserRouter>
