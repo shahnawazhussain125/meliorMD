@@ -55,7 +55,7 @@ class Search extends Component {
     const { cityName, providerCategory, hide } = this.state;
     return (
       <div className="provoder-list-body">
-        <Row className="row-container">
+        <Row className="row-container" id="vh100">
           <Col lg={12} md={15} sm={20} xs={23}>
             <Row className={hide ? "div-container-hide" : "div-container"} >
               <span style={{ padding: '15px' }}>

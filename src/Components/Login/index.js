@@ -3,7 +3,7 @@ import { Row, Col, Button, Input, Icon, Checkbox, Spin, Alert } from "antd";
 import { Link } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
-import logo from "../../assets/images/meliorMD-logo-no-background.svg";
+import logo from "../../assets/images/Group24.svg";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as authActionCreater from '../../Redux/Actions/authAction'
@@ -50,7 +50,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Row type="flex" justify="center" className="login-container">
+      <Row type="flex" justify="center" id="vh100" className="login-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
           <Row className="row-login-box">
             <Row type="flex" justify="center">

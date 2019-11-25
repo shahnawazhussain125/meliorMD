@@ -163,8 +163,8 @@ class SearchResult extends Component {
                                     </Row>
                                     <Row className="input-spacing">
                                         <div>
-                                            <label className="input-label">ZIP COD</label>
-                                            <Input className="search-input" placeholder="Zip cod" onChange={this.handleFiltersInputChange('zipCode')} />
+                                            <label className="input-label">ZIP CODE</label>
+                                            <Input className="search-input" placeholder="Zip code" onChange={this.handleFiltersInputChange('zipCode')} />
                                         </div>
                                     </Row>
                                     <Row className="input-spacing">

@@ -17,8 +17,6 @@ class Profle extends Component {
             data: null
         }
     }
-
-
     componentDidMount() {
         console.log('this.props.location.state.data', this.props.location.state.data)
         this.setState({ data: this.props.location.state.data })

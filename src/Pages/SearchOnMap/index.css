@@ -31,10 +31,16 @@
 
 .provide-list-container {
     margin-top: 10px;
-    height: 450px;
+    height: 480px;
     border: 1px solid rgb(226, 226, 226);
     overflow-y: scroll;
     
+}
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    
+.provide-list-container {
+    height: 540px;
+    }
 }
 
 .view-on-map-col {
@@ -66,7 +72,7 @@
 
 .map-border{
     border: 2px solid #E7E7E7;
-    margin: 10px;
+    margin: 3px;
 }
 
 @media screen and (max-width: 750px) {
@@ -94,6 +100,12 @@
     }
     .provider-info {
         font-size: 11px;
+    }
+    .num-doctors{
+        font-size: 21px;
+        margin-left: 10px;
+        font-weight: bold;
+        color: rgb(38, 38, 141);
     }
   }
   @media screen and (min-width: 1200px) {
