@@ -7,7 +7,7 @@ import "./index.css";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as authActionCreater from '../../Redux/Actions/authAction';
-import logo from "../../assets/images/meliorMD-logo-no-background.svg";
+import logo from "../../assets/images/Group24.svg";
 
 class SignUp extends Component {
   constructor(props) {

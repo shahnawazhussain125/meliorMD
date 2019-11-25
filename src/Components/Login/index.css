@@ -11,9 +11,10 @@
     background-color: #F8FBFF;
 }
 .login-logo {
-    width: 200px;
+    width: 180px;
     border-radius: 4px;
-    background-color: #183761;
+    /* background-color: #183761; */
+    color: #183761;
     opacity: 1;
     margin-bottom: 5px;
     padding: 4px;
