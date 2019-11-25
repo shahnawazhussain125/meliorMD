@@ -50,7 +50,7 @@ class Login extends Component {
 
   render() {
     return (
-      <Row type="flex" justify="center" className="login-container">
+      <Row type="flex" justify="center" id="vh100" className="login-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
           <Row className="row-login-box">
             <Row type="flex" justify="center">

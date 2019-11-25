@@ -1,6 +1,6 @@
 .login-container {
     background-image: url('../../assets/images/background-image.webp');
-    background-size: 100%;
+    background-size: cover;
     padding-bottom: 8%;
 }
 .row-login-box {
@@ -11,7 +11,7 @@
     background-color: #F8FBFF;
 }
 .login-logo {
-    width: 180px;
+    width: 170px;
     border-radius: 4px;
     /* background-color: #183761; */
     color: #183761;

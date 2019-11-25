@@ -1,9 +1,10 @@
 .signup-container {
     background-image: url('../../assets/images/background-image.webp');
     background-size: 100%;
+    background-size: cover;
 }
 .signup-logo {
-    width: 180px;
+    width: 170px;
     border-radius: 4px;
     /* background: transparent; */
     opacity: 1;

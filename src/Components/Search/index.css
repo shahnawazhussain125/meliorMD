@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+#vh100 {
+  height: 100vh;
+}
+
 .div-container {
   margin-top: 30px;
   margin-bottom: 10px;

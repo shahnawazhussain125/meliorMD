@@ -52,7 +52,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Row type="flex" justify="center" className="signup-container">
+      <Row type="flex" justify="center" id="vh100" className="signup-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
           <Row className="signup-box">
             <Row type="flex" justify="center">
