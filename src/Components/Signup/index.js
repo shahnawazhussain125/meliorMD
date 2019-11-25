@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as authActionCreater from '../../Redux/Actions/authAction';
 import logo from "../../assets/images/Group24.svg";
+import Header from '../Header';
 
 class SignUp extends Component {
   constructor(props) {
@@ -52,6 +53,8 @@ class SignUp extends Component {
 
   render() {
     return (
+      <div>
+        <Header/>
       <Row type="flex" justify="center" id="vh100" className="signup-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
           <Row className="signup-box">
@@ -144,6 +147,7 @@ class SignUp extends Component {
             </Spin>) : null
         }
       </Row>
+      </div>
     );
   }
 }

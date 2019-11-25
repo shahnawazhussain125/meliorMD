@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Drawer, Col, Row, Icon } from 'antd';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 class CustomDrawer extends Component {
   state = { visible: false };
@@ -42,10 +43,10 @@ class CustomDrawer extends Component {
                 <p className="links">Contact Us</p>
               </Row>
               <Row className="sidebar-tabs">
-                <p className="links">Add Prvider List</p>
+                <Link to="/add_provider_listing"><p className="links">Add Prvider List</p></Link>
               </Row>
               <Row className="sidebar-tabs">
-                <p className="links">Prvider Login</p>
+                <Link to="/login"><p className="links">Prvider Login</p></Link>
               </Row>
             </Col>
           </Row>

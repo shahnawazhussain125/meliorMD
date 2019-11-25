@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'antd';
-import { Router, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
-// import logo from '../../assets/images/md-logo.webp';
 import logo from "../../assets/images/meliorMD-logo-no-background.svg";
 import DrawerTab from '../Drawer'
 
@@ -11,7 +10,7 @@ class Header extends Component {
 
     render() {
         return (
-            <Router className="header-div">
+            <div className="header-div">
                 <Row type="flex" className="header-bar">
                     <Col lg={0} md={0} sm={2} xs={4}>
                         <Row type="flex" justify="center" align="middle">
@@ -29,7 +28,7 @@ class Header extends Component {
                                 <li>ABOUT</li>
                                 <li>DIRECTORY</li>
                                 <li>CONTACT US</li>
-                                <li><Link to="/login" >ADD A PROVIDER LIST</Link></li>
+                                <li><Link className="link" to="/add_provider_listing" >ADD A PROVIDER LIST</Link></li>
                             </ul>
                         </div>
                     </Col>
@@ -37,13 +36,14 @@ class Header extends Component {
                     <Col lg={3} md={4} sm={6} xs={0}>
                         <div className="vl">
                             <div>
-                                <Button type="primary" className="provider-button">Provider Login</Button>
-                                {/* <Link to="login">Provider Login</Link> */}
+                                <Link to='/login'>
+                                    <Button type="primary" className="provider-button">Provider Login</Button>
+                                </Link>
                             </div>
                         </div>
                     </Col>
                 </Row>
-            </Router>
+            </div>
         )
     }
 }

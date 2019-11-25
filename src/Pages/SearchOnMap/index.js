@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 import { connect } from 'react-redux';
 import dr_image from '../../assets/images/dr_img.webp';
+import Header from '../../Components/Header';
 
 const { Option } = Select;
 
@@ -33,6 +34,7 @@ class SearchOnMap extends Component {
         const { results, result_count } = this.state;
         return (
             <div>
+                <Header/>
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify='center'>

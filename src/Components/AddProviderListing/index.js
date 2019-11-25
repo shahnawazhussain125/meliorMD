@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, Input, TimePicker, Radio, Checkbox, Icon, Typography} from 'antd';
+import Header from '../Header';
 import moment from 'moment';
 import 'antd/dist/antd.css';
 import './index.css';
@@ -41,6 +42,7 @@ class AddProviderListing extends Component {
     render() {
         return (
             <div>
+                <Header/>
                 <Row type="flex" justify="center">
 
                     <Col xxl={8} xl={9} lg={10} md={14} sm={18} xs={23}>
