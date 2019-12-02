@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Input, Icon, Checkbox, Spin, Alert } from "antd";
+import { Row, Col, Button, Input, Icon, Checkbox, Spin } from "antd";
 import Header from '../Header';
 import Footer from '../Footer';
 import { Link } from 'react-router-dom';
@@ -21,10 +21,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    console.log("Signin", this.state.userType)
-    if (this.props.user) {
-      // this.props.history.push(`/${this.props.userType}`);
-    }
   }
 
   handleSubmit = (e) => {
@@ -53,7 +49,7 @@ class Login extends Component {
   render() {
     return (
      <div>
-       <Header/>
+       <Header {...this.props}/>
         <Row type="flex" justify="center" id="vh100" className="login-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
           <Row className="row-login-box">

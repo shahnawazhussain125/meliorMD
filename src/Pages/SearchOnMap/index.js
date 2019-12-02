@@ -35,7 +35,7 @@ class SearchOnMap extends Component {
         const { results, result_count } = this.state;
         return (
             <div>
-                <Header/>
+                <Header {...this.props}/>
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={24}>
                         <Row type="flex" justify='center'>

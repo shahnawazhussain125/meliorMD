@@ -140,7 +140,7 @@ class SearchResult extends Component {
         const { hide, hideAdvSearch, resultToRender, filterResults } = this.state;
         return (
             <div>
-                <Header />
+                <Header {...this.props}/>
                 <div className="search-result-body">
                     <Row>
                         <Col>

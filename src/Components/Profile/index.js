@@ -28,7 +28,7 @@ class Profle extends Component {
         const { data } = this.state;
         return (
             <div>
-                <Header />
+                <Header {...this.props}/>
                 <div className="profile-body">
                     <Row>
                         <Col>

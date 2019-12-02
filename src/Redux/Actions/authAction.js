@@ -42,8 +42,6 @@ export const signIn = (auth_data, history) => dispatch => {
 
 export const signUp = (auth_data, history) => dispatch => {
 
-    console.log('auth_data', auth_data)
-
     dispatch({
         type: types.START_LOADING,
         payload: "Loading!... Please wait"

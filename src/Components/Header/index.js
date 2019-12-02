@@ -8,6 +8,10 @@ import DrawerTab from '../Drawer'
 
 class Header extends Component {
 
+    navigate = (page) => {
+        this.props.history.push("/")
+    }
+
     render() {
         return (
             <div className="header-div">
@@ -19,7 +23,9 @@ class Header extends Component {
                     </Col>
                     <Col lg={5} md={5} sm={14} xs={16}>
                         <Row type="flex" justify="center">
-                            <img className="header-logo" src={logo} alt="logo" />
+                            
+                            <img className="header-logo" src={logo} alt="logo" onClick={() =>this.navigate("/")} />
+                            
                         </Row>
                     </Col>
                     <Col lg={16} md={15} sm={0} xs={0}>

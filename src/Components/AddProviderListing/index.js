@@ -40,7 +40,7 @@ class AddProviderListing extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header {...this.props}/>
                 <Row type="flex" justify="center">
 
                     <Col xxl={8} xl={9} lg={10} md={14} sm={18} xs={23}>
