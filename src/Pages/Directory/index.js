@@ -62,7 +62,13 @@ class Directory extends Component {
       <div>
         <div className="provoder-list-body">
           <Row className="row-container">
-            <Col span={20} style={{ marginTop: 100, marginBottom: 100 }}>
+            <Col
+              span={20}
+              style={{
+                marginTop: 100,
+                marginBottom: 30,
+              }}
+            >
               <Row>
                 <Col span={5}>
                   <Select
@@ -179,7 +185,7 @@ class Directory extends Component {
                   </Typography>
                 </Col>
                 <Col span={2}>
-                  <Typography>.</Typography>
+                  <Typography style={{ color: "#F0DC00" }}>.</Typography>
                 </Col>
               </Row>
               <Row style={{ backgroundColor: "#FED6FF" }}>
@@ -217,7 +223,7 @@ class Directory extends Component {
                   </Typography>
                 </Col>
                 <Col span={2}>
-                  <Typography>.</Typography>
+                  <Typography style={{ color: "#FED6FF" }}>.</Typography>
                 </Col>
               </Row>
               {this.state.rowData.map((val, i) => {
@@ -276,6 +282,31 @@ class Directory extends Component {
                 scroll={{ x: 1500, y: 300 }}
               /> */}
             </Col>
+            <Col span={1}>
+              <Button
+                style={{
+                  margin: 10,
+                  backgroundColor: "#7855F8",
+                  color: "#fff",
+                }}
+              >
+                Update
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Row save all new button */}
+          <Row style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              style={{
+                margin: 10,
+                backgroundColor: "#7855F8",
+                color: "#fff",
+                marginBottom: 50,
+              }}
+            >
+              Save all new
+            </Button>
           </Row>
         </div>
       </div>

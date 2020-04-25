@@ -1,3 +1,10 @@
+.row-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
 /* //////////////////////// Previous screen CSS ////////////////////////// */
 
 .search-result-body {
