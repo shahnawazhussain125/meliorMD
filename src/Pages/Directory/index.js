@@ -1,8 +1,25 @@
 import React, { Component } from "react";
-import { Row, Col, Input, Button, Typography, Icon } from "antd";
+import { Row, Col, Input, Button, Typography, Icon, Select } from "antd";
 import "antd/dist/antd.css";
 import "./index.css";
-import { Table } from "antd";
+
+const { Option } = Select;
+
+function onChange(value) {
+  console.log(`selected ${value}`);
+}
+
+function onBlur() {
+  console.log("blur");
+}
+
+function onFocus() {
+  console.log("focus");
+}
+
+function onSearch(val) {
+  console.log("search:", val);
+}
 
 class Directory extends Component {
   constructor() {
@@ -45,16 +62,82 @@ class Directory extends Component {
       <div>
         <div className="provoder-list-body">
           <Row className="row-container">
-            <Col style={{ width: "80%", marginTop: 100, marginBottom: 100 }}>
-              {/* table conatiner */}
+            <Col span={20} style={{ marginTop: 100, marginBottom: 100 }}>
+              <Row>
+                <Col span={5}>
+                  <Select
+                    showSearch
+                    style={{ width: 250 }}
+                    placeholder="Select collection"
+                    optionFilterProp="children"
+                    onChange={onChange}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    onSearch={onSearch}
+                    filterOption={(input, option) =>
+                      option.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Option value="author">Authors</Option>
+                    <Option value="book">Books</Option>
+                    <Option value="illustrator">Illustrators</Option>
+                    <Option value="language">Languages</Option>
+                    <Option value="tale">Tales</Option>
+                    <Option value="ztest">zTest</Option>
+                  </Select>
+                </Col>
+                <Col span={5}>
+                  <Typography
+                    style={{
+                      marginLeft: 100,
+                      backgroundColor: "#819BFF",
+                      height: 32,
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      textAlign: "end",
+                      padding: 5,
+                      borderRadius: 5,
+                    }}
+                  >
+                    Add
+                  </Typography>
+                </Col>
+                <Col span={2}>
+                  <Input
+                    placeholder="4"
+                    style={{ textAlign: "center", fontSize: 16 }}
+                  />
+                </Col>
+                <Col span={5}>
+                  <Typography
+                    style={{
+                      marginRight: 100,
+                      backgroundColor: "#819BFF",
+                      height: 32,
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      textAlign: "left",
+                      padding: 5,
+                      borderRadius: 5,
+                    }}
+                  >
+                    new lines
+                  </Typography>
+                </Col>
+              </Row>
+
+              {/* Table conatiner */}
               <Row
                 style={{
                   backgroundColor: "#F0DC00",
                   paddingTop: 15,
                   paddingBottom: 15,
+                  marginTop: 50,
                 }}
               >
-                <Col span={5}>
+                <Col span={4}>
                   <Typography
                     style={{
                       textAlign: "center",
@@ -65,7 +148,7 @@ class Directory extends Component {
                     Document
                   </Typography>
                 </Col>
-                <Col span={2}>
+                <Col span={3}>
                   <Typography style={{ fontSize: 16, fontWeight: "bold" }}>
                     test Boolean
                   </Typography>
@@ -100,10 +183,10 @@ class Directory extends Component {
                 </Col>
               </Row>
               <Row style={{ backgroundColor: "#FED6FF" }}>
-                <Col span={5}>
+                <Col span={4}>
                   <Typography style={{ color: "pink" }}>.</Typography>
                 </Col>
-                <Col span={2}>
+                <Col span={3}>
                   <Typography style={{ fontWeight: "bold" }}>
                     <i>boolean</i>
                   </Typography>
@@ -147,14 +230,14 @@ class Directory extends Component {
                       padding: 5,
                     }}
                   >
-                    <Col span={5}>
+                    <Col span={4}>
                       <Typography
                         style={{ backgroundColor: "#EBEBEB", marginRight: 20 }}
                       >
                         {val.document}
                       </Typography>
                     </Col>
-                    <Col span={2}>
+                    <Col span={3}>
                       <Typography>{val.testBool}</Typography>
                     </Col>
                     <Col span={3}>
@@ -212,56 +295,56 @@ export default Directory;
 //   });
 // }
 
-const columns = [
-  {
-    title: "Document",
-    width: 150,
-    dataIndex: "name",
-    key: "name",
-    fixed: "left",
-  },
-  {
-    title: "test Boolean",
-    width: 120,
-    dataIndex: "age",
-    key: "age",
-    fixed: "left",
-  },
-  {
-    title: "test Number",
-    dataIndex: "address",
-    key: "1",
-    width: 150,
-  },
-  {
-    title: "test String",
-    dataIndex: "address",
-    key: "2",
-    width: 150,
-  },
-  {
-    title: "test String 2",
-    dataIndex: "address",
-    key: "3",
-    width: 150,
-  },
-  {
-    title: "t Timestamp",
-    dataIndex: "address",
-    key: "4",
-    width: 150,
-  },
-  {
-    title: "Dimestamp datetime",
-    dataIndex: "address",
-    key: "5",
-    width: 150,
-  },
-  {
-    // title: "Action",
-    key: "operation",
-    fixed: "right",
-    width: 100,
-    render: () => <Button>show</Button>,
-  },
-];
+// const columns = [
+//   {
+//     title: "Document",
+//     width: 150,
+//     dataIndex: "name",
+//     key: "name",
+//     fixed: "left",
+//   },
+//   {
+//     title: "test Boolean",
+//     width: 120,
+//     dataIndex: "age",
+//     key: "age",
+//     fixed: "left",
+//   },
+//   {
+//     title: "test Number",
+//     dataIndex: "address",
+//     key: "1",
+//     width: 150,
+//   },
+//   {
+//     title: "test String",
+//     dataIndex: "address",
+//     key: "2",
+//     width: 150,
+//   },
+//   {
+//     title: "test String 2",
+//     dataIndex: "address",
+//     key: "3",
+//     width: 150,
+//   },
+//   {
+//     title: "t Timestamp",
+//     dataIndex: "address",
+//     key: "4",
+//     width: 150,
+//   },
+//   {
+//     title: "Dimestamp datetime",
+//     dataIndex: "address",
+//     key: "5",
+//     width: 150,
+//   },
+//   {
+//     // title: "Action",
+//     key: "operation",
+//     fixed: "right",
+//     width: 100,
+//     render: () => <Button>show</Button>,
+//   },
+// ];
