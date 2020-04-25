@@ -1,22 +1,36 @@
 import React, { Component } from "react";
-import { Row, Col, Input, Button, Typography, Icon, Select } from "antd";
+import { Row, Col, Input, Button, Typography, Modal, Select } from "antd";
 import "antd/dist/antd.css";
 import "./index.css";
 
 const { Option } = Select;
 
+// Modal functions
+showModal = () => {
+  this.setState({
+    visible: true,
+  });
+};
+handleOk = () => {
+  this.setState({ loading: true });
+  setTimeout(() => {
+    this.setState({ loading: false, visible: false });
+  }, 3000);
+};
+handleCancel = () => {
+  this.setState({ visible: false });
+};
+
+// Functions for dropdown input menu
 function onChange(value) {
   console.log(`selected ${value}`);
 }
-
 function onBlur() {
   console.log("blur");
 }
-
 function onFocus() {
   console.log("focus");
 }
-
 function onSearch(val) {
   console.log("search:", val);
 }
@@ -25,6 +39,8 @@ class Directory extends Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
+      visible: false,
       rowData: [
         {
           document: "kdaliSNJL83klnzllanay88GSM",
