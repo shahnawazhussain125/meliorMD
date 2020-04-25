@@ -1,5 +1,6 @@
 .row-container {
   display: flex;
+  margin-top: 0px;
   justify-content: center;
   align-items: center;
 }

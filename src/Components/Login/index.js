@@ -48,7 +48,7 @@ class Login extends Component {
 
   render() {
     return (
-     <div>
+     <div className="login-div">
        <Header {...this.props}/>
         <Row type="flex" justify="center" id="vh100" className="login-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>

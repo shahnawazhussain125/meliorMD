@@ -12,12 +12,11 @@
     padding: 4px;
 }
 .signup-box {
-    margin-top: 20%;
+    margin-top: 40%;
     margin-bottom: 2%;
     border-radius: 10px;
     padding: 25px;
     background-color: #F8FBFF;
-    /* box-shadow: rgb(240, 239, 239) 0px 0px 2px 2px; */
 }
 .row-input-name {
     margin-top: 15px;
@@ -34,20 +33,12 @@
 .pass-strength {
     color: #5694D9;
 }
-/* .forgot-pass-text {
-    margin-top: 27px;
-    color: rgba(180, 180, 180, 0.979);
-    color: rgba(128, 128, 128, 0.986);
-} */
 .signup-button {
     width: 40%;
     background-color: #5D89C7;
     color: white;
     font-weight: normal;
 }
-/* .new-to-melior-text {
-    margin-top: 8px;
-} */
 .login-button {
     border: 0px;
     opacity: 1;
@@ -64,5 +55,16 @@
 @media screen and (max-width: 380px) {
     .signup-box {
         margin-top: 14%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .signup-box {
+        margin-top: 20%;
+    }
+  }
+  
+  @media screen and (max-width: 633px) {
+    .signup-box {
+        margin-top: 35%;
     }
   }

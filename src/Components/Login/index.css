@@ -1,10 +1,15 @@
+
+.login-div {
+    justify-content: center;
+    align-items: center;
+}
 .login-container {
     background-image: url('../../assets/images/background-image.webp');
     background-size: cover;
-    padding-bottom: 8%;
 }
 .row-login-box {
-    margin-top: 20%;
+    /* display: flex; */
+    margin-top: 45%;
     margin-bottom: 2%;
     border-radius: 10px;
     padding: 25px;
@@ -60,3 +65,14 @@
     opacity: 1;
     color: #5694D9;
 }
+@media screen and (max-width: 480px) {
+    .row-login-box {
+        margin-top: 30%;
+    }
+  }
+  
+  @media screen and (max-width: 633px) {
+    .row-login-box {
+        margin-top: 35%;
+    }
+  }

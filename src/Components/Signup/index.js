@@ -59,7 +59,7 @@ class SignUp extends Component {
         <Header {...this.props}/>
         <Row type="flex" justify="center" id="vh100" className="signup-container">
         <Col xxl={5} xl={6} lg={7} md={9} sm={14} xs={22}>
-          <Row className="signup-box">
+          <Row className="signup-box" style={{marginTop:"40%"}}>
             <Row type="flex" justify="center">
               <img className="signup-logo" src={logo} alt="logo" />
             </Row>
@@ -123,7 +123,7 @@ class SignUp extends Component {
               </Checkbox>
             </Row>
             <Row className="row-signup-button" type="flex" justify="center">
-              <Button className="signup-button" onClick={(e) => this.handleClick(e)}>Sign up</Button>
+              <Button className="signup-button" style={{backgroundColor:" #5D89C7"}} onClick={(e) => this.handleClick(e)}>Sign up</Button>
             </Row>
           </Row>
           <Row className="row-login" type="flex" justify="center">

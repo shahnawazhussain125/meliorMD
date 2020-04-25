@@ -51,15 +51,13 @@ class Search extends Component {
     }
   }
 
-
-
   render() {
     const { cityName, providerCategory, hide } = this.state;
     return (
       <div>
         <Header {...this.props}/>
         <div className="provoder-list-body">
-          <Row className="row-container" id="vh100">
+          <Row className="row-container" id="vh100" style={{marginBottom:"0px", paddingBottom:"0px"}}>
             <Col lg={12} md={15} sm={20} xs={23}>
               <Row className={hide ? "div-container-hide" : "div-container"} >
                 <span style={{ padding: '15px' }}>
@@ -121,7 +119,7 @@ class Search extends Component {
           </Row>
           {
             !hide &&
-            <Row className="row-container">
+            <Row className="row-container" style={{marginTop:"0px", paddingTop:"0px"}}>
               <Col lg={12} md={15} sm={20} xs={23}>
                 <Row className="find-a-listing">
                   <h3>Find a listing</h3>
