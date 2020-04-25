@@ -5,22 +5,6 @@ import "./index.css";
 
 const { Option } = Select;
 
-// Modal functions
-showModal = () => {
-  this.setState({
-    visible: true,
-  });
-};
-handleOk = () => {
-  this.setState({ loading: true });
-  setTimeout(() => {
-    this.setState({ loading: false, visible: false });
-  }, 3000);
-};
-handleCancel = () => {
-  this.setState({ visible: false });
-};
-
 // Functions for dropdown input menu
 function onChange(value) {
   console.log(`selected ${value}`);
@@ -73,7 +57,24 @@ class Directory extends Component {
     };
   }
 
+  // Modal functions
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+  handleOk = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+    }, 3000);
+  };
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
   render() {
+    const { visible, loading } = this.state;
     return (
       <div>
         <div className="provoder-list-body">
@@ -279,6 +280,7 @@ class Directory extends Component {
                     </Col>
                     <Col span={2}>
                       <Button
+                        onClick={this.showModal}
                         style={{
                           margin: 5,
                           backgroundColor: "#7855F8",
@@ -291,12 +293,6 @@ class Directory extends Component {
                   </Row>
                 );
               })}
-              {/* <Table
-                style={{ marginTop: 100 }}
-                columns={columns}
-                dataSource={this.state.rowData}
-                scroll={{ x: 1500, y: 300 }}
-              /> */}
             </Col>
             <Col span={1}>
               <Button
@@ -325,6 +321,39 @@ class Directory extends Component {
             </Button>
           </Row>
         </div>
+        <Modal
+          visible={visible}
+          title="Title"
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          footer={[
+            <Button key="back" onClick={this.handleCancel}>
+              Return
+            </Button>,
+            <Button
+              key="submit"
+              type="primary"
+              loading={loading}
+              onClick={this.handleOk}
+            >
+              Submit
+            </Button>,
+          ]}
+        >
+          <Row
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography>Document</Typography>
+            <Input
+              placeholder="Enter document"
+              style={{ fontSize: 16, marginLeft: 20 }}
+            />
+          </Row>
+        </Modal>
       </div>
     );
   }
