@@ -79,13 +79,7 @@ class Directory extends Component {
       <div>
         <div className="provoder-list-body">
           <Row className="row-container">
-            <Col
-              span={20}
-              style={{
-                marginTop: 100,
-                marginBottom: 30,
-              }}
-            >
+            <Col span={21} style={{ marginTop: 100, marginBottom: 30 }}>
               <Row>
                 <Col span={5}>
                   <Select
@@ -112,20 +106,7 @@ class Directory extends Component {
                   </Select>
                 </Col>
                 <Col span={5}>
-                  <Typography
-                    style={{
-                      marginLeft: 100,
-                      backgroundColor: "#819BFF",
-                      height: 32,
-                      fontSize: 16,
-                      fontWeight: "bold",
-                      textAlign: "end",
-                      padding: 5,
-                      borderRadius: 5,
-                    }}
-                  >
-                    Add
-                  </Typography>
+                  <Typography className="text-add">Add</Typography>
                 </Col>
                 <Col span={2}>
                   <Input
@@ -134,44 +115,16 @@ class Directory extends Component {
                   />
                 </Col>
                 <Col span={5}>
-                  <Typography
-                    style={{
-                      marginRight: 100,
-                      backgroundColor: "#819BFF",
-                      height: 32,
-                      fontSize: 16,
-                      fontWeight: "bold",
-                      textAlign: "left",
-                      padding: 5,
-                      borderRadius: 5,
-                    }}
-                  >
-                    new lines
-                  </Typography>
+                  <Typography className="text-newline">new lines</Typography>
                 </Col>
               </Row>
 
               {/* Table conatiner */}
-              <Row
-                style={{
-                  backgroundColor: "#F0DC00",
-                  paddingTop: 15,
-                  paddingBottom: 15,
-                  marginTop: 50,
-                }}
-              >
-                <Col span={4}>
-                  <Typography
-                    style={{
-                      textAlign: "center",
-                      fontSize: 16,
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Document
-                  </Typography>
+              <Row className="row1">
+                <Col span={5}>
+                  <Typography className="text-doc">Document</Typography>
                 </Col>
-                <Col span={3}>
+                <Col span={2}>
                   <Typography style={{ fontSize: 16, fontWeight: "bold" }}>
                     test Boolean
                   </Typography>
@@ -206,10 +159,10 @@ class Directory extends Component {
                 </Col>
               </Row>
               <Row style={{ backgroundColor: "#FED6FF" }}>
-                <Col span={4}>
+                <Col span={5}>
                   <Typography style={{ color: "pink" }}>.</Typography>
                 </Col>
-                <Col span={3}>
+                <Col span={2}>
                   <Typography style={{ fontWeight: "bold" }}>
                     <i>boolean</i>
                   </Typography>
@@ -245,22 +198,15 @@ class Directory extends Component {
               </Row>
               {this.state.rowData.map((val, i) => {
                 return (
-                  <Row
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      backgroundColor: "#fff",
-                      padding: 5,
-                    }}
-                  >
-                    <Col span={4}>
+                  <Row className="row-map">
+                    <Col span={5}>
                       <Typography
                         style={{ backgroundColor: "#EBEBEB", marginRight: 20 }}
                       >
                         {val.document}
                       </Typography>
                     </Col>
-                    <Col span={3}>
+                    <Col span={2}>
                       <Typography>{val.testBool}</Typography>
                     </Col>
                     <Col span={3}>
@@ -279,14 +225,7 @@ class Directory extends Component {
                       <Typography>{val.dimeStamp}</Typography>
                     </Col>
                     <Col span={2}>
-                      <Button
-                        onClick={this.showModal}
-                        style={{
-                          margin: 5,
-                          backgroundColor: "#7855F8",
-                          color: "#fff",
-                        }}
-                      >
+                      <Button onClick={this.showModal} className="button-show">
                         Show
                       </Button>
                     </Col>
@@ -295,35 +234,18 @@ class Directory extends Component {
               })}
             </Col>
             <Col span={1}>
-              <Button
-                style={{
-                  margin: 10,
-                  backgroundColor: "#7855F8",
-                  color: "#fff",
-                }}
-              >
-                Update
-              </Button>
+              <Button className="button-update">Update</Button>
             </Col>
           </Row>
 
           {/* Row save all new button */}
           <Row style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              style={{
-                margin: 10,
-                backgroundColor: "#7855F8",
-                color: "#fff",
-                marginBottom: 50,
-              }}
-            >
-              Save all new
-            </Button>
+            <Button className="button-save-all">Save all new</Button>
           </Row>
         </div>
         <Modal
           visible={visible}
-          title="Title"
+          title="Update data"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={[
@@ -340,18 +262,61 @@ class Directory extends Component {
             </Button>,
           ]}
         >
-          <Row
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Typography>Document</Typography>
-            <Input
-              placeholder="Enter document"
-              style={{ fontSize: 16, marginLeft: 20 }}
-            />
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Document</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter document" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Test boolean</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter boolean" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Test number</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter number" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Test string</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter string" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Test string 2</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter string" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>t Timestamp</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter timestamp" style={{ fontSize: 16 }} />
+            </Col>
+          </Row>
+          <Row className="row-modal-inputflield">
+            <Col span={6}>
+              <Typography>Dimestamp datetime</Typography>
+            </Col>
+            <Col span={15}>
+              <Input placeholder="Enter dimestamp" style={{ fontSize: 16 }} />
+            </Col>
           </Row>
         </Modal>
       </div>
@@ -360,67 +325,3 @@ class Directory extends Component {
 }
 
 export default Directory;
-
-// const data = [];
-// for (let i = 0; i < 100; i++) {
-//   data.push({
-//     key: i,
-//     name: `Edrward ${i}`,
-//     age: `true ${i}`,
-//     address: `London Park no. ${i}`,
-//   });
-// }
-
-// const columns = [
-//   {
-//     title: "Document",
-//     width: 150,
-//     dataIndex: "name",
-//     key: "name",
-//     fixed: "left",
-//   },
-//   {
-//     title: "test Boolean",
-//     width: 120,
-//     dataIndex: "age",
-//     key: "age",
-//     fixed: "left",
-//   },
-//   {
-//     title: "test Number",
-//     dataIndex: "address",
-//     key: "1",
-//     width: 150,
-//   },
-//   {
-//     title: "test String",
-//     dataIndex: "address",
-//     key: "2",
-//     width: 150,
-//   },
-//   {
-//     title: "test String 2",
-//     dataIndex: "address",
-//     key: "3",
-//     width: 150,
-//   },
-//   {
-//     title: "t Timestamp",
-//     dataIndex: "address",
-//     key: "4",
-//     width: 150,
-//   },
-//   {
-//     title: "Dimestamp datetime",
-//     dataIndex: "address",
-//     key: "5",
-//     width: 150,
-//   },
-//   {
-//     // title: "Action",
-//     key: "operation",
-//     fixed: "right",
-//     width: 100,
-//     render: () => <Button>show</Button>,
-//   },
-// ];
